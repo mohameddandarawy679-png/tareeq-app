@@ -43,49 +43,224 @@ input{width:100%;padding:14px;border-radius:12px;border:none;font-size:16px;text
 
 <div id="lockScreen">
 <div class="top"><img class="top-bg" src="cover.jpg" onerror="this.style.display='none'"><img class="cover" src="profile.jpg" onerror="this.style.display='none'">
-<h1 data-ar="طريق الاحتراف من الصفر" data-en="Road to Mastery From Zero" data-fr="La Route vers la Maîtrise" data-es="Camino a la Maestría Desde Cero" data-de="Weg zur Meisterschaft von Null">طريق الاحتراف من الصفر</h1>
+<h1>طريق الاحتراف من الصفر</h1>
 <div class="stars">★★★★★ 5/5</div>
-<div data-ar="120 درس - ضعف الدروس - شرح لعيل 9 سنين" data-en="120 Lessons - Double Lessons - For 9-Year-Old" data-fr="120 Leçons - Leçons Doubles - Pour 9 Ans" data-es="120 Lecciones - Lecciones Dobles - Para 9 Años" data-de="120 Lektionen - Doppelte Lektionen - Für 9-Jährige">120 درس - ضعف الدروس - شرح لعيل 9 سنين</div>
+<div>120 درس - ضعف الدروس - شرح لعيل 9 سنين</div>
 <div class="langs"><span>Python</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>SQL</span><span>Flutter</span><span>C++</span></div>
-<p data-ar="60 يوم × درسين في اليوم = 120 درس - 3 أمثلة + 5 تدريبات + اختبار + مشروعين" data-en="60 Days x 2 Lessons = 120 Lessons - 3 Examples + 5 Trainings + Quiz + 2 Projects" data-fr="60 Jours x 2 Leçons = 120 Leçons" data-es="60 Días x 2 Lecciones = 120 Lecciones" data-de="60 Tage x 2 Lektionen = 120 Lektionen">60 يوم × درسين في اليوم = 120 درس - 3 أمثلة + 5 تدريبات + اختبار + مشروعين</p>
+<p>60 يوم × درسين في اليوم = 120 درس - 3 أمثلة + 5 تدريبات + اختبار + مشروعين</p>
 </div>
 <div class="lock-box">
-<h2 data-ar="🔒 الكتاب مقفول" data-en="🔒 Book is Locked" data-fr="🔒 Le Livre est Verrouillé" data-es="🔒 El Libro está Bloqueado" data-de="🔒 Buch ist Gesperrt">🔒 الكتاب مقفول</h2>
-<p data-ar="اكتب كود التفعيل عشان تفتح الكتاب كله" data-en="Write your activation code" data-fr="Écrivez votre code" data-es="Escribe tu código" data-de="Schreibe deinen Code">اكتب كود التفعيل عشان تفتح الكتاب كله</p>
-<a class="whats" href="https://wa.me/201098920188?text=ازيك يا محترف، عايز كود تفعيل الكتاب" target="_blank"><span data-ar="📱 اطلب كودك على واتساب" data-en="📱 Get Your Code on WhatsApp" data-fr="📱 Obtenez Votre Code sur WhatsApp" data-es="📱 Obtén Tu Código en WhatsApp" data-de="📱 Hol Dir Deinen Code auf WhatsApp">📱 اطلب كودك على واتساب</span></a>
-<input id="codeInput" type="password" placeholder="اكتب كود التفعيل هنا">
-<button class="btn-gold" onclick="activate()"><span data-ar="افتح الكتاب الآن 🔓" data-en="Open Book Now 🔓" data-fr="Ouvrir le Livre Maintenant 🔓" data-es="Abrir Libro Ahora 🔓" data-de="Buch Jetzt Öffnen 🔓">افتح الكتاب الآن 🔓</span></button>
-<p id="msg"></p>
-<div style="color:#FFD700;font-weight:bold">© 2026 طريق الاحتراف من الصفر<br>المحترف 😎</div>
+<h2>🔒 الكتاب مقفول</h2>
+<p>اكتب كود التفعيل عشان تفتح الكتاب كله</p>
+<a class="whats" href="https://wa.me/201098920188?text=ازيك يا محترف، عايز كود تفعيل الكتاب" target="_blank">📱 اطلب كودك على واتساب</a>
+<input id="codeInput" type="password" placeholder="اكتب كود التفعيل هنا" autocomplete="off">
+<button class="btn-gold" onclick="activate()">افتح الكتاب الآن 🔓</button>
+<p id="msg" style="color:#FFD700;font-weight:bold;min-height:20px"></p>
+<button onclick="clearCache()" style="background:transparent;color:#aaa;border:none;cursor:pointer;font-size:12px;margin-top:10px">لو الكود مش راضي يفتح دوس هنا وامسح الذاكرة القديمة</button>
+<div style="color:#FFD700;font-weight:bold;margin-top:10px">© 2026 طريق الاحتراف من الصفر<br>المحترف 😎</div>
 </div>
 </div>
 
 <div id="bookScreen" class="book">
-<div class="top"><h1>طريق الاحتراف من الصفر - 120 درس مضاعف</h1><div class="stars">★★★★★</div><p>كل يوم فيه درسين: درس نظري + درس عملي. كل درس فيه 3 أمثلة و 5 تدريبات واختبار ومشروعين. لو عندك 9 سنين هتفهم.</p></div>
+<div class="top"><h1>طريق الاحتراف من الصفر - 120 درس مضاعف</h1><div class="stars">★★★★★</div><p>كل يوم فيه درسين: درس نظري + درس عملي. كل درس فيه 3 أمثلة و 5 تدريبات واختبار ومشروعين.</p></div>
 
-<!-- ===== PYTHON ===== -->
 <div class="sec">المرحلة 1: Python - اليوم 1 إلى 10 - 20 درس</div>
-
 <div class="lesson"><span class="tag">اليوم 1 - الدرس 1+2</span><h3>اليوم 1: يعني إيه برمجة؟ وأول كود ليك</h3>
-<p><b>الدرس الأول - النظري:</b> تخيل عندك روبوت صغير. الروبوت مش بيفهم غير لما تقوله اعمل إيه بالظبط. البرمجة هي انك بتدي أوامر للكمبيوتر خطوة بخطوة.</p>
-<div class="step"><b>يعني إيه print؟</b> print يعني "اطبع" أو "قول". زي لما ماما تقولك "قول بسم الله".</div>
-<div class="code">print("اهلا بيك يا بطل")<br>print("انا هبقى محترف")<br>print("انا عندي 9 سنين")</div>
-<p><b>المثال 1:</b> print("انا بحب المانجا") - هيطبع انا بحب المانجا</p>
-<p><b>المثال 2:</b> print(5+5) - هيطبع 10، الكمبيوتر بيحسب كمان</p>
-<p><b>المثال 3:</b> print("يوسف", "علي", "مريم") - هيطبع 3 أسامي جنب بعض</p>
-<div class="step"><b>خطوة بخطوة:</b> 1. اكتب print 2. افتح قوس ( 3. اكتب الكلام بين " " 4. اقفل القوس ) 5. دوس Run</div>
-<div class="warn"><b>غلطة بيقع فيها الكل:</b> لو نسيت " " أو القوس، الكود مش هيشتغل.</div>
+<p><b>الدرس الأول - النظري:</b> تخيل عندك روبوت صغير. البرمجة هي انك بتدي أوامر للكمبيوتر خطوة بخطوة.</p>
+<div class="step"><b>يعني إيه print؟</b> print يعني "اطبع" أو "قول".</div>
+<div class="code">print("اهلا بيك يا بطل")<br>print("انا هبقى محترف")</div>
+<p><b>المثال 1:</b> print("انا بحب المانجا")</p>
+<p><b>المثال 2:</b> print(5+5) - هيطبع 10</p>
+<p><b>المثال 3:</b> print("يوسف", "علي", "مريم")</p>
 <span class="tag2">الدرس الثاني - العملي 🔥</span>
-<p><b>دلوقتي هنطبق:</b> اعمل برنامج بيحكي قصة قصيرة عنك في 5 سطور.</p>
-<div class="code">print("انا اسمي يوسف")<br>print("عندي 9 سنين")<br>print("بحب روبلوكس")<br>print("بحب المانجا")<br>print("هبقى مبرمج محترف")</div>
-<div class="try"><b>🎯 5 تدريبات:</b><br>1. اطبع اسمك<br>2. اطبع عمرك<br>3. اطبع لعبتك المفضلة<br>4. اطبع أكلك المفضل<br>5. اطبع "انا بطل Python"</div>
-<div class="quiz"><b>📝 اختبار:</b> لو كتبت print("اهلا") من غير قوس، هيشتغل؟ الإجابة: لأ، لازم القوس.</div>
+<div class="code">print("انا اسمي يوسف")<br>print("عندي 9 سنين")<br>print("بحب روبلوكس")<br>print("هبقى مبرمج محترف")</div>
+<div class="try"><b>🎯 5 تدريبات:</b> 1. اطبع اسمك 2. اطبع عمرك 3. اطبع لعبتك 4. اطبع أكلك 5. اطبع "انا بطل Python"</div>
+<div class="quiz"><b>📝 اختبار:</b> لو كتبت print("اهلا") من غير قوس، هيشتغل؟ لأ، لازم القوس.</div>
 <p><b>🏆 المشروع 1:</b> برنامج ترحيب بيقول "اهلا بيك في عالمي" 5 مرات.</p>
-<p><b>🏆 المشروع 2:</b> قصة قصيرة عن يومك في المدرسة في 10 سطور بـ print.</p></div>
+<p><b>🏆 المشروع 2:</b> قصة قصيرة عن يومك في 10 سطور بـ print.</p></div>
 
 <div class="lesson"><span class="tag">اليوم 2 - الدرس 3+4</span><h3>اليوم 2: المتغيرات - العلبة السحرية</h3>
-<p><b>الدرس الأول - النظري:</b> عندك 3 علب. علبة "اسمي"، علبة "عمري"، علبة "بلدي". المتغير هو العلبة دي. بتلزق عليها اسم وتحط جواها حاجة.</p>
+<p><b>الدرس الأول:</b> عندك 3 علب. علبة "اسمي"، علبة "عمري"، علبة "بلدي". المتغير هو العلبة دي.</p>
 <div class="code">name = "يوسف"<br>age = 9<br>country = "مصر"<br>print("انا اسمي", name)</div>
-<p><b>المثال 1:</b> game = "روبلوكس" - علبة اسمها game جواها روبلوكس</p>
-<p><b>المثال 2:</b> score = 100 - علبة اسمها score جواها 100</p>
-<p><b>المثال 3:</b> لو غيرت اللي جوه العلبة، print هيطبع الجديد. جرب: name = "ع
+<p><b>المثال 1:</b> game = "روبلوكس"</p>
+<p><b>المثال 2:</b> score = 100</p>
+<p><b>المثال 3:</b> لو غيرت اللي جوه العلبة، print هيطبع الجديد.</p>
+<span class="tag2">الدرس الثاني - العملي 🔥</span>
+<div class="code">my_name = "يوسف"<br>my_age = 9<br>my_game = "ماين كرافت"<br>print(my_name, my_age, my_game)</div>
+<div class="try"><b>🎯 5 تدريبات:</b> 1. علبة لاسمك 2. علبة لعمرك 3. علبة لمدرستك 4. علبة للونك 5. اطبعهم كلهم</div>
+<p><b>🏆 المشروع 1:</b> بطاقة تعريف كاملة.</p>
+<p><b>🏆 المشروع 2:</b> بدل اللي في علبتين.</p></div>
+
+<div class="lesson"><span class="tag">اليوم 3 - الدرس 5+6</span><h3>اليوم 3: input - خلي الكمبيوتر يسألك</h3>
+<div class="code">name = input("اسمك إيه يا بطل؟ ")<br>print("اهلا بيك", name)</div>
+<p><b>المثال 1:</b> color = input("لونك المفضل؟ ")</p>
+<p><b>المثال 2:</b> age = input("عمرك كام؟ ")</p>
+<span class="tag2">الدرس الثاني - العملي 🔥</span>
+<div class="code">name = input("اسمك؟ ")<br>age = input("عمرك؟ ")<br>game = input("لعبتك؟ ")<br>print("انت", name, "عندك", age, "وبتحب", game)</div>
+<div class="try"><b>🎯 5 تدريبات:</b> اسأل عن اسم صاحبك، مدرسته، أكله، لونه، واطبعهم.</div>
+<p><b>🏆 المشروع 1:</b> شات بوت بيسأل 5 أسئلة.</p>
+<p><b>🏆 المشروع 2:</b> استبيان لـ 10 صحابك.</p></div>
+
+<div class="lesson"><span class="tag">اليوم 4 - الدرس 7+8</span><h3>اليوم 4: الحساب</h3>
+<div class="code">a = 10<br>b = 3<br>print(a + b)<br>print(a - b)<br>print(a * b)<br>print(a / b)</div>
+<p><b>المثال 1:</b> 5*2=10 كورة</p>
+<p><b>المثال 2:</b> 20/4=5</p>
+<p><b>المثال 3:</b> 10 % 3 = 1</p>
+<span class="tag2">الدرس الثاني - العملي 🔥</span>
+<div class="code">x = int(input("اكتب رقم: "))<br>y = int(input("اكتب رقم تاني: "))<br>print("الجمع:", x+y)<br>print("الضرب:", x*y)</div>
+<div class="try"><b>🎯 5 تدريبات:</b> 10+20, 50-15, 6*7, 100/10, 17%5</div>
+<p><b>🏆 المشروع 1:</b> آلة حاسبة كاملة.</p>
+<p><b>🏆 المشروع 2:</b> برنامج مصروف: مصروفك في الأسبوع والشهر.</p></div>
+
+<div class="lesson"><span class="tag">اليوم 5 - الدرس 9+10</span><h3>اليوم 5: الشروط if</h3>
+<div class="code">age = 9<br>if age >= 10:<br>&nbsp;&nbsp;print("انت كبير")<br>else:<br>&nbsp;&nbsp;print("انت لسه صغير بس شاطر")</div>
+<span class="tag2">الدرس الثاني - العملي 🔥 - elif</span>
+<div class="code">score = int(input("درجتك كام؟ "))<br>if score >= 90:<br>&nbsp;&nbsp;print("ممتاز")<br>elif score >= 70:<br>&nbsp;&nbsp;print("جيد جدا")<br>else:<br>&nbsp;&nbsp;print("حاول تاني")</div>
+<div class="try"><b>🎯 5 تدريبات:</b> لو عمرك >=18، لو درجتك >=50، لو رقمك زوجي، لو كلمة السر صح، لو الجو حر</div>
+<p><b>🏆 المشروع 1:</b> برنامج درجات.</p>
+<p><b>🏆 المشروع 2:</b> برنامج دخول ملاهي.</p></div>
+
+<div class="lesson"><span class="tag">اليوم 6 - الدرس 11+12</span><h3>اليوم 6: الحلقات for</h3>
+<div class="code">for i in range(1, 11):<br>&nbsp;&nbsp;print("انا بطل", i)</div>
+<span class="tag2">الدرس الثاني - while</span>
+<div class="code">count = 1<br>while count <= 5:<br>&nbsp;&nbsp;print("العد", count)<br>&nbsp;&nbsp;count = count + 1</div>
+<div class="try"><b>🎯 5 تدريبات:</b> اطبع من 1 لـ 20، الأرقام الزوجية، جدول 2، أسماء صحابك، "انا محترف" 10 مرات</div>
+<p><b>🏆 المشروع 1:</b> جدول الضرب كامل.</p>
+<p><b>🏆 المشروع 2:</b> لعبة عد.</p></div>
+
+<div class="lesson"><span class="tag">اليوم 7 - الدرس 13+14</span><h3>اليوم 7: القوائم List - الشنطة</h3>
+<div class="code">games = ["روبلوكس", "ماين كرافت", "فيفا"]<br>print(games[0])<br>games.append("ببجي")</div>
+<p><b>المثال 1:</b> len(games) بيقولك فيها كام حاجة</p>
+<p><b>المثال 2:</b> games.remove("فيفا")</p>
+<span class="tag2">الدرس الثاني - العملي 🔥</span>
+<div class="code">friends = []<br>friends.append(input("اسم صاحبك الأول؟ "))<br>print("صحابك:", friends)</div>
+<p><b>🏆 المشروع 1:</b> قائمة مهام.</p>
+<p><b>🏆 المشروع 2:</b> قائمة أفلام.</p></div>
+
+<div class="lesson"><span class="tag">اليوم 8 - الدرس 15+16</span><h3>اليوم 8: الدوال Function - الوصفة</h3>
+<div class="code">def hello(name):<br>&nbsp;&nbsp;print("اهلا يا", name)<br><br>hello("يوسف")</div>
+<span class="tag2">الدرس الثاني - العملي 🔥</span>
+<div class="code">def calc(a, b):<br>&nbsp;&nbsp;print("الجمع", a+b)<br>&nbsp;&nbsp;print("الضرب", a*b)<br><br>calc(10, 5)</div>
+<p><b>🏆 المشروع 1:</b> حاسبة بالدوال.</p>
+<p><b>🏆 المشروع 2:</b> برنامج بيحول الدولار لجنيه.</p></div>
+
+<div class="lesson"><span class="tag">اليوم 9 - الدرس 17+18</span><h3>اليوم 9: القاموس Dict - البطاقة</h3>
+<div class="code">me = {"name": "يوسف", "age": 9, "game": "روبلوكس"}<br>print(me["name"])</div>
+<span class="tag2">الدرس الثاني - العملي 🔥</span>
+<div class="code">players = [{"name": "يوسف", "score": 100}, {"name": "علي", "score": 80}]<br>print(players[0]["name"])</div>
+<p><b>🏆 المشروع 1:</b> قاعدة بيانات لـ 3 صحابك.</p>
+<p><b>🏆 المشروع 2:</b> قاموس ألعاب.</p></div>
+
+<div class="lesson"><span class="tag">اليوم 10 - مشروع مضاعف 🏆</span><h3>اليوم 10: متجر ألعاب + متجر أكل</h3>
+<p><b>المشروع 1:</b> متجر ألعاب بيسأل عن اسمك وبيعرض 3 ألعاب.</p>
+<p><b>المشروع 2:</b> متجر أكل: بيتزا بـ 50، برجر بـ 40، شاورما بـ 30.</p></div>
+
+<div class="sec">المرحلة 2: HTML + CSS - اليوم 11 إلى 20 - 20 درس</div>
+<div class="lesson"><span class="tag">اليوم 11 - درسين</span><h3>اليوم 11: HTML - هيكل العمارة</h3><div class="code">&lt;h1&gt;انا يوسف&lt;/h1&gt;<br>&lt;p&gt;انا بحب البرمجة&lt;/p&gt;</div><p><b>الدرس 2:</b> صفحة فيها عنوان وفقرة وصورة وزرار وقائمة.</p><p><b>🏆 المشروع 1:</b> صفحتك الشخصية.</p><p><b>🏆 المشروع 2:</b> صفحة عن لعبتك المفضلة.</p></div>
+<div class="lesson"><span class="tag">اليوم 12 - درسين</span><h3>اليوم 12: الصور والروابط + فيديو</h3><div class="code">&lt;img src="me.jpg" width="200"&gt;<br>&lt;a href="https://wa.me/201098920188"&gt;كلمني&lt;/a&gt;</div><p><b>🏆 المشروع 1:</b> كارت تعريف.</p><p><b>🏆 المشروع 2:</b> صفحة فيها فيديو.</p></div>
+<div class="lesson"><span class="tag">اليوم 13 - درسين</span><h3>اليوم 13: CSS - المكياج والألوان</h3><div class="code">h1 { color: gold; background: #0A1931; }</div><p><b>🏆 المشروع 1:</b> صفحة بألوان الكتاب.</p><p><b>🏆 المشروع 2:</b> صفحة بألوانك.</p></div>
+<div class="lesson"><span class="tag">اليوم 14 - درسين</span><h3>اليوم 14: Flexbox + Grid</h3><div class="code">.box { display: flex; gap: 10px; }</div><p><b>🏆 المشروع 1:</b> معرض صور.</p><p><b>🏆 المشروع 2:</b> صفحة منتجات.</p></div>
+<div class="lesson"><span class="tag">اليوم 15 - درسين</span><h3>اليوم 15: الفورم</h3><div class="code">&lt;input placeholder="اكتب اسمك"&gt;<br>&lt;button&gt;سجل دخول&lt;/button&gt;</div><p><b>🏆 المشروع 1:</b> صفحة تسجيل دخول.</p><p><b>🏆 المشروع 2:</b> صفحة تسجيل في مسابقة.</p></div>
+<div class="lesson"><span class="tag">اليوم 16 - درسين</span><h3>اليوم 16: موقع متجاوب</h3><div class="code">@media (max-width: 600px) { h1 { font-size: 20px; } }</div><p><b>🏆 المشروع 1:</b> موقع موبايل.</p><p><b>🏆 المشروع 2:</b> موقع تابلت.</p></div>
+<div class="lesson"><span class="tag">اليوم 17 - درسين</span><h3>اليوم 17: الأنيميشن</h3><div class="code">button:hover { transform: scale(1.1); }</div><p><b>🏆 المشروع 1:</b> موقع زراره بينط.</p><p><b>🏆 المشروع 2:</b> موقع فيه صورة بتتحرك.</p></div>
+<div class="lesson"><span class="tag">اليوم 18 - درسين</span><h3>اليوم 18: صفحة هبوط</h3><p>صفحة هبوط زي صفحة الكتاب دي.</p><p><b>🏆 المشروع 1:</b> صفحة هبوط للعبة.</p><p><b>🏆 المشروع 2:</b> صفحة هبوط لكورس.</p></div>
+<div class="lesson"><span class="tag">اليوم 19 - درسين</span><h3>اليوم 19: متجر إلكتروني</h3><p>كل لعبة ليها صورة وسعر وزرار واتساب.</p><p><b>🏆 المشروع 1:</b> متجر ألعاب.</p><p><b>🏆 المشروع 2:</b> متجر ملابس.</p></div>
+<div class="lesson"><span class="tag">اليوم 20 - مشروع مضاعف 🏆</span><h3>اليوم 20: موقعك الشخصي + موقع لصاحبك</h3><p><b>المشروع 1:</b> موقع كامل ليك.</p><p><b>المشروع 2:</b> نفس الموقع لصاحبك.</p></div>
+
+<div class="sec">المرحلة 3: JavaScript - اليوم 21 إلى 30 - 20 درس</div>
+<div class="lesson"><span class="tag">اليوم 21 - درسين</span><h3>اليوم 21: أول كود JS</h3><div class="code">let name = "يوسف";<br>alert("اهلا يا " + name);</div><p><b>🏆 المشروع 1:</b> زرار ترحيب.</p><p><b>🏆 المشروع 2:</b> برنامج بيسأل عن اسمك وعمرك.</p></div>
+<div class="lesson"><span class="tag">اليوم 22 - درسين</span><h3>اليوم 22: onclick + عداد</h3><div class="code">let likes = 0;<br>function addLike(){ likes++; }</div><p><b>🏆 المشروع 1:</b> عداد لايكات.</p><p><b>🏆 المشروع 2:</b> لعبة دوس على الكورة.</p></div>
+<div class="lesson"><span class="tag">اليوم 23 - درسين</span><h3>اليوم 23: الشروط والحلقات + لعبة تخمين</h3><div class="code">let secret = 7;<br>if(guess == secret){ alert("صح!"); }</div><p><b>🏆 المشروع 1:</b> لعبة تخمين.</p><p><b>🏆 المشروع 2:</b> حجر ورقة مقص.</p></div>
+<div class="lesson"><span class="tag">اليوم 24 - درسين</span><h3>اليوم 24: القوائم + To-Do</h3><div class="code">let tasks = [];<br>tasks.push("ذاكر");</div><p><b>🏆 المشروع 1:</b> To-Do.</p><p><b>🏆 المشروع 2:</b> قائمة مشتريات.</p></div>
+<div class="lesson"><span class="tag">اليوم 25 - درسين</span><h3>اليوم 25: localStorage</h3><div class="code">localStorage.setItem("name", "يوسف");</div><p><b>🏆 المشروع 1:</b> تسجيل دخول يفتكرك.</p><p><b>🏆 المشروع 2:</b> صفحة بتفتكر لعبتك.</p></div>
+<div class="lesson"><span class="tag">اليوم 26 - درسين</span><h3>اليوم 26: آلة حاسبة</h3><p><b>الدرس 1:</b> حاسبة + - * /</p><p><b>الدرس 2:</b> حاسبة فيها % و **</p><p><b>🏆 المشروع 1:</b> حاسبة عادية.</p><p><b>🏆 المشروع 2:</b> حاسبة مصروفك.</p></div>
+<div class="lesson"><span class="tag">اليوم 27 - درسين</span><h3>اليوم 27: الساعة + ستوب ووتش</h3><p><b>الدرس 1:</b> ساعة رقمية.</p><p><b>الدرس 2:</b> ستوب ووتش.</p><p><b>🏆 المشروع 1:</b> ساعة.</p><p><b>🏆 المشروع 2:</b> مؤقت للمذاكرة.</p></div>
+<div class="lesson"><span class="tag">اليوم 28 - درسين</span><h3>اليوم 28: لعبة X O + لعبة ذاكرة</h3><p><b>الدرس 1:</b> X O.</p><p><b>الدرس 2:</b> لعبة ذاكرة.</p><p><b>🏆 المشروع 1:</b> X O.</p><p><b>🏆 المشروع 2:</b> لعبة ذاكرة.</p></div>
+<div class="lesson"><span class="tag">اليوم 29 - درسين</span><h3>اليوم 29: متجر JS + سلة + فاتورة</h3><p><b>الدرس 1:</b> سلة شراء.</p><p><b>الدرس 2:</b> سلة فيها حذف وفاتورة.</p><p><b>🏆 المشروع 1:</b> متجر ألعاب.</p><p><b>🏆 المشروع 2:</b> متجر أكل.</p></div>
+<div class="lesson"><span class="tag">اليوم 30 - مشروع مضاعف 🏆</span><h3>اليوم 30: تطبيق زي الكتاب + تطبيق أذكار</h3><p><b>المشروع 1:</b> تطبيق زي الكتاب ده.</p><p><b>المشروع 2:</b> تطبيق أذكار: سبحة بتعد.</p></div>
+
+<div class="sec">المرحلة 4: SQL - اليوم 31 إلى 40 - 20 درس</div>
+<div class="lesson"><span class="tag">اليوم 31 - درسين</span><h3>اليوم 31: أول جدول</h3><div class="code">CREATE TABLE users (id INT, name TEXT, age INT);</div><p><b>🏆 المشروع 1:</b> جدول مدرسة.</p><p><b>🏆 المشروع 2:</b> جدول ألعاب.</p></div>
+<div class="lesson"><span class="tag">اليوم 32 - درسين</span><h3>اليوم 32: INSERT</h3><div class="code">INSERT INTO users VALUES (1, 'يوسف', 9);</div><p><b>🏆 المشروع 1:</b> سجل 5 طلاب.</p><p><b>🏆 المشروع 2:</b> سجل 10 ألعاب.</p></div>
+<div class="lesson"><span class="tag">اليوم 33 - درسين</span><h3>اليوم 33: SELECT</h3><div class="code">SELECT * FROM users WHERE age > 10;</div><p><b>🏆 المشروع 1:</b> دور على الطلاب اللي عمرهم أكبر من 10.</p><p><b>🏆 المشروع 2:</b> دور على الألعاب اللي سعرها أقل من 100.</p></div>
+<div class="lesson"><span class="tag">اليوم 34 - درسين</span><h3>اليوم 34: UPDATE / DELETE</h3><div class="code">UPDATE users SET age = 10 WHERE name = 'يوسف';</div><p><b>🏆 المشروع 1:</b> لوحة تحكم.</p><p><b>🏆 المشروع 2:</b> حذف الألعاب القديمة.</p></div>
+<div class="lesson"><span class="tag">اليوم 35 - درسين</span><h3>اليوم 35: ORDER BY + GROUP BY</h3><div class="code">SELECT * FROM users ORDER BY age DESC;</div><p><b>🏆 المشروع 1:</b> تقرير درجات مرتب.</p><p><b>🏆 المشروع 2:</b> عدد الطلاب في كل عمر.</p></div>
+<div class="lesson"><span class="tag">اليوم 36 - درسين</span><h3>اليوم 36: JOIN</h3><div class="code">SELECT * FROM users JOIN grades ON users.id = grades.user_id;</div><p><b>🏆 المشروع 1:</b> نظام درجات.</p><p><b>🏆 المشروع 2:</b> نظام حضور وغياب.</p></div>
+<div class="lesson"><span class="tag">اليوم 37 - درسين</span><h3>اليوم 37: متجر بقاعدة بيانات + فواتير</h3><p><b>الدرس 1:</b> منتجات + عملاء + طلبات.</p><p><b>الدرس 2:</b> فواتير.</p><p><b>🏆 المشروع 1:</b> متجر.</p><p><b>🏆 المشروع 2:</b> صيدلية.</p></div>
+<div class="lesson"><span class="tag">اليوم 38 - درسين</span><h3>اليوم 38: تسجيل دخول + صلاحيات</h3><p><b>الدرس 1:</b> جدول مستخدمين.</p><p><b>الدرس 2:</b> صلاحيات: مدير، مدرس، طالب.</p><p><b>🏆 المشروع 1:</b> تسجيل دخول.</p><p><b>🏆 المشروع 2:</b> نظام مدرسة.</p></div>
+<div class="lesson"><span class="tag">اليوم 39 - درسين</span><h3>اليوم 39: أكواد تفعيل</h3><p><b>الدرس 1:</b> جدول أكواد زي الكتاب ده.</p><p><b>الدرس 2:</b> كود بيستخدم مرة واحدة بس.</p><p><b>🏆 المشروع 1:</b> جدول أكواد.</p><p><b>🏆 المشروع 2:</b> نظام شحن رصيد.</p></div>
+<div class="lesson"><span class="tag">اليوم 40 - مشروع مضاعف 🏆</span><h3>اليوم 40: متجر كامل + مدرسة كاملة</h3><p><b>المشروع 1:</b> متجر كامل.</p><p><b>المشروع 2:</b> مدرسة كاملة.</p></div>
+
+<div class="sec">المرحلة 5: Flutter - اليوم 41 إلى 50 - 20 درس</div>
+<div class="lesson"><span class="tag">اليوم 41 - درسين</span><h3>اليوم 41: أول تطبيق</h3><div class="code">Text("اهلا بيك يا بطل")</div><p><b>🏆 المشروع 1:</b> شاشة ترحيب.</p><p><b>🏆 المشروع 2:</b> شاشة فيها صورتك.</p></div>
+<div class="lesson"><span class="tag">اليوم 42 - درسين</span><h3>اليوم 42: الزرار والصور</h3><div class="code">ElevatedButton(onPressed: () {}, child: Text("دوس عليا"))</div><p><b>🏆 المشروع 1:</b> كارت شخصي.</p><p><b>🏆 المشروع 2:</b> زرار بيغير اللون.</p></div>
+<div class="lesson"><span class="tag">اليوم 43 - درسين</span><h3>اليوم 43: ListView + GridView</h3><p><b>🏆 المشروع 1:</b> قائمة كورسات.</p><p><b>🏆 المشروع 2:</b> معرض صور.</p></div>
+<div class="lesson"><span class="tag">اليوم 44 - درسين</span><h3>اليوم 44: التنقل</h3><p><b>🏆 المشروع 1:</b> تطبيق 3 شاشات.</p><p><b>🏆 المشروع 2:</b> تطبيق متجر بشاشة تفاصيل.</p></div>
+<div class="lesson"><span class="tag">اليوم 45 - درسين</span><h3>اليوم 45: الفورم</h3><p><b>🏆 المشروع 1:</b> تسجيل دخول.</p><p><b>🏆 المشروع 2:</b> تسجيل في مسابقة.</p></div>
+<div class="lesson"><span class="tag">اليوم 46 - درسين</span><h3>اليوم 46: حاسبة</h3><p><b>🏆 المشروع 1:</b> حاسبة.</p><p><b>🏆 المشروع 2:</b> حاسبة مصروف.</p></div>
+<div class="lesson"><span class="tag">اليوم 47 - درسين</span><h3>اليوم 47: متجر</h3><p><b>🏆 المشروع 1:</b> متجر ألعاب.</p><p><b>🏆 المشروع 2:</b> متجر أكل.</p></div>
+<div class="lesson"><span class="tag">اليوم 48 - درسين</span><h3>اليوم 48: واتساب + اتصال</h3><p><b>🏆 المشروع 1:</b> زرار واتساب.</p><p><b>🏆 المشروع 2:</b> تطبيق تواصل.</p></div>
+<div class="lesson"><span class="tag">اليوم 49 - درسين</span><h3>اليوم 49: تطبيق الكتاب + تطبيق قصص</h3><p><b>🏆 المشروع 1:</b> تطبيق الكتاب.</p><p><b>🏆 المشروع 2:</b> تطبيق قصص.</p></div>
+<div class="lesson"><span class="tag">اليوم 50 - مشروع مضاعف 🏆</span><h3>اليوم 50: تطبيقك جاهز للنشر + تطبيقين</h3><p><b>المشروع 1:</b> تطبيقك جاهز على Google Play.</p><p><b>المشروع 2:</b> تطبيق تاني من اختيارك.</p></div>
+
+<div class="sec">المرحلة 6: C++ - اليوم 51 إلى 60 - 20 درس</div>
+<div class="lesson"><span class="tag">اليوم 51 - درسين</span><h3>اليوم 51: أول كود C++</h3><div class="code">#include &lt;iostream&gt;<br>using namespace std;<br>int main() { cout &lt;&lt; "اهلا يا بطل"; return 0; }</div><p><b>🏆 المشروع 1:</b> برنامج ترحيب.</p><p><b>🏆 المشروع 2:</b> برنامج جدول الحصص.</p></div>
+<div class="lesson"><span class="tag">اليوم 52 - درسين</span><h3>اليوم 52: المتغيرات + إدخال</h3><div class="code">int age = 9;<br>cin &gt;&gt; age;</div><p><b>🏆 المشروع 1:</b> حاسبة.</p><p><b>🏆 المشروع 2:</b> برنامج بيسأل عن درجتك.</p></div>
+<div class="lesson"><span class="tag">اليوم 53 - درسين</span><h3>اليوم 53: الشروط</h3><div class="code">if (age >= 10) { cout &lt;&lt; "كبير"; }</div><p><b>🏆 المشروع 1:</b> نظام تقديرات.</p><p><b>🏆 المشروع 2:</b> نظام دخول ملاهي.</p></div>
+<div class="lesson"><span class="tag">اليوم 54 - درسين</span><h3>اليوم 54: الحلقات</h3><div class="code">for (int i = 0; i &lt; 10; i++) { cout &lt;&lt; i; }</div><p><b>🏆 المشروع 1:</b> جدول ضرب.</p><p><b>🏆 المشروع 2:</b> برنامج بيعد من 100 لـ 1.</p></div>
+<div class="lesson"><span class="tag">اليوم 55 - درسين</span><h3>اليوم 55: المصفوفات</h3><div class="code">int arr[3] = {1, 2, 3};</div><p><b>🏆 المشروع 1:</b> متوسط 5 درجات.</p><p><b>🏆 المشروع 2:</b> لعبة X O.</p></div>
+<div class="lesson"><span class="tag">اليوم 56 - درسين</span><h3>اليوم 56: الدوال</h3><div class="code">int add(int a, int b) { return a + b; }</div><p><b>🏆 المشروع 1:</b> حاسبة بالدوال.</p><p><b>🏆 المشروع 2:</b> دالة بتحسب مساحة المستطيل.</p></div>
+<div class="lesson"><span class="tag">اليوم 57 - درسين</span><h3>اليوم 57: الكلاسات</h3><div class="code">class Player { public: string name; int score; };</div><p><b>🏆 المشروع 1:</b> نظام طلاب.</p><p><b>🏆 المشروع 2:</b> نظام لاعبين.</p></div>
+<div class="lesson"><span class="tag">اليوم 58 - درسين</span><h3>اليوم 58: لعبة تخمين + حجر ورقة مقص</h3><p><b>المشروع 1:</b> تخمين.</p><p><b>المشروع 2:</b> حجر ورقة مقص.</p></div>
+<div class="lesson"><span class="tag">اليوم 59 - درسين</span><h3>اليوم 59: نظام بنك + متجر</h3><p><b>المشروع 1:</b> بنك.</p><p><b>المشروع 2:</b> محفظة.</p></div>
+<div class="lesson"><span class="tag">اليوم 60 - التخرج المضاعف 🎓</span><h3>اليوم 60: التخرج - انت بقيت محترف ×2 🎓</h3>
+<p><b>مبروك يا بطل!</b><br>انت خلصت 120 درس.<br>✅ Python - 20 درس<br>✅ HTML + CSS - 20 درس<br>✅ JavaScript - 20 درس<br>✅ SQL - 20 درس<br>✅ Flutter - 20 درس<br>✅ C++ - 20 درس</p>
+<p style="text-align:center;font-size:22px;color:#FFD700">★★★★★ 5/5<br>مبروك يا محترف 🎓<br>المحترف 😎</p></div>
+
+<div class="footer">© 2026 طريق الاحتراف من الصفر<br>المحترف 😎</div>
+<p style="text-align:center"><a class="whats" href="https://wa.me/201098920188">📱 كلمني على واتساب</a></p>
+</div>
+
+<script>
+function setLang(lang){
+  document.querySelectorAll('[data-ar]').forEach(el=>{
+    let t = el.getAttribute('data-'+lang);
+    if(t) el.textContent = t;
+  });
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang==='ar' ? 'rtl' : 'ltr';
+  document.querySelectorAll('.lang-bar button').forEach(b=>b.classList.remove('active'));
+  let btn = document.getElementById('btn-'+lang);
+  if(btn) btn.classList.add('active');
+  try{ localStorage.setItem('bookLang', lang); }catch(e){}
+}
+try{
+  let saved = localStorage.getItem('bookLang');
+  if(saved && saved!=='ar') setLang(saved);
+}catch(e){}
+// الـ 100 كود - محفوظين
+const validCodes=["SN5000-A1B2","SN5000-C3D4","SN5000-E5F6","SN5000-G7H8","SN5000-J9K0","SN5000-M1N2","SN5000-P3Q4","SN5000-R5S6","SN5000-T7U8","SN5000-V9W0","SN5000-X1Y2","SN5000-Z3A4","SN5000-B5C6","SN5000-D7E8","SN5000-F9G0","SN5000-H1J2","SN5000-K3L4","SN5000-M5N6","SN5000-P7Q8","SN5000-R9S0","SN5000-T1U2","SN5000-V3W4","SN5000-X5Y6","SN5000-Z7A8","SN5000-B9C0","SN5000-D1E2","SN5000-F3G4","SN5000-H5J6","SN5000-K7L8","SN5000-M9N0","SN5000-P1Q2","SN5000-R3S4","SN5000-T5U6","SN5000-V7W8","SN5000-X9Y0","SN5000-Z1A2","SN5000-B3C4","SN5000-D5E6","SN5000-F7G8","SN5000-H9J0","SN5000-K1L2","SN5000-M3N4","SN5000-P5Q6","SN5000-R7S8","SN5000-T9U0","SN5000-V1W2","SN5000-X3Y4","SN5000-Z5A6","SN5000-B7C8","SN5000-D9E0","SN5000-F1G2","SN5000-H3J4","SN5000-K5L6","SN5000-M7N8","SN5000-P9Q0","SN5000-R1S2","SN5000-T3U4","SN5000-V5W6","SN5000-X7Y8","SN5000-Z9A0","SN5000-B1C2","SN5000-D3E4","SN5000-F5G6","SN5000-H7J8","SN5000-K9L0","SN5000-M1P2","SN5000-Q3R4","SN5000-S5T6","SN5000-U7V8","SN5000-W9X0","SN5000-Y1Z2","SN5000-A3B4","SN5000-C5D6","SN5000-E7F8","SN5000-G9H0","SN5000-J1K2","SN5000-L3M4","SN5000-N5P6","SN5000-Q7R8","SN5000-S9T0","SN5000-U1V2","SN5000-W3X4","SN5000-Y5Z6","SN5000-A7B8","SN5000-C9D0","SN5000-E1F2","SN5000-G3H4","SN5000-J5K6","SN5000-L7M8","SN5000-N9P0","SN5000-Q1R2","SN5000-S3T4","SN5000-U5V6","SN5000-W7X8","SN5000-Y9Z0","SN5000-A2B3","SN5000-C4D5","SN5000-E6F7","SN5000-G8H9","SN5000-J0K1"];
+function activate(){
+  var input = document.getElementById('codeInput');
+  var msg = document.getElementById('msg');
+  var code = input.value.trim().toUpperCase().replace(/\s/g,'');
+  if(!code){ msg.innerHTML='❌ اكتب الكود الأول'; return; }
+  if(validCodes.indexOf(code) !== -1){
+    try{ localStorage.setItem('unlocked','yes'); }catch(e){}
+    document.getElementById('lockScreen').style.display='none';
+    document.getElementById('bookScreen').style.display='block';
+    window.scrollTo(0,0);
+  } else {
+    msg.innerHTML='❌ كود غلط، اطلب كودك من واتساب';
+  }
+}
+function clearCache(){
+  try{ localStorage.removeItem('unlocked'); localStorage.removeItem('bookLang'); }catch(e){}
+  alert('اتمسحت الذاكرة القديمة، اكتب الكود تاني دلوقتي');
+  location.reload();
+}
+// لو كان فاتح قبل كده، افتحه على طول
+try{ if(localStorage.getItem('unlocked')==='yes'){ document.getElementById('lockScreen').style.display='none'; document.getElementById('bookScreen').style.display='block'; } }catch(e){}
+</script>
+</body>
+                                                                                                                                                                                   </html>
