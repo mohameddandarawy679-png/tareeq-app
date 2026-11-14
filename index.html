@@ -29,7 +29,6 @@ input{width:100%;padding:14px;border-radius:12px;border:none;font-size:16px;text
 .sec{background:#FFD700;color:#0A1931;padding:12px;border-radius:12px;text-align:center;font-weight:bold;font-size:19px;margin:22px 0 10px}
 .langs{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:10px 0}.langs span{background:#FFD700;color:#0A1931;padding:6px 12px;border-radius:20px;font-weight:bold;font-size:13px}
 .footer{margin-top:30px;padding:20px;text-align:center;border-top:1px solid #FFD700;color:#FFD700}
-.used{font-size:12px;color:#ff9a9a;margin-top:8px}
 </style>
 </head>
 <body>
@@ -42,27 +41,23 @@ input{width:100%;padding:14px;border-radius:12px;border:none;font-size:16px;text
 <div class="top"><img class="top-bg" src="cover.jpg" onerror="this.style.display='none'"><img class="cover" src="profile.jpg" onerror="this.style.display='none'">
 <h1 data-ar="طريق الاحتراف من الصفر" data-en="Road to Mastery From Zero">طريق الاحتراف من الصفر</h1>
 <div class="stars">★★★★★ 5/5</div>
-<div data-ar="120 درس - ضعف الدروس - شرح لعيل 9 سنين" data-en="120 Lessons - Double Lessons - For a 9-Year-Old">120 درس - ضعف الدروس - شرح لعيل 9 سنين</div>
+<div data-ar="120 درس - الكود استخدام مرة واحدة فقط" data-en="120 Lessons - Code One-Time Use Only">120 درس - الكود استخدام مرة واحدة فقط</div>
 <div class="langs"><span>Python</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>SQL</span><span>Flutter</span><span>C++</span></div>
-<p data-ar="60 يوم × درسين = 120 درس - الكود استخدام مرة واحدة فقط" data-en="60 Days x 2 Lessons = 120 Lessons - Code is One-Time Use Only">60 يوم × درسين = 120 درس - الكود استخدام مرة واحدة فقط</p>
+<p data-ar="60 يوم × درسين = 120 درس - شرح لعيل 9 سنين" data-en="60 Days x 2 Lessons = 120 Lessons - For a 9-Year-Old">60 يوم × درسين = 120 درس - شرح لعيل 9 سنين</p>
 </div>
 <div class="lock-box">
 <h2 data-ar="🔒 الكتاب مقفول" data-en="🔒 Book is Locked">🔒 الكتاب مقفول</h2>
 <p data-ar="اكتب كود التفعيل - الكود بيشتغل مرة واحدة بس" data-en="Write activation code - Code works only once">اكتب كود التفعيل - الكود بيشتغل مرة واحدة بس</p>
-<p style="color:#FFD700;font-size:13px" data-ar="⚠️ لو بعت الكود لصاحبك، مش هيشتغل عنده بعد ما تستخدمه انت" data-en="⚠️ If you share your code with a friend, it will not work for him after you use it">⚠️ لو بعت الكود لصاحبك، مش هيشتغل عنده بعد ما تستخدمه انت</p>
 <a class="whats" href="https://wa.me/201098920188?text=ازيك يا محترف، عايز كود تفعيل الكتاب" target="_blank"><span data-ar="📱 اطلب كودك على واتساب" data-en="📱 Get Your Code on WhatsApp">📱 اطلب كودك على واتساب</span></a>
 <input id="codeInput" type="password" placeholder="اكتب كود التفعيل هنا" autocomplete="off">
 <button class="btn-gold" onclick="activate()"><span data-ar="افتح الكتاب الآن 🔓" data-en="Open Book Now 🔓">افتح الكتاب الآن 🔓</span></button>
 <p id="msg" style="color:#FFD700;font-weight:bold;min-height:20px"></p>
-<div id="usedInfo" class="used"></div>
-<button onclick="clearCache()" style="background:transparent;color:#aaa;border:none;cursor:pointer;font-size:12px;margin-top:10px"><span data-ar="مسح الذاكرة (للتجربة فقط)" data-en="Clear memory (for testing only)">مسح الذاكرة (للتجربة فقط)</span></button>
 <div style="color:#FFD700;font-weight:bold;margin-top:10px">© 2026 <span data-ar="طريق الاحتراف من الصفر" data-en="Road to Mastery From Zero">طريق الاحتراف من الصفر</span><br><span data-ar="المحترف 😎" data-en="Al-Mohtaref 😎">المحترف 😎</span></div>
 </div>
 </div>
 
 <div id="bookScreen" class="book">
-<div class="top"><h1 data-ar="طريق الاحتراف من الصفر - 120 درس مضاعف" data-en="Road to Mastery - 120 Double Lessons">طريق الاحتراف من الصفر - 120 درس مضاعف</h1><div class="stars">★★★★★</div><p data-ar="كل يوم فيه درسين: نظري + عملي. كل درس فيه 3 أمثلة و 5 تدريبات واختبار ومشروعين." data-en="Every day has 2 lessons: Theory + Practice. Every lesson has 3 examples, 5 trainings, quiz and 2 projects.">كل يوم فيه درسين: نظري + عملي. كل درس فيه 3 أمثلة و 5 تدريبات واختبار ومشروعين.</p><p id="myCodeShow" style="color:#FFD700;font-weight:bold"></p></div>
-
+<div class="top"><h1 data-ar="طريق الاحتراف من الصفر - 120 درس مضاعف" data-en="Road to Mastery - 120 Double Lessons">طريق الاحتراف من الصفر - 120 درس مضاعف</h1><div class="stars">★★★★★</div><p data-ar="كل يوم فيه درسين: نظري + عملي. كل درس فيه 3 أمثلة و 5 تدريبات واختبار ومشروعين." data-en="Every day has 2 lessons: Theory + Practice. Every lesson has 3 examples, 5 trainings, quiz and 2 projects.">كل يوم فيه درسين: نظري + عملي. كل درس فيه 3 أمثلة و 5 تدريبات واختبار ومشروعين.</p></div>
 <div class="sec" data-ar="المرحلة 1: Python - اليوم 1 إلى 10 - 20 درس" data-en="Stage 1: Python - Day 1 to 10 - 20 Lessons">المرحلة 1: Python - اليوم 1 إلى 10 - 20 درس</div>
 <div class="lesson"><span class="tag" data-ar="اليوم 1 - الدرس 1+2" data-en="Day 1 - Lesson 1+2">اليوم 1 - الدرس 1+2</span><h3 data-ar="اليوم 1: يعني إيه برمجة؟" data-en="Day 1: What is Programming?">اليوم 1: يعني إيه برمجة؟</h3>
 <p data-ar="الدرس الأول: تخيل عندك روبوت صغير. البرمجة هي انك بتدي أوامر للكمبيوتر خطوة بخطوة." data-en="Lesson 1: Imagine you have a small robot. Programming is giving step-by-step orders to the computer.">الدرس الأول: تخيل عندك روبوت صغير. البرمجة هي انك بتدي أوامر للكمبيوتر خطوة بخطوة.</p>
@@ -71,89 +66,70 @@ input{width:100%;padding:14px;border-radius:12px;border:none;font-size:16px;text
 <div class="code" data-code-ar='print("انا اسمي يوسف")<br>print("عندي 9 سنين")<br>print("بحب روبلوكس")' data-code-en='print("My name is Youssef")<br>print("I am 9 years old")<br>print("I love Roblox")'>print("انا اسمي يوسف")<br>print("عندي 9 سنين")<br>print("بحب روبلوكس")</div>
 <div class="try" data-ar="🎯 5 تدريبات: اطبع اسمك، عمرك، لعبتك، أكلك، انا بطل Python" data-en="🎯 5 Trainings: Print name, age, game, food, I am Python Hero">🎯 5 تدريبات: اطبع اسمك، عمرك، لعبتك، أكلك، انا بطل Python</div>
 <p data-ar="🏆 المشروع 1: برنامج ترحيب 5 مرات. 🏆 المشروع 2: قصة قصيرة في 10 سطور." data-en="🏆 Project 1: Welcome program 5 times. 🏆 Project 2: Short story in 10 lines.">🏆 المشروع 1: برنامج ترحيب 5 مرات. 🏆 المشروع 2: قصة قصيرة في 10 سطور.</p></div>
-
 <div class="lesson"><span class="tag" data-ar="اليوم 2 - الدرس 3+4" data-en="Day 2 - Lesson 3+4">اليوم 2 - الدرس 3+4</span><h3 data-ar="اليوم 2: المتغيرات - العلبة السحرية" data-en="Day 2: Variables - The Magic Box">اليوم 2: المتغيرات - العلبة السحرية</h3>
 <div class="code" data-code-ar='name = "يوسف"<br>age = 9<br>country = "مصر"<br>print("انا اسمي", name)' data-code-en='name = "Youssef"<br>age = 9<br>country = "Egypt"<br>print("My name is", name)'>name = "يوسف"<br>age = 9<br>country = "مصر"<br>print("انا اسمي", name)</div>
 <p data-ar="🏆 المشروع 1: بطاقة تعريف كاملة. 🏆 المشروع 2: بدل اللي في علبتين." data-en="🏆 Project 1: Full ID card. 🏆 Project 2: Swap two boxes.">🏆 المشروع 1: بطاقة تعريف كاملة. 🏆 المشروع 2: بدل اللي في علبتين.</p></div>
-
 <div class="lesson"><span class="tag" data-ar="اليوم 3 - الدرس 5+6" data-en="Day 3 - Lesson 5+6">اليوم 3 - الدرس 5+6</span><h3 data-ar="اليوم 3: input - خلي الكمبيوتر يسألك" data-en="Day 3: input - Make Computer Ask You">اليوم 3: input - خلي الكمبيوتر يسألك</h3>
 <div class="code" data-code-ar='name = input("اسمك إيه يا بطل؟ ")<br>print("اهلا بيك", name)' data-code-en='name = input("What is your name hero? ")<br>print("Welcome", name)'>name = input("اسمك إيه يا بطل؟ ")<br>print("اهلا بيك", name)</div>
 <p data-ar="🏆 المشروع 1: شات بوت بيسأل 5 أسئلة. 🏆 المشروع 2: استبيان لـ 10 صحابك." data-en="🏆 Project 1: Chat bot asks 5 questions. 🏆 Project 2: Survey for 10 friends.">🏆 المشروع 1: شات بوت بيسأل 5 أسئلة. 🏆 المشروع 2: استبيان لـ 10 صحابك.</p></div>
-
 <div class="lesson"><span class="tag" data-ar="اليوم 4 - الدرس 7+8" data-en="Day 4 - Lesson 7+8">اليوم 4 - الدرس 7+8</span><h3 data-ar="اليوم 4: الحساب" data-en="Day 4: Math">اليوم 4: الحساب</h3>
-<div class="code" data-code-ar='x = int(input("اكتب رقم: "))<br>y = int(input("اكتب رقم تاني: "))<br>print("الجمع:", x+y)' data-code-en='x = int(input("Write a number: "))<br>y = int(input("Write another number: "))<br>print("Sum:", x+y)'>x = int(input("اكتب رقم: "))<br>y = int(input("اكتب رقم تاني: "))<br>print("الجمع:", x+y)</div>
+<div class="code" data-code-ar='x = int(input("اكتب رقم: "))<br>print("الجمع:", x+5)' data-code-en='x = int(input("Write a number: "))<br>print("Sum:", x+5)'>x = int(input("اكتب رقم: "))<br>print("الجمع:", x+5)</div>
 <p data-ar="🏆 المشروع 1: آلة حاسبة. 🏆 المشروع 2: برنامج مصروفك." data-en="🏆 Project 1: Calculator. 🏆 Project 2: Pocket money program.">🏆 المشروع 1: آلة حاسبة. 🏆 المشروع 2: برنامج مصروفك.</p></div>
-
 <div class="lesson"><span class="tag" data-ar="اليوم 5 - الدرس 9+10" data-en="Day 5 - Lesson 9+10">اليوم 5 - الدرس 9+10</span><h3 data-ar="اليوم 5: الشروط if" data-en="Day 5: if Conditions">اليوم 5: الشروط if</h3>
-<div class="code" data-code-ar='score = int(input("درجتك كام؟ "))<br>if score >= 90:<br>&nbsp;&nbsp;print("ممتاز")<br>else:<br>&nbsp;&nbsp;print("حاول تاني")' data-code-en='score = int(input("What is your grade? "))<br>if score >= 90:<br>&nbsp;&nbsp;print("Excellent")<br>else:<br>&nbsp;&nbsp;print("Try again")'>score = int(input("درجتك كام؟ "))<br>if score >= 90:<br>&nbsp;&nbsp;print("ممتاز")<br>else:<br>&nbsp;&nbsp;print("حاول تاني")</div>
-<p data-ar="🏆 المشروع 1: برنامج درجات. 🏆 المشروع 2: برنامج دخول ملاهي." data-en="🏆 Project 1: Grades program. 🏆 Project 2: Amusement park entry.">🏆 المشروع 1: برنامج درجات. 🏆 المشروع 2: برنامج دخول ملاهي.</p></div>
-
+<div class="code" data-code-ar='score = int(input("درجتك كام؟ "))<br>if score >= 90:<br>&nbsp;&nbsp;print("ممتاز")<br>else:<br>&nbsp;&nbsp;print("حاول تاني")' data-code-en='score = int(input("What is your grade? "))<br>if score >= 90:<br>&nbsp;&nbsp;print("Excellent")<br>else:<br>&nbsp;&nbsp;print("Try again")'>score = int(input("درجتك كام؟ "))<br>if score >= 90:<br>&nbsp;&nbsp;print("ممتاز")<br>else:<br>&nbsp;&nbsp;print("حاول تاني")</div></div>
 <div class="lesson"><span class="tag" data-ar="اليوم 6 - الدرس 11+12" data-en="Day 6 - Lesson 11+12">اليوم 6 - الدرس 11+12</span><h3 data-ar="اليوم 6: الحلقات for" data-en="Day 6: for Loops">اليوم 6: الحلقات for</h3>
-<div class="code" data-code-ar='for i in range(1, 11):<br>&nbsp;&nbsp;print("انا بطل", i)' data-code-en='for i in range(1, 11):<br>&nbsp;&nbsp;print("I am hero", i)'>for i in range(1, 11):<br>&nbsp;&nbsp;print("انا بطل", i)</div>
-<p data-ar="🏆 المشروع 1: جدول الضرب. 🏆 المشروع 2: لعبة عد." data-en="🏆 Project 1: Multiplication table. 🏆 Project 2: Counting game.">🏆 المشروع 1: جدول الضرب. 🏆 المشروع 2: لعبة عد.</p></div>
-
+<div class="code" data-code-ar='for i in range(1, 11):<br>&nbsp;&nbsp;print("انا بطل", i)' data-code-en='for i in range(1, 11):<br>&nbsp;&nbsp;print("I am hero", i)'>for i in range(1, 11):<br>&nbsp;&nbsp;print("انا بطل", i)</div></div>
 <div class="lesson"><span class="tag" data-ar="اليوم 7 - الدرس 13+14" data-en="Day 7 - Lesson 13+14">اليوم 7 - الدرس 13+14</span><h3 data-ar="اليوم 7: القوائم List" data-en="Day 7: Lists">اليوم 7: القوائم List</h3>
-<div class="code" data-code-ar='games = ["روبلوكس", "ماين كرافت", "فيفا"]<br>print(games[0])' data-code-en='games = ["Roblox", "Minecraft", "FIFA"]<br>print(games[0])'>games = ["روبلوكس", "ماين كرافت", "فيفا"]<br>print(games[0])</div>
-<p data-ar="🏆 المشروع 1: قائمة مهام. 🏆 المشروع 2: قائمة أفلام." data-en="🏆 Project 1: To-Do list. 🏆 Project 2: Movies list.">🏆 المشروع 1: قائمة مهام. 🏆 المشروع 2: قائمة أفلام.</p></div>
-
+<div class="code" data-code-ar='games = ["روبلوكس", "ماين كرافت", "فيفا"]' data-code-en='games = ["Roblox", "Minecraft", "FIFA"]'>games = ["روبلوكس", "ماين كرافت", "فيفا"]</div></div>
 <div class="lesson"><span class="tag" data-ar="اليوم 8 - الدرس 15+16" data-en="Day 8 - Lesson 15+16">اليوم 8 - الدرس 15+16</span><h3 data-ar="اليوم 8: الدوال Function" data-en="Day 8: Functions">اليوم 8: الدوال Function</h3>
-<div class="code" data-code-ar='def hello(name):<br>&nbsp;&nbsp;print("اهلا يا", name)<br><br>hello("يوسف")' data-code-en='def hello(name):<br>&nbsp;&nbsp;print("Hello", name)<br><br>hello("Youssef")'>def hello(name):<br>&nbsp;&nbsp;print("اهلا يا", name)<br><br>hello("يوسف")</div>
-<p data-ar="🏆 المشروع 1: حاسبة بالدوال. 🏆 المشروع 2: محول دولار لجنيه." data-en="🏆 Project 1: Calculator with functions. 🏆 Project 2: Dollar to pound converter.">🏆 المشروع 1: حاسبة بالدوال. 🏆 المشروع 2: محول دولار لجنيه.</p></div>
-
+<div class="code" data-code-ar='def hello(name):<br>&nbsp;&nbsp;print("اهلا يا", name)<br><br>hello("يوسف")' data-code-en='def hello(name):<br>&nbsp;&nbsp;print("Hello", name)<br><br>hello("Youssef")'>def hello(name):<br>&nbsp;&nbsp;print("اهلا يا", name)<br><br>hello("يوسف")</div></div>
 <div class="lesson"><span class="tag" data-ar="اليوم 9 - الدرس 17+18" data-en="Day 9 - Lesson 17+18">اليوم 9 - الدرس 17+18</span><h3 data-ar="اليوم 9: القاموس Dict" data-en="Day 9: Dictionary">اليوم 9: القاموس Dict</h3>
-<div class="code" data-code-ar='me = {"name": "يوسف", "age": 9, "game": "روبلوكس"}' data-code-en='me = {"name": "Youssef", "age": 9, "game": "Roblox"}'>me = {"name": "يوسف", "age": 9, "game": "روبلوكس"}</div>
-<p data-ar="🏆 المشروع 1: قاعدة بيانات لـ 3 صحابك. 🏆 المشروع 2: قاموس ألعاب." data-en="🏆 Project 1: Database for 3 friends. 🏆 Project 2: Games dictionary.">🏆 المشروع 1: قاعدة بيانات لـ 3 صحابك. 🏆 المشروع 2: قاموس ألعاب.</p></div>
-
+<div class="code" data-code-ar='me = {"name": "يوسف", "age": 9, "game": "روبلوكس"}' data-code-en='me = {"name": "Youssef", "age": 9, "game": "Roblox"}'>me = {"name": "يوسف", "age": 9, "game": "روبلوكس"}</div></div>
 <div class="lesson"><span class="tag" data-ar="اليوم 10 - مشروع مضاعف 🏆" data-en="Day 10 - Double Project 🏆">اليوم 10 - مشروع مضاعف 🏆</span><h3 data-ar="اليوم 10: متجر ألعاب + متجر أكل" data-en="Day 10: Games Store + Food Store">اليوم 10: متجر ألعاب + متجر أكل</h3><p data-ar="المشروع 1: متجر ألعاب. المشروع 2: متجر أكل." data-en="Project 1: Games store. Project 2: Food store.">المشروع 1: متجر ألعاب. المشروع 2: متجر أكل.</p></div>
-
 <div class="sec" data-ar="المرحلة 2: HTML + CSS - اليوم 11 إلى 20" data-en="Stage 2: HTML + CSS - Day 11 to 20">المرحلة 2: HTML + CSS - اليوم 11 إلى 20</div>
-<div class="lesson"><span class="tag" data-ar="اليوم 11 - درسين" data-en="Day 11 - 2 Lessons">اليوم 11 - درسين</span><h3 data-ar="اليوم 11: HTML" data-en="Day 11: HTML">اليوم 11: HTML</h3><div class="code" data-code-ar='&lt;h1&gt;انا يوسف&lt;/h1&gt;<br>&lt;p&gt;انا بحب البرمجة&lt;/p&gt;' data-code-en='&lt;h1&gt;I am Youssef&lt;/h1&gt;<br>&lt;p&gt;I love programming&lt;/p&gt;'>&lt;h1&gt;انا يوسف&lt;/h1&gt;<br>&lt;p&gt;انا بحب البرمجة&lt;/p&gt;</div><p data-ar="🏆 المشروع 1: صفحتك الشخصية. 🏆 المشروع 2: صفحة عن لعبتك." data-en="🏆 Project 1: Your personal page. 🏆 Project 2: Page about your game.">🏆 المشروع 1: صفحتك الشخصية. 🏆 المشروع 2: صفحة عن لعبتك.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 11 - درسين" data-en="Day 11 - 2 Lessons">اليوم 11 - درسين</span><h3 data-ar="اليوم 11: HTML" data-en="Day 11: HTML">اليوم 11: HTML</h3><div class="code" data-code-ar='&lt;h1&gt;انا يوسف&lt;/h1&gt;<br>&lt;p&gt;انا بحب البرمجة&lt;/p&gt;' data-code-en='&lt;h1&gt;I am Youssef&lt;/h1&gt;<br>&lt;p&gt;I love programming&lt;/p&gt;'>&lt;h1&gt;انا يوسف&lt;/h1&gt;<br>&lt;p&gt;انا بحب البرمجة&lt;/p&gt;</div></div>
 <div class="lesson"><span class="tag" data-ar="اليوم 12 - درسين" data-en="Day 12 - 2 Lessons">اليوم 12 - درسين</span><h3 data-ar="اليوم 12: الصور والروابط" data-en="Day 12: Images and Links">اليوم 12: الصور والروابط</h3><p data-ar="🏆 المشروع 1: كارت تعريف. 🏆 المشروع 2: صفحة فيها فيديو." data-en="🏆 Project 1: ID card. 🏆 Project 2: Page with video.">🏆 المشروع 1: كارت تعريف. 🏆 المشروع 2: صفحة فيها فيديو.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 13 - درسين" data-en="Day 13 - 2 Lessons">اليوم 13 - درسين</span><h3 data-ar="اليوم 13: CSS" data-en="Day 13: CSS">اليوم 13: CSS</h3><p data-ar="🏆 المشروع 1: صفحة بألوان الكتاب. 🏆 المشروع 2: صفحة بألوانك." data-en="🏆 Project 1: Page with book colors. 🏆 Project 2: Page with your colors.">🏆 المشروع 1: صفحة بألوان الكتاب. 🏆 المشروع 2: صفحة بألوانك.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 14 - درسين" data-en="Day 14 - 2 Lessons">اليوم 14 - درسين</span><h3 data-ar="اليوم 14: Flexbox + Grid" data-en="Day 14: Flexbox + Grid">اليوم 14: Flexbox + Grid</h3><p data-ar="🏆 المشروع 1: معرض صور. 🏆 المشروع 2: صفحة منتجات." data-en="🏆 Project 1: Photo gallery. 🏆 Project 2: Products page.">🏆 المشروع 1: معرض صور. 🏆 المشروع 2: صفحة منتجات.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 15 - درسين" data-en="Day 15 - 2 Lessons">اليوم 15 - درسين</span><h3 data-ar="اليوم 15: الفورم" data-en="Day 15: Form">اليوم 15: الفورم</h3><p data-ar="🏆 المشروع 1: تسجيل دخول. 🏆 المشروع 2: تسجيل في مسابقة." data-en="🏆 Project 1: Login. 🏆 Project 2: Competition registration.">🏆 المشروع 1: تسجيل دخول. 🏆 المشروع 2: تسجيل في مسابقة.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 16 - درسين" data-en="Day 16 - 2 Lessons">اليوم 16 - درسين</span><h3 data-ar="اليوم 16: موقع متجاوب" data-en="Day 16: Responsive Website">اليوم 16: موقع متجاوب</h3><p data-ar="🏆 المشروع 1: موقع موبايل. 🏆 المشروع 2: موقع تابلت." data-en="🏆 Project 1: Mobile website. 🏆 Project 2: Tablet website.">🏆 المشروع 1: موقع موبايل. 🏆 المشروع 2: موقع تابلت.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 17 - درسين" data-en="Day 17 - 2 Lessons">اليوم 17 - درسين</span><h3 data-ar="اليوم 17: الأنيميشن" data-en="Day 17: Animation">اليوم 17: الأنيميشن</h3><p data-ar="🏆 المشروع 1: زرار بينط. 🏆 المشروع 2: صورة بتتحرك." data-en="🏆 Project 1: Jumping button. 🏆 Project 2: Moving image.">🏆 المشروع 1: زرار بينط. 🏆 المشروع 2: صورة بتتحرك.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 18 - درسين" data-en="Day 18 - 2 Lessons">اليوم 18 - درسين</span><h3 data-ar="اليوم 18: صفحة هبوط" data-en="Day 18: Landing Page">اليوم 18: صفحة هبوط</h3><p data-ar="🏆 المشروع 1: صفحة هبوط للعبة. 🏆 المشروع 2: صفحة هبوط لكورس." data-en="🏆 Project 1: Landing page for game. 🏆 Project 2: Landing page for course.">🏆 المشروع 1: صفحة هبوط للعبة. 🏆 المشروع 2: صفحة هبوط لكورس.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 19 - درسين" data-en="Day 19 - 2 Lessons">اليوم 19 - درسين</span><h3 data-ar="اليوم 19: متجر إلكتروني" data-en="Day 19: Online Store">اليوم 19: متجر إلكتروني</h3><p data-ar="🏆 المشروع 1: متجر ألعاب. 🏆 المشروع 2: متجر ملابس." data-en="🏆 Project 1: Games store. 🏆 Project 2: Clothes store.">🏆 المشروع 1: متجر ألعاب. 🏆 المشروع 2: متجر ملابس.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 20 - مشروع مضاعف 🏆" data-en="Day 20 - Double Project 🏆">اليوم 20 - مشروع مضاعف 🏆</span><h3 data-ar="اليوم 20: موقعك الشخصي" data-en="Day 20: Your Personal Website">اليوم 20: موقعك الشخصي</h3><p data-ar="المشروع 1: موقع كامل ليك. المشروع 2: موقع لصاحبك." data-en="Project 1: Full website for you. Project 2: Website for friend.">المشروع 1: موقع كامل ليك. المشروع 2: موقع لصاحبك.</p></div>
-
+<div class="lesson"><span class="tag" data-ar="اليوم 13 - درسين" data-en="Day 13 - 2 Lessons">اليوم 13 - درسين</span><h3 data-ar="اليوم 13: CSS" data-en="Day 13: CSS">اليوم 13: CSS</h3><p data-ar="🏆 المشروع 1: صفحة بألوان الكتاب." data-en="🏆 Project 1: Page with book colors.">🏆 المشروع 1: صفحة بألوان الكتاب.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 14 - درسين" data-en="Day 14 - 2 Lessons">اليوم 14 - درسين</span><h3 data-ar="اليوم 14: Flexbox + Grid" data-en="Day 14: Flexbox + Grid">اليوم 14: Flexbox + Grid</h3><p data-ar="🏆 المشروع 1: معرض صور." data-en="🏆 Project 1: Photo gallery.">🏆 المشروع 1: معرض صور.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 15 - درسين" data-en="Day 15 - 2 Lessons">اليوم 15 - درسين</span><h3 data-ar="اليوم 15: الفورم" data-en="Day 15: Form">اليوم 15: الفورم</h3><p data-ar="🏆 المشروع 1: تسجيل دخول." data-en="🏆 Project 1: Login.">🏆 المشروع 1: تسجيل دخول.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 16 - درسين" data-en="Day 16 - 2 Lessons">اليوم 16 - درسين</span><h3 data-ar="اليوم 16: موقع متجاوب" data-en="Day 16: Responsive Website">اليوم 16: موقع متجاوب</h3><p data-ar="🏆 المشروع 1: موقع موبايل." data-en="🏆 Project 1: Mobile website.">🏆 المشروع 1: موقع موبايل.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 17 - درسين" data-en="Day 17 - 2 Lessons">اليوم 17 - درسين</span><h3 data-ar="اليوم 17: الأنيميشن" data-en="Day 17: Animation">اليوم 17: الأنيميشن</h3><p data-ar="🏆 المشروع 1: زرار بينط." data-en="🏆 Project 1: Jumping button.">🏆 المشروع 1: زرار بينط.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 18 - درسين" data-en="Day 18 - 2 Lessons">اليوم 18 - درسين</span><h3 data-ar="اليوم 18: صفحة هبوط" data-en="Day 18: Landing Page">اليوم 18: صفحة هبوط</h3><p data-ar="🏆 المشروع 1: صفحة هبوط للعبة." data-en="🏆 Project 1: Landing page for game.">🏆 المشروع 1: صفحة هبوط للعبة.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 19 - درسين" data-en="Day 19 - 2 Lessons">اليوم 19 - درسين</span><h3 data-ar="اليوم 19: متجر إلكتروني" data-en="Day 19: Online Store">اليوم 19: متجر إلكتروني</h3><p data-ar="🏆 المشروع 1: متجر ألعاب." data-en="🏆 Project 1: Games store.">🏆 المشروع 1: متجر ألعاب.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 20 - مشروع مضاعف 🏆" data-en="Day 20 - Double Project 🏆">اليوم 20 - مشروع مضاعف 🏆</span><h3 data-ar="اليوم 20: موقعك الشخصي" data-en="Day 20: Your Personal Website">اليوم 20: موقعك الشخصي</h3><p data-ar="المشروع 1: موقع كامل ليك." data-en="Project 1: Full website for you.">المشروع 1: موقع كامل ليك.</p></div>
 <div class="sec" data-ar="المرحلة 3: JavaScript - اليوم 21 إلى 30" data-en="Stage 3: JavaScript - Day 21 to 30">المرحلة 3: JavaScript - اليوم 21 إلى 30</div>
 <div class="lesson"><span class="tag" data-ar="اليوم 21 - درسين" data-en="Day 21 - 2 Lessons">اليوم 21 - درسين</span><h3 data-ar="اليوم 21: أول كود JS" data-en="Day 21: First JS Code">اليوم 21: أول كود JS</h3><div class="code" data-code-ar='let name = "يوسف";<br>alert("اهلا يا " + name);' data-code-en='let name = "Youssef";<br>alert("Hello " + name);'>let name = "يوسف";<br>alert("اهلا يا " + name);</div></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 22 - درسين" data-en="Day 22 - 2 Lessons">اليوم 22 - درسين</span><h3 data-ar="اليوم 22: عداد" data-en="Day 22: Counter">اليوم 22: عداد</h3><p data-ar="🏆 المشروع 1: عداد لايكات. 🏆 المشروع 2: لعبة دوس على الكورة." data-en="🏆 Project 1: Likes counter. 🏆 Project 2: Click ball game.">🏆 المشروع 1: عداد لايكات. 🏆 المشروع 2: لعبة دوس على الكورة.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 23 - درسين" data-en="Day 23 - 2 Lessons">اليوم 23 - درسين</span><h3 data-ar="اليوم 23: لعبة تخمين" data-en="Day 23: Guessing Game">اليوم 23: لعبة تخمين</h3><p data-ar="🏆 المشروع 1: لعبة تخمين. 🏆 المشروع 2: حجر ورقة مقص." data-en="🏆 Project 1: Guessing game. 🏆 Project 2: Rock Paper Scissors.">🏆 المشروع 1: لعبة تخمين. 🏆 المشروع 2: حجر ورقة مقص.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 24 - درسين" data-en="Day 24 - 2 Lessons">اليوم 24 - درسين</span><h3 data-ar="اليوم 24: To-Do" data-en="Day 24: To-Do">اليوم 24: To-Do</h3><p data-ar="🏆 المشروع 1: To-Do. 🏆 المشروع 2: قائمة مشتريات." data-en="🏆 Project 1: To-Do. 🏆 Project 2: Shopping list.">🏆 المشروع 1: To-Do. 🏆 المشروع 2: قائمة مشتريات.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 22 - درسين" data-en="Day 22 - 2 Lessons">اليوم 22 - درسين</span><h3 data-ar="اليوم 22: عداد" data-en="Day 22: Counter">اليوم 22: عداد</h3><p data-ar="🏆 المشروع 1: عداد لايكات." data-en="🏆 Project 1: Likes counter.">🏆 المشروع 1: عداد لايكات.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 23 - درسين" data-en="Day 23 - 2 Lessons">اليوم 23 - درسين</span><h3 data-ar="اليوم 23: لعبة تخمين" data-en="Day 23: Guessing Game">اليوم 23: لعبة تخمين</h3><p data-ar="🏆 المشروع 1: لعبة تخمين." data-en="🏆 Project 1: Guessing game.">🏆 المشروع 1: لعبة تخمين.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 24 - درسين" data-en="Day 24 - 2 Lessons">اليوم 24 - درسين</span><h3 data-ar="اليوم 24: To-Do" data-en="Day 24: To-Do">اليوم 24: To-Do</h3><p data-ar="🏆 المشروع 1: To-Do." data-en="🏆 Project 1: To-Do.">🏆 المشروع 1: To-Do.</p></div>
 <div class="lesson"><span class="tag" data-ar="اليوم 25 - درسين" data-en="Day 25 - 2 Lessons">اليوم 25 - درسين</span><h3 data-ar="اليوم 25: localStorage" data-en="Day 25: localStorage">اليوم 25: localStorage</h3><p data-ar="🏆 المشروع 1: تسجيل دخول يفتكرك." data-en="🏆 Project 1: Login that remembers you.">🏆 المشروع 1: تسجيل دخول يفتكرك.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 26 - درسين" data-en="Day 26 - 2 Lessons">اليوم 26 - درسين</span><h3 data-ar="اليوم 26: آلة حاسبة" data-en="Day 26: Calculator">اليوم 26: آلة حاسبة</h3><p data-ar="🏆 المشروع 1: حاسبة عادية. 🏆 المشروع 2: حاسبة مصروفك." data-en="🏆 Project 1: Normal calculator. 🏆 Project 2: Pocket money calculator.">🏆 المشروع 1: حاسبة عادية. 🏆 المشروع 2: حاسبة مصروفك.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 27 - درسين" data-en="Day 27 - 2 Lessons">اليوم 27 - درسين</span><h3 data-ar="اليوم 27: الساعة" data-en="Day 27: Clock">اليوم 27: الساعة</h3><p data-ar="🏆 المشروع 1: ساعة. 🏆 المشروع 2: مؤقت للمذاكرة." data-en="🏆 Project 1: Clock. 🏆 Project 2: Study timer.">🏆 المشروع 1: ساعة. 🏆 المشروع 2: مؤقت للمذاكرة.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 28 - درسين" data-en="Day 28 - 2 Lessons">اليوم 28 - درسين</span><h3 data-ar="اليوم 28: لعبة X O" data-en="Day 28: X O Game">اليوم 28: لعبة X O</h3><p data-ar="🏆 المشروع 1: X O. 🏆 المشروع 2: لعبة ذاكرة." data-en="🏆 Project 1: X O. 🏆 Project 2: Memory game.">🏆 المشروع 1: X O. 🏆 المشروع 2: لعبة ذاكرة.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 29 - درسين" data-en="Day 29 - 2 Lessons">اليوم 29 - درسين</span><h3 data-ar="اليوم 29: متجر JS" data-en="Day 29: JS Store">اليوم 29: متجر JS</h3><p data-ar="🏆 المشروع 1: متجر ألعاب. 🏆 المشروع 2: متجر أكل." data-en="🏆 Project 1: Games store. 🏆 Project 2: Food store.">🏆 المشروع 1: متجر ألعاب. 🏆 المشروع 2: متجر أكل.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 30 - مشروع مضاعف 🏆" data-en="Day 30 - Double Project 🏆">اليوم 30 - مشروع مضاعف 🏆</span><h3 data-ar="اليوم 30: تطبيق زي الكتاب" data-en="Day 30: App Like Book">اليوم 30: تطبيق زي الكتاب</h3><p data-ar="المشروع 1: تطبيق زي الكتاب ده. المشروع 2: تطبيق أذكار." data-en="Project 1: App like this book. Project 2: Azkar app.">المشروع 1: تطبيق زي الكتاب ده. المشروع 2: تطبيق أذكار.</p></div>
-
+<div class="lesson"><span class="tag" data-ar="اليوم 26 - درسين" data-en="Day 26 - 2 Lessons">اليوم 26 - درسين</span><h3 data-ar="اليوم 26: آلة حاسبة" data-en="Day 26: Calculator">اليوم 26: آلة حاسبة</h3><p data-ar="🏆 المشروع 1: حاسبة عادية." data-en="🏆 Project 1: Normal calculator.">🏆 المشروع 1: حاسبة عادية.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 27 - درسين" data-en="Day 27 - 2 Lessons">اليوم 27 - درسين</span><h3 data-ar="اليوم 27: الساعة" data-en="Day 27: Clock">اليوم 27: الساعة</h3><p data-ar="🏆 المشروع 1: ساعة." data-en="🏆 Project 1: Clock.">🏆 المشروع 1: ساعة.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 28 - درسين" data-en="Day 28 - 2 Lessons">اليوم 28 - درسين</span><h3 data-ar="اليوم 28: لعبة X O" data-en="Day 28: X O Game">اليوم 28: لعبة X O</h3><p data-ar="🏆 المشروع 1: X O." data-en="🏆 Project 1: X O.">🏆 المشروع 1: X O.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 29 - درسين" data-en="Day 29 - 2 Lessons">اليوم 29 - درسين</span><h3 data-ar="اليوم 29: متجر JS" data-en="Day 29: JS Store">اليوم 29: متجر JS</h3><p data-ar="🏆 المشروع 1: متجر ألعاب." data-en="🏆 Project 1: Games store.">🏆 المشروع 1: متجر ألعاب.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 30 - مشروع مضاعف 🏆" data-en="Day 30 - Double Project 🏆">اليوم 30 - مشروع مضاعف 🏆</span><h3 data-ar="اليوم 30: تطبيق زي الكتاب" data-en="Day 30: App Like Book">اليوم 30: تطبيق زي الكتاب</h3><p data-ar="المشروع 1: تطبيق زي الكتاب ده." data-en="Project 1: App like this book.">المشروع 1: تطبيق زي الكتاب ده.</p></div>
 <div class="sec" data-ar="المرحلة 4: SQL - اليوم 31 إلى 40" data-en="Stage 4: SQL - Day 31 to 40">المرحلة 4: SQL - اليوم 31 إلى 40</div>
-<div class="lesson"><span class="tag" data-ar="اليوم 31 - درسين" data-en="Day 31 - 2 Lessons">اليوم 31 - درسين</span><h3 data-ar="اليوم 31: أول جدول" data-en="Day 31: First Table">اليوم 31: أول جدول</h3><div class="code">CREATE TABLE users (id INT, name TEXT, age INT);</div><p data-ar="🏆 المشروع 1: جدول مدرسة. 🏆 المشروع 2: جدول ألعاب." data-en="🏆 Project 1: School table. 🏆 Project 2: Games table.">🏆 المشروع 1: جدول مدرسة. 🏆 المشروع 2: جدول ألعاب.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 31 - درسين" data-en="Day 31 - 2 Lessons">اليوم 31 - درسين</span><h3 data-ar="اليوم 31: أول جدول" data-en="Day 31: First Table">اليوم 31: أول جدول</h3><div class="code">CREATE TABLE users (id INT, name TEXT, age INT);</div></div>
 <div class="lesson"><span class="tag" data-ar="اليوم 32 - درسين" data-en="Day 32 - 2 Lessons">اليوم 32 - درسين</span><h3 data-ar="اليوم 32: INSERT" data-en="Day 32: INSERT">اليوم 32: INSERT</h3><div class="code" data-code-ar="INSERT INTO users VALUES (1, 'يوسف', 9);" data-code-en="INSERT INTO users VALUES (1, 'Youssef', 9);">INSERT INTO users VALUES (1, 'يوسف', 9);</div></div>
 <div class="lesson"><span class="tag" data-ar="اليوم 33 - درسين" data-en="Day 33 - 2 Lessons">اليوم 33 - درسين</span><h3 data-ar="اليوم 33: SELECT" data-en="Day 33: SELECT">اليوم 33: SELECT</h3><p data-ar="🏆 المشروع 1: دور على الطلاب اللي عمرهم أكبر من 10." data-en="🏆 Project 1: Find students older than 10.">🏆 المشروع 1: دور على الطلاب اللي عمرهم أكبر من 10.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 34 - درسين" data-en="Day 34 - 2 Lessons">اليوم 34 - درسين</span><h3 data-ar="اليوم 34: UPDATE / DELETE" data-en="Day 34: UPDATE / DELETE">اليوم 34: UPDATE / DELETE</h3><p data-ar="🏆 المشروع 1: لوحة تحكم. 🏆 المشروع 2: حذف الألعاب القديمة." data-en="🏆 Project 1: Dashboard. 🏆 Project 2: Delete old games.">🏆 المشروع 1: لوحة تحكم. 🏆 المشروع 2: حذف الألعاب القديمة.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 34 - درسين" data-en="Day 34 - 2 Lessons">اليوم 34 - درسين</span><h3 data-ar="اليوم 34: UPDATE / DELETE" data-en="Day 34: UPDATE / DELETE">اليوم 34: UPDATE / DELETE</h3><p data-ar="🏆 المشروع 1: لوحة تحكم." data-en="🏆 Project 1: Dashboard.">🏆 المشروع 1: لوحة تحكم.</p></div>
 <div class="lesson"><span class="tag" data-ar="اليوم 35 - درسين" data-en="Day 35 - 2 Lessons">اليوم 35 - درسين</span><h3 data-ar="اليوم 35: ORDER BY" data-en="Day 35: ORDER BY">اليوم 35: ORDER BY</h3><p data-ar="🏆 المشروع 1: تقرير درجات مرتب." data-en="🏆 Project 1: Sorted grades report.">🏆 المشروع 1: تقرير درجات مرتب.</p></div>
 <div class="lesson"><span class="tag" data-ar="اليوم 36 - درسين" data-en="Day 36 - 2 Lessons">اليوم 36 - درسين</span><h3 data-ar="اليوم 36: JOIN" data-en="Day 36: JOIN">اليوم 36: JOIN</h3><p data-ar="🏆 المشروع 1: نظام درجات." data-en="🏆 Project 1: Grades system.">🏆 المشروع 1: نظام درجات.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 37 - درسين" data-en="Day 37 - 2 Lessons">اليوم 37 - درسين</span><h3 data-ar="اليوم 37: متجر بقاعدة بيانات" data-en="Day 37: Store Database">اليوم 37: متجر بقاعدة بيانات</h3><p data-ar="🏆 المشروع 1: متجر. 🏆 المشروع 2: صيدلية." data-en="🏆 Project 1: Store. 🏆 Project 2: Pharmacy.">🏆 المشروع 1: متجر. 🏆 المشروع 2: صيدلية.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 38 - درسين" data-en="Day 38 - 2 Lessons">اليوم 38 - درسين</span><h3 data-ar="اليوم 38: تسجيل دخول" data-en="Day 38: Login">اليوم 38: تسجيل دخول</h3><p data-ar="🏆 المشروع 1: تسجيل دخول. 🏆 المشروع 2: نظام مدرسة." data-en="🏆 Project 1: Login. 🏆 Project 2: School system.">🏆 المشروع 1: تسجيل دخول. 🏆 المشروع 2: نظام مدرسة.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 39 - درسين" data-en="Day 39 - 2 Lessons">اليوم 39 - درسين</span><h3 data-ar="اليوم 39: أكواد تفعيل" data-en="Day 39: Activation Codes">اليوم 39: أكواد تفعيل</h3><p data-ar="🏆 المشروع 1: جدول أكواد. 🏆 المشروع 2: نظام شحن رصيد." data-en="🏆 Project 1: Codes table. 🏆 Project 2: Balance recharge system.">🏆 المشروع 1: جدول أكواد. 🏆 المشروع 2: نظام شحن رصيد.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 40 - مشروع مضاعف 🏆" data-en="Day 40 - Double Project 🏆">اليوم 40 - مشروع مضاعف 🏆</span><h3 data-ar="اليوم 40: متجر كامل + مدرسة كاملة" data-en="Day 40: Full Store + Full School">اليوم 40: متجر كامل + مدرسة كاملة</h3><p data-ar="المشروع 1: متجر كامل. المشروع 2: مدرسة كاملة." data-en="Project 1: Full store. Project 2: Full school.">المشروع 1: متجر كامل. المشروع 2: مدرسة كاملة.</p></div>
-
+<div class="lesson"><span class="tag" data-ar="اليوم 37 - درسين" data-en="Day 37 - 2 Lessons">اليوم 37 - درسين</span><h3 data-ar="اليوم 37: متجر بقاعدة بيانات" data-en="Day 37: Store Database">اليوم 37: متجر بقاعدة بيانات</h3><p data-ar="🏆 المشروع 1: متجر." data-en="🏆 Project 1: Store.">🏆 المشروع 1: متجر.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 38 - درسين" data-en="Day 38 - 2 Lessons">اليوم 38 - درسين</span><h3 data-ar="اليوم 38: تسجيل دخول" data-en="Day 38: Login">اليوم 38: تسجيل دخول</h3><p data-ar="🏆 المشروع 1: تسجيل دخول." data-en="🏆 Project 1: Login.">🏆 المشروع 1: تسجيل دخول.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 39 - درسين" data-en="Day 39 - 2 Lessons">اليوم 39 - درسين</span><h3 data-ar="اليوم 39: أكواد تفعيل" data-en="Day 39: Activation Codes">اليوم 39: أكواد تفعيل</h3><p data-ar="🏆 المشروع 1: جدول أكواد." data-en="🏆 Project 1: Codes table.">🏆 المشروع 1: جدول أكواد.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 40 - مشروع مضاعف 🏆" data-en="Day 40 - Double Project 🏆">اليوم 40 - مشروع مضاعف 🏆</span><h3 data-ar="اليوم 40: متجر كامل + مدرسة كاملة" data-en="Day 40: Full Store + Full School">اليوم 40: متجر كامل + مدرسة كاملة</h3><p data-ar="المشروع 1: متجر كامل." data-en="Project 1: Full store.">المشروع 1: متجر كامل.</p></div>
 <div class="sec" data-ar="المرحلة 5: Flutter - اليوم 41 إلى 50" data-en="Stage 5: Flutter - Day 41 to 50">المرحلة 5: Flutter - اليوم 41 إلى 50</div>
 <div class="lesson"><span class="tag" data-ar="اليوم 41 - درسين" data-en="Day 41 - 2 Lessons">اليوم 41 - درسين</span><h3 data-ar="اليوم 41: أول تطبيق" data-en="Day 41: First App">اليوم 41: أول تطبيق</h3><div class="code" data-code-ar='Text("اهلا بيك يا بطل")' data-code-en='Text("Welcome Hero")'>Text("اهلا بيك يا بطل")</div></div>
 <div class="lesson"><span class="tag" data-ar="اليوم 42 - درسين" data-en="Day 42 - 2 Lessons">اليوم 42 - درسين</span><h3 data-ar="اليوم 42: الزرار والصور" data-en="Day 42: Button and Images">اليوم 42: الزرار والصور</h3><div class="code" data-code-ar='ElevatedButton(onPressed: () {}, child: Text("دوس عليا"))' data-code-en='ElevatedButton(onPressed: () {}, child: Text("Click Me"))'>ElevatedButton(onPressed: () {}, child: Text("دوس عليا"))</div></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 43 - درسين" data-en="Day 43 - 2 Lessons">اليوم 43 - درسين</span><h3 data-ar="اليوم 43: ListView + GridView" data-en="Day 43: ListView + GridView">اليوم 43: ListView + GridView</h3><p data-ar="🏆 المشروع 1: قائمة كورسات. 🏆 المشروع 2: معرض صور." data-en="🏆 Project 1: Courses list. 🏆 Project 2: Photo gallery.">🏆 المشروع 1: قائمة كورسات. 🏆 المشروع 2: معرض صور.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 43 - درسين" data-en="Day 43 - 2 Lessons">اليوم 43 - درسين</span><h3 data-ar="اليوم 43: ListView + GridView" data-en="Day 43: ListView + GridView">اليوم 43: ListView + GridView</h3><p data-ar="🏆 المشروع 1: قائمة كورسات." data-en="🏆 Project 1: Courses list.">🏆 المشروع 1: قائمة كورسات.</p></div>
 <div class="lesson"><span class="tag" data-ar="اليوم 44 - درسين" data-en="Day 44 - 2 Lessons">اليوم 44 - درسين</span><h3 data-ar="اليوم 44: التنقل" data-en="Day 44: Navigation">اليوم 44: التنقل</h3><p data-ar="🏆 المشروع 1: تطبيق 3 شاشات." data-en="🏆 Project 1: App with 3 screens.">🏆 المشروع 1: تطبيق 3 شاشات.</p></div>
 <div class="lesson"><span class="tag" data-ar="اليوم 45 - درسين" data-en="Day 45 - 2 Lessons">اليوم 45 - درسين</span><h3 data-ar="اليوم 45: الفورم" data-en="Day 45: Form">اليوم 45: الفورم</h3><p data-ar="🏆 المشروع 1: تسجيل دخول." data-en="🏆 Project 1: Login.">🏆 المشروع 1: تسجيل دخول.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 46 - درسين" data-en="Day 46 - 2 Lessons">اليوم 46 - درسين</span><h3 data-ar="اليوم 46: حاسبة" data-en="Day 46: Calculator">اليوم 46: حاسبة</h3><p data-ar="🏆 المشروع 1: حاسبة. 🏆 المشروع 2: حاسبة مصروف." data-en="🏆 Project 1: Calculator. 🏆 Project 2: Pocket money calculator.">🏆 المشروع 1: حاسبة. 🏆 المشروع 2: حاسبة مصروف.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 47 - درسين" data-en="Day 47 - 2 Lessons">اليوم 47 - درسين</span><h3 data-ar="اليوم 47: متجر" data-en="Day 47: Store">اليوم 47: متجر</h3><p data-ar="🏆 المشروع 1: متجر ألعاب. 🏆 المشروع 2: متجر أكل." data-en="🏆 Project 1: Games store. 🏆 Project 2: Food store.">🏆 المشروع 1: متجر ألعاب. 🏆 المشروع 2: متجر أكل.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 46 - درسين" data-en="Day 46 - 2 Lessons">اليوم 46 - درسين</span><h3 data-ar="اليوم 46: حاسبة" data-en="Day 46: Calculator">اليوم 46: حاسبة</h3><p data-ar="🏆 المشروع 1: حاسبة." data-en="🏆 Project 1: Calculator.">🏆 المشروع 1: حاسبة.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 47 - درسين" data-en="Day 47 - 2 Lessons">اليوم 47 - درسين</span><h3 data-ar="اليوم 47: متجر" data-en="Day 47: Store">اليوم 47: متجر</h3><p data-ar="🏆 المشروع 1: متجر ألعاب." data-en="🏆 Project 1: Games store.">🏆 المشروع 1: متجر ألعاب.</p></div>
 <div class="lesson"><span class="tag" data-ar="اليوم 48 - درسين" data-en="Day 48 - 2 Lessons">اليوم 48 - درسين</span><h3 data-ar="اليوم 48: واتساب" data-en="Day 48: WhatsApp">اليوم 48: واتساب</h3><p data-ar="🏆 المشروع 1: زرار واتساب." data-en="🏆 Project 1: WhatsApp button.">🏆 المشروع 1: زرار واتساب.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 49 - درسين" data-en="Day 49 - 2 Lessons">اليوم 49 - درسين</span><h3 data-ar="اليوم 49: تطبيق الكتاب" data-en="Day 49: Book App">اليوم 49: تطبيق الكتاب</h3><p data-ar="🏆 المشروع 1: تطبيق الكتاب. 🏆 المشروع 2: تطبيق قصص." data-en="🏆 Project 1: Book app. 🏆 Project 2: Stories app.">🏆 المشروع 1: تطبيق الكتاب. 🏆 المشروع 2: تطبيق قصص.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 49 - درسين" data-en="Day 49 - 2 Lessons">اليوم 49 - درسين</span><h3 data-ar="اليوم 49: تطبيق الكتاب" data-en="Day 49: Book App">اليوم 49: تطبيق الكتاب</h3><p data-ar="🏆 المشروع 1: تطبيق الكتاب." data-en="🏆 Project 1: Book app.">🏆 المشروع 1: تطبيق الكتاب.</p></div>
 <div class="lesson"><span class="tag" data-ar="اليوم 50 - مشروع مضاعف 🏆" data-en="Day 50 - Double Project 🏆">اليوم 50 - مشروع مضاعف 🏆</span><h3 data-ar="اليوم 50: تطبيقك جاهز للنشر" data-en="Day 50: Your App Ready to Publish">اليوم 50: تطبيقك جاهز للنشر</h3><p data-ar="المشروع 1: تطبيقك جاهز على Google Play." data-en="Project 1: Your app ready for Google Play.">المشروع 1: تطبيقك جاهز على Google Play.</p></div>
-
 <div class="sec" data-ar="المرحلة 6: C++ - اليوم 51 إلى 60" data-en="Stage 6: C++ - Day 51 to 60">المرحلة 6: C++ - اليوم 51 إلى 60</div>
 <div class="lesson"><span class="tag" data-ar="اليوم 51 - درسين" data-en="Day 51 - 2 Lessons">اليوم 51 - درسين</span><h3 data-ar="اليوم 51: أول كود C++" data-en="Day 51: First C++ Code">اليوم 51: أول كود C++</h3><div class="code" data-code-ar='int main() { cout &lt;&lt; "اهلا يا بطل"; return 0; }' data-code-en='int main() { cout &lt;&lt; "Welcome Hero"; return 0; }'>int main() { cout &lt;&lt; "اهلا يا بطل"; return 0; }</div></div>
 <div class="lesson"><span class="tag" data-ar="اليوم 52 - درسين" data-en="Day 52 - 2 Lessons">اليوم 52 - درسين</span><h3 data-ar="اليوم 52: المتغيرات" data-en="Day 52: Variables">اليوم 52: المتغيرات</h3><div class="code" data-code-ar='string name = "يوسف";' data-code-en='string name = "Youssef";'>string name = "يوسف";</div></div>
@@ -162,22 +138,19 @@ input{width:100%;padding:14px;border-radius:12px;border:none;font-size:16px;text
 <div class="lesson"><span class="tag" data-ar="اليوم 55 - درسين" data-en="Day 55 - 2 Lessons">اليوم 55 - درسين</span><h3 data-ar="اليوم 55: المصفوفات" data-en="Day 55: Arrays">اليوم 55: المصفوفات</h3><p data-ar="🏆 المشروع 1: متوسط 5 درجات." data-en="🏆 Project 1: Average of 5 grades.">🏆 المشروع 1: متوسط 5 درجات.</p></div>
 <div class="lesson"><span class="tag" data-ar="اليوم 56 - درسين" data-en="Day 56 - 2 Lessons">اليوم 56 - درسين</span><h3 data-ar="اليوم 56: الدوال" data-en="Day 56: Functions">اليوم 56: الدوال</h3><p data-ar="🏆 المشروع 1: حاسبة بالدوال." data-en="🏆 Project 1: Calculator with functions.">🏆 المشروع 1: حاسبة بالدوال.</p></div>
 <div class="lesson"><span class="tag" data-ar="اليوم 57 - درسين" data-en="Day 57 - 2 Lessons">اليوم 57 - درسين</span><h3 data-ar="اليوم 57: الكلاسات" data-en="Day 57: Classes">اليوم 57: الكلاسات</h3><p data-ar="🏆 المشروع 1: نظام طلاب." data-en="🏆 Project 1: Students system.">🏆 المشروع 1: نظام طلاب.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 58 - درسين" data-en="Day 58 - 2 Lessons">اليوم 58 - درسين</span><h3 data-ar="اليوم 58: لعبة تخمين" data-en="Day 58: Guessing Game">اليوم 58: لعبة تخمين</h3><p data-ar="🏆 المشروع 1: تخمين. 🏆 المشروع 2: حجر ورقة مقص." data-en="🏆 Project 1: Guessing. 🏆 Project 2: Rock Paper Scissors.">🏆 المشروع 1: تخمين. 🏆 المشروع 2: حجر ورقة مقص.</p></div>
-<div class="lesson"><span class="tag" data-ar="اليوم 59 - درسين" data-en="Day 59 - 2 Lessons">اليوم 59 - درسين</span><h3 data-ar="اليوم 59: نظام بنك" data-en="Day 59: Bank System">اليوم 59: نظام بنك</h3><p data-ar="🏆 المشروع 1: بنك. 🏆 المشروع 2: محفظة." data-en="🏆 Project 1: Bank. 🏆 Project 2: Wallet.">🏆 المشروع 1: بنك. 🏆 المشروع 2: محفظة.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 58 - درسين" data-en="Day 58 - 2 Lessons">اليوم 58 - درسين</span><h3 data-ar="اليوم 58: لعبة تخمين" data-en="Day 58: Guessing Game">اليوم 58: لعبة تخمين</h3><p data-ar="🏆 المشروع 1: تخمين." data-en="🏆 Project 1: Guessing.">🏆 المشروع 1: تخمين.</p></div>
+<div class="lesson"><span class="tag" data-ar="اليوم 59 - درسين" data-en="Day 59 - 2 Lessons">اليوم 59 - درسين</span><h3 data-ar="اليوم 59: نظام بنك" data-en="Day 59: Bank System">اليوم 59: نظام بنك</h3><p data-ar="🏆 المشروع 1: بنك." data-en="🏆 Project 1: Bank.">🏆 المشروع 1: بنك.</p></div>
 <div class="lesson"><span class="tag" data-ar="اليوم 60 - التخرج 🎓" data-en="Day 60 - Graduation 🎓">اليوم 60 - التخرج 🎓</span><h3 data-ar="اليوم 60: التخرج - انت بقيت محترف ×2 🎓" data-en="Day 60: Graduation - You Became Pro x2 🎓">اليوم 60: التخرج - انت بقيت محترف ×2 🎓</h3><p data-ar="مبروك يا بطل! انت خلصت 120 درس." data-en="Congratulations Hero! You finished 120 lessons.">مبروك يا بطل! انت خلصت 120 درس.</p><p style="text-align:center;font-size:22px;color:#FFD700">★★★★★ 5/5<br><span data-ar="مبروك يا محترف 🎓" data-en="Congratulations Pro 🎓">مبروك يا محترف 🎓</span><br><span data-ar="المحترف 😎" data-en="Al-Mohtaref 😎">المحترف 😎</span></p></div>
-
 <div class="footer">© 2026 <span data-ar="طريق الاحتراف من الصفر" data-en="Road to Mastery From Zero">طريق الاحتراف من الصفر</span><br><span data-ar="المحترف 😎" data-en="Al-Mohtaref 😎">المحترف 😎</span></div>
 </div>
 
 <script>
-const codeMapArToEn = {"يوسف":"Youssef","مريم":"Mariam","علي":"Ali","مصر":"Egypt","ماين كرافت":"Minecraft","روبلوكس":"Roblox","فيفا":"FIFA","ببجي":"PUBG","اهلا بيك يا بطل":"Welcome Hero","انا هبقى محترف":"I will be a pro","انا اسمي":"My name is","بحب روبلوكس":"I love Roblox","اهلا بيك":"Welcome","انت كبير":"You are big","درجتك كام؟":"What is your grade?","ممتاز":"Excellent","حاول تاني":"Try again","انا بطل":"I am hero","العد":"Count","اكتب رقم:":"Write a number:","الجمع:":"Sum:","اهلا يا":"Hello","كبير":"Big","صح!":"Correct!","دوس عليا":"Click Me","اكتب اسمك":"Write your name","سجل دخول":"Login","كلمني":"Contact Me","اهلا يا بطل":"Welcome Hero"};
+const codeMapArToEn = {"يوسف":"Youssef","مصر":"Egypt","ماين كرافت":"Minecraft","روبلوكس":"Roblox","اهلا بيك يا بطل":"Welcome Hero","انا هبقى محترف":"I will be a pro","انا اسمي":"My name is","اهلا بيك":"Welcome","درجتك كام؟":"What is your grade?","ممتاز":"Excellent","حاول تاني":"Try again","انا بطل":"I am hero","اهلا يا":"Hello","كبير":"Big","دوس عليا":"Click Me","اكتب اسمك":"Write your name","كلمني":"Contact Me","اهلا يا بطل":"Welcome Hero"};
 function translateCodeBlocks(lang){
   document.querySelectorAll('.code').forEach(el=>{
-    let ar = el.getAttribute('data-code-ar');
-    let en = el.getAttribute('data-code-en');
+    let ar = el.getAttribute('data-code-ar'); let en = el.getAttribute('data-code-en');
     if(ar && en){ el.innerHTML = lang==='ar' ? ar : en; return; }
-    let html = el.getAttribute('data-original');
-    if(!html){ html = el.innerHTML; el.setAttribute('data-original', html); }
+    let html = el.getAttribute('data-original'); if(!html){ html = el.innerHTML; el.setAttribute('data-original', html); }
     let base = el.getAttribute('data-original');
     if(lang==='en'){ for(let k in codeMapArToEn){ base = base.split(k).join(codeMapArToEn[k]); } el.innerHTML = base; } else { el.innerHTML = el.getAttribute('data-original'); }
   });
@@ -185,68 +158,41 @@ function translateCodeBlocks(lang){
 function setLang(lang){
   document.querySelectorAll('[data-ar]').forEach(el=>{ let t = el.getAttribute('data-'+lang); if(t) el.textContent = t; });
   translateCodeBlocks(lang);
-  document.documentElement.lang = lang;
-  document.documentElement.dir = lang==='ar' ? 'rtl' : 'ltr';
+  document.documentElement.lang = lang; document.documentElement.dir = lang==='ar' ? 'rtl' : 'ltr';
   document.querySelectorAll('.lang-bar button').forEach(b=>b.classList.remove('active'));
   let btn = document.getElementById('btn-'+lang); if(btn) btn.classList.add('active');
   try{ localStorage.setItem('bookLang', lang); }catch(e){}
   let inp = document.getElementById('codeInput'); if(inp) inp.placeholder = lang==='ar' ? 'اكتب كود التفعيل هنا' : 'Write activation code here';
-  updateUsedInfo();
-}
-function getUsedCodes(){ try{ return JSON.parse(localStorage.getItem('usedCodes')||'[]'); }catch(e){ return []; } }
-function getMyCode(){ try{ return localStorage.getItem('myCode')||''; }catch(e){ return ''; } }
-function updateUsedInfo(){
-  let lang = localStorage.getItem('bookLang')||'ar';
-  let used = getUsedCodes();
-  let el = document.getElementById('usedInfo');
-  if(el && used.length>0){ el.textContent = lang==='en' ? 'Used codes on this device: '+used.length+' - Each code works only once' : 'أكواد اتستخدمت على الجهاز ده: '+used.length+' - كل كود بيشتغل مرة واحدة بس'; }
-  let show = document.getElementById('myCodeShow');
-  let my = getMyCode();
-  if(show && my){ show.textContent = lang==='en' ? 'Your code: '+my+' (One-time use - already burned)' : 'كودك: '+my+' (استخدام مرة واحدة - اتحرق خلاص)'; }
 }
 try{ let saved = localStorage.getItem('bookLang'); if(saved) setLang(saved); else translateCodeBlocks('ar'); }catch(e){}
 const validCodes=["SN5000-A1B2","SN5000-C3D4","SN5000-E5F6","SN5000-G7H8","SN5000-J9K0","SN5000-M1N2","SN5000-P3Q4","SN5000-R5S6","SN5000-T7U8","SN5000-V9W0","SN5000-X1Y2","SN5000-Z3A4","SN5000-B5C6","SN5000-D7E8","SN5000-F9G0","SN5000-H1J2","SN5000-K3L4","SN5000-M5N6","SN5000-P7Q8","SN5000-R9S0","SN5000-T1U2","SN5000-V3W4","SN5000-X5Y6","SN5000-Z7A8","SN5000-B9C0","SN5000-D1E2","SN5000-F3G4","SN5000-H5J6","SN5000-K7L8","SN5000-M9N0","SN5000-P1Q2","SN5000-R3S4","SN5000-T5U6","SN5000-V7W8","SN5000-X9Y0","SN5000-Z1A2","SN5000-B3C4","SN5000-D5E6","SN5000-F7G8","SN5000-H9J0","SN5000-K1L2","SN5000-M3N4","SN5000-P5Q6","SN5000-R7S8","SN5000-T9U0","SN5000-V1W2","SN5000-X3Y4","SN5000-Z5A6","SN5000-B7C8","SN5000-D9E0","SN5000-F1G2","SN5000-H3J4","SN5000-K5L6","SN5000-M7N8","SN5000-P9Q0","SN5000-R1S2","SN5000-T3U4","SN5000-V5W6","SN5000-X7Y8","SN5000-Z9A0","SN5000-B1C2","SN5000-D3E4","SN5000-F5G6","SN5000-H7J8","SN5000-K9L0","SN5000-M1P2","SN5000-Q3R4","SN5000-S5T6","SN5000-U7V8","SN5000-W9X0","SN5000-Y1Z2","SN5000-A3B4","SN5000-C5D6","SN5000-E7F8","SN5000-G9H0","SN5000-J1K2","SN5000-L3M4","SN5000-N5P6","SN5000-Q7R8","SN5000-S9T0","SN5000-U1V2","SN5000-W3X4","SN5000-Y5Z6","SN5000-A7B8","SN5000-C9D0","SN5000-E1F2","SN5000-G3H4","SN5000-J5K6","SN5000-L7M8","SN5000-N9P0","SN5000-Q1R2","SN5000-S3T4","SN5000-U5V6","SN5000-W7X8","SN5000-Y9Z0","SN5000-A2B3","SN5000-C4D5","SN5000-E6F7","SN5000-G8H9","SN5000-J0K1"];
+function getBurned(){ try{ return JSON.parse(localStorage.getItem('burnedCodes_v2')||'[]'); }catch(e){ return []; } }
 function activate(){
   var input = document.getElementById('codeInput');
   var msg = document.getElementById('msg');
   var lang = localStorage.getItem('bookLang') || 'ar';
   var code = input.value.trim().toUpperCase().replace(/\s/g,'');
   if(!code){ msg.innerHTML = lang==='en' ? '❌ Write the code first' : '❌ اكتب الكود الأول'; return; }
-  var used = getUsedCodes();
-  // لو الكود اتستخدم قبل كده على نفس الجهاز
-  if(used.indexOf(code) !== -1){
-    msg.innerHTML = lang==='en' ? '❌ This code was already used - One-time use only! Get a new code from WhatsApp' : '❌ الكود ده اتستخدم قبل كده - استخدام مرة واحدة بس! اطلب كود جديد من واتساب';
+  var burned = getBurned();
+  if(burned.indexOf(code) !== -1){
+    msg.innerHTML = lang==='en' ? '🔥 This code was burned - One-time use only!' : '🔥 الكود ده اتحرق خلاص - استخدام مرة واحدة بس!';
     return;
   }
   if(validCodes.indexOf(code) === -1){
-    msg.innerHTML = lang==='en' ? '❌ Wrong code' : '❌ كود غلط، اطلب كودك من واتساب';
+    msg.innerHTML = lang==='en' ? '❌ Wrong code' : '❌ كود غلط';
     return;
   }
-  // حرق الكود - استخدام مرة واحدة
-  used.push(code);
+  burned.push(code);
   try{
-    localStorage.setItem('usedCodes', JSON.stringify(used));
-    localStorage.setItem('myCode', code);
+    localStorage.setItem('burnedCodes_v2', JSON.stringify(burned));
     localStorage.setItem('unlocked','yes');
     localStorage.setItem('unlockedCode', code);
   }catch(e){}
   document.getElementById('lockScreen').style.display='none';
   document.getElementById('bookScreen').style.display='block';
-  updateUsedInfo();
   window.scrollTo(0,0);
 }
-function clearCache(){
-  try{ localStorage.removeItem('unlocked'); localStorage.removeItem('bookLang'); localStorage.removeItem('usedCodes'); localStorage.removeItem('myCode'); localStorage.removeItem('unlockedCode'); }catch(e){}
-  alert('اتمسحت الذاكرة / Cleared');
-  location.reload();
-}
-try{
-  if(localStorage.getItem('unlocked')==='yes'){
-    document.getElementById('lockScreen').style.display='none';
-    document.getElementById('bookScreen').style.display='block';
-    updateUsedInfo();
-  } else { updateUsedInfo(); }
-}catch(e){}
+try{ if(localStorage.getItem('unlocked')==='yes'){ document.getElementById('lockScreen').style.display='none'; document.getElementById('bookScreen').style.display='block'; } }catch(e){}
 </script>
 </body>
-                                                                                                                                                                                                                                  </html>
+  </html>
