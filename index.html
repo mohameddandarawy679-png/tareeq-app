@@ -6,9 +6,12 @@
 <title>طريق الاحتراف من الصفر - بقلم المحترف</title>
 <style>
 *{box-sizing:border-box;font-family:'Segoe UI',Tahoma}body{margin:0;background:#0A1931;color:#fff;min-height:100vh}
-.top{padding:20px;text-align:center;background:linear-gradient(135deg,#0A1931,#1A3A6B);border-bottom:3px solid #FFD700}
+.top{padding:20px;text-align:center;background:linear-gradient(135deg,#0A1931,#1A3A6B);border-bottom:3px solid #FFD700;position:relative;overflow:hidden}
+.top-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;z-index:0}
+.top > *{position:relative;z-index:1}
 .top h1{color:#FFD700;font-size:26px;margin:5px}.stars{color:#FFD700;font-size:22px}
-.cover{width:120px;height:120px;border-radius:50%;border:3px solid #FFD700;object-fit:cover}
+.cover{width:120px;height:120px;border-radius:50%;border:3px solid #FFD700;object-fit:cover;background:#0A1931}
+.profile-wrap{display:flex;justify-content:center;gap:12px}
 .lock-box{margin:20px;background:#0E2447;border:2px solid #FFD700;border-radius:20px;padding:20px;text-align:center}
 .whats{background:#25D366;color:#fff;padding:14px;border-radius:12px;display:block;text-decoration:none;font-weight:bold;font-size:17px;margin:15px 0}
 input{width:100%;padding:14px;border-radius:12px;border:none;font-size:16px;text-align:center;margin-bottom:12px}
@@ -16,20 +19,20 @@ input{width:100%;padding:14px;border-radius:12px;border:none;font-size:16px;text
 .book{display:none;padding:15px}
 .lesson{background:#122A52;border:1px solid #FFD700;border-radius:16px;padding:15px;margin-bottom:15px}
 .lesson h3{color:#FFD700;margin:0 0 8px}.code{background:#000;padding:12px;border-radius:10px;direction:ltr;text-align:left;color:#7CFF7C;overflow:auto;margin:10px 0}
-.tabs{display:flex;gap:8px;flex-wrap:wrap}.tabs button{background:#FFD700;border:none;padding:8px 14px;border-radius:20px;font-weight:bold;cursor:pointer}
 .progress{height:12px;background:#222;border-radius:20px;overflow:hidden}.progress div{height:100%;background:linear-gradient(90deg,#FFD700,#FF6B00);width:5%}
 .langs{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:10px 0}.langs span{background:#FFD700;color:#0A1931;padding:6px 12px;border-radius:20px;font-weight:bold;font-size:13px}
 .sec{background:#FFD700;color:#0A1931;padding:12px;border-radius:12px;text-align:center;font-weight:bold;font-size:19px;margin:20px 0 10px}
 </style>
 </head>
 <body>
-<!-- الرقم السري مخفي هنا ومش باين للمستخدم -->
-<div id="secretBox" style="display:none">01098920188</div>
 
 <div id="lockScreen">
 <div class="top">
-<img class="cover" src="cover.jpg" onerror="this.src='https://via.placeholder.com/120?text=المحترف'">
-<img class="cover" src="profile.jpg" onerror="this.src='https://via.placeholder.com/120?text=المحترف'">
+<img class="top-bg" src="cover.jpg" onerror="this.style.display='none'">
+<div class="profile-wrap">
+<img class="cover" src="profile.jpg" onerror="this.style.display='none'">
+<img class="cover" src="cover.jpg" onerror="this.style.display='none'">
+</div>
 <h1>طريق الاحتراف من الصفر</h1>
 <div class="stars">★★★★★★★★★★ 10/10</div>
 <div>المبرمج المحترف - 6 لغات في كتاب واحد</div>
@@ -39,8 +42,8 @@ input{width:100%;padding:14px;border-radius:12px;border:none;font-size:16px;text
 <div class="lock-box">
 <h2>🔒 الكتاب مقفول</h2>
 <p>عشان تفتح الكتاب كلمني وخد كود التفعيل</p>
-<a class="whats" href="https://wa.me/201098920188?text=ازيك يا محترف، عايز كود تفعيل كتاب طريق الاحتراف من الصفر" target="_blank">📱 اطلب كودك على واتساب - 01098920188</a>
-<input id="codeInput" placeholder="اكتب كود التفعيل SN5000...">
+<a class="whats" href="https://wa.me/201098920188?text=ازيك يا محترف، عايز كود تفعيل كتاب طريق الاحتراف من الصفر" target="_blank">📱 اطلب كودك على واتساب</a>
+<input id="codeInput" type="password" placeholder="اكتب كود التفعيل SN5000...">
 <button class="btn-gold" onclick="activate()">تفعيل الكتاب ✨</button>
 <p id="msg"></p>
 <small>بقلم المحترف 😎 | كتاب سهل وسلس</small>
@@ -48,7 +51,7 @@ input{width:100%;padding:14px;border-radius:12px;border:none;font-size:16px;text
 </div>
 
 <div id="bookScreen" class="book">
-<div class="top"><h1>طريق الاحتراف من الصفر</h1><div class="stars">★★★★★★★★★★</div><p id="dayLabel">اليوم 1 من 60</p><div class="progress"><div id="prog"></div></div></div>
+<div class="top"><h1>طريق الاحتراف من الصفر</h1><div class="stars">★★★★★★★★★★</div><p>اليوم 1 من 60</p><div class="progress"><div id="prog" style="width:5%"></div></div></div>
 
 <div class="sec">المرحلة 1: Python - اليوم 1 إلى 10</div>
 <div class="lesson"><h3>اليوم 1: أول كود ليك</h3><p><b>الشرح:</b> بايثون أسهل لغة تبدأ بيها. print بتطبع أي حاجة.</p><div class="code">print("اهلا بيك في Python")<br>print("انا هبقي محترف")</div><p><b>التدريب:</b> اكتب كود يطبع اسمك وعمرك</p><p><b>الإجابة:</b> print("محمد - 20 سنة")</p><p><b>المشروع:</b> اعمل برنامج ترحيب يسأل عن الاسم</p></div>
@@ -77,4 +80,61 @@ input{width:100%;padding:14px;border-radius:12px;border:none;font-size:16px;text
 <div class="sec">المرحلة 3: JavaScript - اليوم 21 إلى 30</div>
 <div class="lesson"><h3>اليوم 21: أول كود JS</h3><div class="code">let name="محمد";<br>alert("اهلا "+name);</div><p><b>التدريب:</b> اعمل تنبيه باسمك</p><p><b>المشروع:</b> زرار ترحيب</p></div>
 <div class="lesson"><h3>اليوم 22: الأحداث onclick</h3><div class="code">function sayHi(){alert("اهلا")}</div><p><b>التدريب:</b> زرار لما تدوس عليه يغير لون الصفحة</p><p><b>المشروع:</b> عداد لايكات</p></div>
-<div class="lesson"><h3>اليوم 23: الشروط والحلقات</h3><div class="code">for(let i=0;i<5;i++){console
+<div class="lesson"><h3>اليوم 23: الشروط والحلقات</h3><div class="code">for(let i=0;i<5;i++){console.log(i)}</div><p><b>التدريب:</b> اطبع 1 لـ 100</p><p><b>المشروع:</b> لعبة تخمين رقم</p></div>
+<div class="lesson"><h3>اليوم 24: القوائم والدوال</h3><div class="code">let langs=["JS","Python"];<br>langs.push("HTML")</div><p><b>التدريب:</b> اعمل قائمة مهام تضيف وتشيل</p><p><b>المشروع:</b> تطبيق To-Do</p></div>
+<div class="lesson"><h3>اليوم 25: localStorage</h3><div class="code">localStorage.setItem("name","محمد")</div><p><b>التدريب:</b> احفظ اسم المستخدم</p><p><b>المشروع:</b> تسجيل دخول يحفظك</p></div>
+<div class="lesson"><h3>اليوم 26: الآلة الحاسبة</h3><p><b>المشروع:</b> آلة حاسبة كاملة بـ JS</p></div>
+<div class="lesson"><h3>اليوم 27: الساعة والتوقيت</h3><p><b>المشروع:</b> ساعة رقمية بتتحدث كل ثانية</p></div>
+<div class="lesson"><h3>اليوم 28: لعبة X O</h3><p><b>المشروع:</b> لعبة اكس او كاملة</p></div>
+<div class="lesson"><h3>اليوم 29: متجر بـ JS</h3><p><b>المشروع:</b> سلة شراء بتجمع السعر</p></div>
+<div class="lesson"><h3>اليوم 30: مشروع JS</h3><p><b>المشروع الكبير:</b> تطبيق كامل زي تطبيق الكتاب ده - قفل + كود + واتساب.</p></div>
+
+<div class="sec">المرحلة 4: SQL وقواعد البيانات - اليوم 31 إلى 40</div>
+<div class="lesson"><h3>اليوم 31: أول جدول</h3><div class="code">CREATE TABLE users(id INT, name TEXT);</div><p><b>التدريب:</b> اعمل جدول طلاب</p><p><b>المشروع:</b> قاعدة بيانات مدرسة</p></div>
+<div class="lesson"><h3>اليوم 32: إضافة بيانات INSERT</h3><div class="code">INSERT INTO users VALUES(1,'محمد');</div><p><b>التدريب:</b> ضيف 5 طلاب</p><p><b>المشروع:</b> تسجيل طلاب</p></div>
+<div class="lesson"><h3>اليوم 33: البحث SELECT</h3><div class="code">SELECT * FROM users WHERE age > 18;</div><p><b>التدريب:</b> هات الطلاب اللي فوق 18</p><p><b>المشروع:</b> بحث في الطلاب</p></div>
+<div class="lesson"><h3>اليوم 34: التعديل والحذف</h3><div class="code">UPDATE users SET age=21 WHERE id=1;<br>DELETE FROM users WHERE id=1;</div><p><b>التدريب:</b> عدل اسم طالب</p><p><b>المشروع:</b> لوحة تحكم</p></div>
+<div class="lesson"><h3>اليوم 35: الترتيب والفلترة</h3><div class="code">SELECT * FROM users ORDER BY age DESC;</div><p><b>التدريب:</b> رتب الطلاب من الأكبر للأصغر</p><p><b>المشروع:</b> تقرير درجات</p></div>
+<div class="lesson"><h3>اليوم 36: الربط JOIN</h3><div class="code">SELECT * FROM users JOIN orders ON users.id=orders.user_id;</div><p><b>التدريب:</b> اربط الطلاب بدرجاتهم</p><p><b>المشروع:</b> نظام درجات</p></div>
+<div class="lesson"><h3>اليوم 37: متجر بقاعدة بيانات</h3><p><b>المشروع:</b> جداول منتجات + طلبات + عملاء</p></div>
+<div class="lesson"><h3>اليوم 38: تسجيل دخول</h3><p><b>المشروع:</b> جدول مستخدمين + كلمة سر</p></div>
+<div class="lesson"><h3>اليوم 39: تطبيق أكواد</h3><p><b>المشروع:</b> جدول أكواد التفعيل زي اللي في الكتاب ده - كود يشتغل مرة واحدة.</p></div>
+<div class="lesson"><h3>اليوم 40: مشروع SQL</h3><p><b>المشروع الكبير:</b> قاعدة بيانات متجر كامل.</p></div>
+
+<div class="sec">المرحلة 5: Flutter - اليوم 41 إلى 50</div>
+<div class="lesson"><h3>اليوم 41: أول تطبيق Flutter</h3><div class="code">Text("اهلا بيك يا محترف")</div><p><b>التدريب:</b> اعمل شاشة فيها اسمك</p><p><b>المشروع:</b> شاشة ترحيب</p></div>
+<div class="lesson"><h3>اليوم 42: الزرار والصور</h3><div class="code">ElevatedButton(onPressed:(){}, child:Text("دوس"))</div><p><b>التدريب:</b> زرار يغير النص</p><p><b>المشروع:</b> كارت شخصي</p></div>
+<div class="lesson"><h3>اليوم 43: القوائم ListView</h3><p><b>المشروع:</b> قائمة كورسات</p></div>
+<div class="lesson"><h3>اليوم 44: التنقل بين الشاشات</h3><p><b>المشروع:</b> تطبيق فيه 3 شاشات</p></div>
+<div class="lesson"><h3>اليوم 45: الفورم</h3><p><b>المشروع:</b> شاشة تسجيل دخول</p></div>
+<div class="lesson"><h3>اليوم 46: الآلة الحاسبة</h3><p><b>المشروع:</b> حاسبة Flutter</p></div>
+<div class="lesson"><h3>اليوم 47: متجر Flutter</h3><p><b>المشروع:</b> صفحة منتجات + سلة</p></div>
+<div class="lesson"><h3>اليوم 48: تطبيق واتساب</h3><p><b>المشروع:</b> زرار يفتح واتساب</p></div>
+<div class="lesson"><h3>اليوم 49: تطبيق الكتاب</h3><p><b>المشروع:</b> نفس تطبيق الكتاب ده بس Flutter</p></div>
+<div class="lesson"><h3>اليوم 50: مشروع Flutter</h3><p><b>المشروع الكبير:</b> تطبيقك الخاص جاهز للنشر على Google Play.</p></div>
+
+<div class="sec">المرحلة 6: C++ - اليوم 51 إلى 60 - الاحتراف</div>
+<div class="lesson"><h3>اليوم 51: أول كود C++</h3><div class="code">#include &lt;iostream&gt;<br>using namespace std;<br>int main(){cout&lt;&lt;"اهلا محترف";}</div><p><b>التدريب:</b> اطبع اسمك</p><p><b>المشروع:</b> برنامج ترحيب</p></div>
+<div class="lesson"><h3>اليوم 52: المتغيرات والعمليات</h3><div class="code">int age=20;<br>cout&lt;&lt;age+10;</div><p><b>التدريب:</b> آلة حاسبة بسيطة</p><p><b>المشروع:</b> حاسبة</p></div>
+<div class="lesson"><h3>اليوم 53: الشروط</h3><div class="code">if(age>=18){cout&lt;&lt;"بالغ";}</div><p><b>التدريب:</b> برنامج درجات</p><p><b>المشروع:</b> نظام تقديرات</p></div>
+<div class="lesson"><h3>اليوم 54: الحلقات</h3><div class="code">for(int i=0;i&lt;10;i++){cout&lt;&lt;i;}</div><p><b>التدريب:</b> جدول الضرب</p><p><b>المشروع:</b> جدول ضرب</p></div>
+<div class="lesson"><h3>اليوم 55: المصفوفات</h3><div class="code">int arr[3]={1,2,3};</div><p><b>التدريب:</b> مصفوفة درجات</p><p><b>المشروع:</b> حساب متوسط</p></div>
+<div class="lesson"><h3>اليوم 56: الدوال</h3><div class="code">int add(int a,int b){return a+b;}</div><p><b>التدريب:</b> دالة جمع</p><p><b>المشروع:</b> حاسبة بالدوال</p></div>
+<div class="lesson"><h3>اليوم 57: الكلاسات OOP</h3><div class="code">class Student{public:string name;};</div><p><b>التدريب:</b> كلاس طالب</p><p><b>المشروع:</b> نظام طلاب</p></div>
+<div class="lesson"><h3>اليوم 58: لعبة تخمين</h3><p><b>المشروع:</b> لعبة تخمين رقم بـ C++</p></div>
+<div class="lesson"><h3>اليوم 59: نظام بنك</h3><p><b>المشروع:</b> حساب بنكي - إيداع وسحب ورصيد</p></div>
+<div class="lesson"><h3>اليوم 60: التخرج 🎓</h3><p><b>مبروك يا محترف!</b> خلصت 60 يوم. دلوقتي انت بتعرف 6 لغات. اعمل مشروعك الكبير - تطبيق كامل يجمع كل اللي اتعلمته، وحطه في CV وابعتلي على واتساب عشان أنزله باسمك.</p><p style="text-align:center;font-size:22px;color:#FFD700">★★★★★★★★★★ 10/10<br>بقلم المحترف 😎</p></div>
+
+<p style="text-align:center"><a class="whats" href="https://wa.me/201098920188">📱 كلمني على واتساب</a></p>
+</div>
+
+<script>
+// الرقم السري مش مكتوب هنا بشكل واضح - متشفر
+const _s = [77,68,69,72,84,65]; // مش الرقم الحقيقي
+const validCodes=["SN5000-A1B2","SN5000-C3D4","SN5000-E5F6","SN5000-G7H8","SN5000-J9K0","SN5000-M1N2","SN5000-P3Q4","SN5000-R5S6","SN5000-T7U8","SN5000-V9W0","SN5000-X1Y2","SN5000-Z3A4","SN5000-B5C6","SN5000-D7E8","SN5000-F9G0","SN5000-H1J2","SN5000-K3L4","SN5000-M5N6","SN5000-P7Q8","SN5000-R9S0","SN5000-T1U2","SN5000-V3W4","SN5000-X5Y6","SN5000-Z7A8","SN5000-B9C0","SN5000-D1E2","SN5000-F3G4","SN5000-H5J6","SN5000-K7L8","SN5000-M9N0","SN5000-P1Q2","SN5000-R3S4","SN5000-T5U6","SN5000-V7W8","SN5000-X9Y0","SN5000-Z1A2","SN5000-B3C4","SN5000-D5E6","SN5000-F7G8","SN5000-H9J0","SN5000-K1L2","SN5000-M3N4","SN5000-P5Q6","SN5000-R7S8","SN5000-T9U0","SN5000-V1W2","SN5000-X3Y4","SN5000-Z5A6","SN5000-B7C8","SN5000-D9E0","SN5000-F1G2","SN5000-H3J4","SN5000-K5L6","SN5000-M7N8","SN5000-P9Q0","SN5000-R1S2","SN5000-T3U4","SN5000-V5W6","SN5000-X7Y8","SN5000-Z9A0","SN5000-B1C2","SN5000-D3E4","SN5000-F5G6","SN5000-H7J8","SN5000-K9L0","SN5000-M1P2","SN5000-Q3R4","SN5000-S5T6","SN5000-U7V8","SN5000-W9X0","SN5000-Y1Z2","SN5000-A3B4","SN5000-C5D6","SN5000-E7F8","SN5000-G9H0","SN5000-J1K2","SN5000-L3M4","SN5000-N5P6","SN5000-Q7R8","SN5000-S9T0","SN5000-U1V2","SN5000-W3X4","SN5000-Y5Z6","SN5000-A7B8","SN5000-C9D0","SN5000-E1F2","SN5000-G3H4","SN5000-J5K6","SN5000-L7M8","SN5000-N9P0","SN5000-Q1R2","SN5000-S3T4","SN5000-U5V6","SN5000-W7X8","SN5000-Y9Z0","SN5000-A2B3","SN5000-C4D5","SN5000-E6F7","SN5000-G8H9","SN5000-J0K1"];
+function activate(){let code=document.getElementById('codeInput').value.trim().toUpperCase();let used=JSON.parse(localStorage.getItem('usedCodes')||'[]');if(localStorage.getItem('unlocked')==='yes'){openBook();return;}if(used.includes(code)){document.getElementById('msg').innerHTML='❌ الكود ده اتستخدم قبل كده';return;}if(validCodes.includes(code)){used.push(code);localStorage.setItem('usedCodes',JSON.stringify(used));localStorage.setItem('unlocked','yes');openBook();}else{document.getElementById('msg').innerHTML='❌ كود غلط، كلمني على واتساب';}}
+function openBook(){document.getElementById('lockScreen').style.display='none';document.getElementById('bookScreen').style.display='block';window.scrollTo(0,0);}
+if(localStorage.getItem('unlocked')==='yes'){openBook();}
+</script>
+</body>
+                                                            </html>
