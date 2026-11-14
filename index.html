@@ -3,65 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>طريق الاحتراف من الصفر</title>
+<title>طريق الاحتراف من الصفر - بقلم المحترف</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:Arial}
-body{
-  min-height:100vh;
-  background:url('bg.jpg') center/cover no-repeat fixed;
-  background-color:#051428;
-  display:flex;justify-content:center;align-items:center;padding:20px;
-}
-.card{width:100%;max-width:420px;text-align:center}
-.avatar{
-  width:130px;height:130px;object-fit:cover;object-position:top;
-  border-radius:50%;border:4px solid #ffce00;
-  margin:10px auto;display:block;
-}
-.stars{color:#ffce00;font-size:32px;letter-spacing:5px;margin:10px 0}
-.box{
-  background:rgba(5,20,50,.82);border:2px solid #ffce00;
-  border-radius:20px;padding:22px;margin-top:15px;
-}
-.box h2{color:#fff;font-size:28px;margin-bottom:8px}
-.box p{color:#fff;font-size:15px;margin-bottom:16px}
-.whats{
-  display:block;background:#00c853;color:#fff;text-decoration:none;
-  padding:14px;border-radius:12px;font-weight:bold;margin-bottom:12px
-}
-input{
-  width:100%;padding:14px;border-radius:12px;border:none;
-  font-size:18px;text-align:center;margin-bottom:12px;outline:none
-}
-.btn{
-  width:100%;padding:14px;border:none;border-radius:12px;
-  background:#ffce00;font-size:22px;font-weight:bold;cursor:pointer
-}
-.author{
-  margin-top:18px;color:#e8c36a;font-weight:bold;font-size:22px;
-  text-shadow:0 2px 8px #000;background:rgba(5,20,50,.7);
-  display:inline-block;padding:6px 14px;border-radius:10px
-}
+*{box-sizing:border-box;font-family:'Segoe UI',Tahoma}body{margin:0;background:#0A1931;color:#fff;min-height:100vh}
+.top{padding:20px;text-align:center;background:linear-gradient(135deg,#0A1931,#1A3A6B);border-bottom:3px solid #FFD700}
+.top h1{color:#FFD700;font-size:26px;margin:5px}.stars{color:#FFD700;font-size:22px}
+.cover{width:120px;height:120px;border-radius:50%;border:3px solid #FFD700;object-fit:cover}
+.lock-box{margin:20px;background:#0E2447;border:2px solid #FFD700;border-radius:20px;padding:20px;text-align:center}
+.whats{background:#25D366;color:#fff;padding:14px;border-radius:12px;display:block;text-decoration:none;font-weight:bold;font-size:17px;margin:15px 0}
+input{width:100%;padding:14px;border-radius:12px;border:none;font-size:16px;text-align:center;margin-bottom:12px}
+.btn-gold{background:#FFD700;color:#0A1931;padding:14px;border:none;border-radius:12px;width:100%;font-weight:bold;font-size:18px;cursor:pointer}
+.book{display:none;padding:15px}
+.lesson{background:#122A52;border:1px solid #FFD700;border-radius:16px;padding:15px;margin-bottom:15px}
+.lesson h3{color:#FFD700;margin:0 0 8px}.code{background:#000;padding:12px;border-radius:10px;direction:ltr;text-align:left;color:#7CFF7C;overflow:auto;margin:10px 0}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}.tabs button{background:#FFD700;border:none;padding:8px 14px;border-radius:20px;font-weight:bold;cursor:pointer}
+.progress{height:12px;background:#222;border-radius:20px;overflow:hidden}.progress div{height:100%;background:linear-gradient(90deg,#FFD700,#FF6B00);width:5%}
+.langs{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:10px 0}.langs span{background:#FFD700;color:#0A1931;padding:6px 12px;border-radius:20px;font-weight:bold;font-size:13px}
+.sec{background:#FFD700;color:#0A1931;padding:12px;border-radius:12px;text-align:center;font-weight:bold;font-size:19px;margin:20px 0 10px}
 </style>
 </head>
 <body>
-<div class="card">
-  <img src="profile.jpg" class="avatar">
-  <div class="stars">★★★★★</div>
-  <div class="box">
-    <h2>الكتاب مقفول</h2>
-    <p>عشان تفتح الكتاب كلمني وخد كود التفعيل</p>
-    <a class="whats" href="https://wa.me/201098920188">اطلب كودك على واتساب - 01098920188</a>
-    <input id="code" placeholder="">
-    <button class="btn" onclick="check()">تفعيل الكتاب</button>
-  </div>
-  <div class="author">بقلم: المحترف</div>
+<!-- الرقم السري مخفي هنا ومش باين للمستخدم -->
+<div id="secretBox" style="display:none">01098920188</div>
+
+<div id="lockScreen">
+<div class="top">
+<img class="cover" src="cover.jpg" onerror="this.src='https://via.placeholder.com/120?text=المحترف'">
+<img class="cover" src="profile.jpg" onerror="this.src='https://via.placeholder.com/120?text=المحترف'">
+<h1>طريق الاحتراف من الصفر</h1>
+<div class="stars">★★★★★★★★★★ 10/10</div>
+<div>المبرمج المحترف - 6 لغات في كتاب واحد</div>
+<div class="langs"><span>Python</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>SQL</span><span>Flutter</span><span>C++</span></div>
+<p>60 يوم للاحتراف - شرح + تدريب + إجابة + مشروع</p>
 </div>
-<script>
-function check(){
-  var v=document.getElementById('code').value.trim();
-  if(v==="SN5000"){alert("تم التفعيل ✅");}else{alert("الكود غلط، اطلبه من واتساب");}
-}
-</script>
-</body>
-</html>
+<div class="lock-box">
+<h2>🔒 الكتاب مقفول</h2>
+<p>عشان تفتح الكتاب كلمني وخد كود التفعيل</p>
+<a class="whats" href="https://wa.me/201098920188?text=ازيك يا محترف، عايز كود تفعيل كتاب طريق الاحتراف من الصفر" target="_blank">📱 اطلب كودك على واتساب - 01098920188</a>
+<input id="codeInput" placeholder="اكتب كود التفعيل SN5000...">
+<button class="btn-gold" onclick="activate()">تفعيل الكتاب ✨</button>
+<p id="msg"></p>
+<small>بقلم المحترف 😎 | كتاب سهل وسلس</small>
+</div>
+</div>
+
+<div id="bookScreen" class="book">
+<div class="top"><h1>طريق الاحتراف من الصفر</h1><div class="stars">★★★★★★★★★★</div><p id="dayLabel">اليوم 1 من 60</p><div class="progress"><div id="prog"></div></div></div>
+
+<div class="sec">المرحلة 1: Python - اليوم 1 إلى 10</div>
+<div class="lesson"><h3>اليوم 1: أول كود ليك</h3><p><b>الشرح:</b> بايثون أسهل لغة تبدأ بيها. print بتطبع أي حاجة.</p><div class="code">print("اهلا بيك في Python")<br>print("انا هبقي محترف")</div><p><b>التدريب:</b> اكتب كود يطبع اسمك وعمرك</p><p><b>الإجابة:</b> print("محمد - 20 سنة")</p><p><b>المشروع:</b> اعمل برنامج ترحيب يسأل عن الاسم</p></div>
+<div class="lesson"><h3>اليوم 2: المتغيرات</h3><p><b>الشرح:</b> المتغير زي صندوق بتحط فيه قيمة.</p><div class="code">name = "محمد"<br>age = 20<br>print(name, age)</div><p><b>التدريب:</b> اعمل متغير لبلدك واطبعه</p><p><b>الإجابة:</b> country = "مصر"</p><p><b>المشروع:</b> بطاقة تعريف ليك</p></div>
+<div class="lesson"><h3>اليوم 3: الإدخال input</h3><div class="code">name = input("ما اسمك؟ ")<br>print("اهلا " + name)</div><p><b>التدريب:</b> اسأل المستخدم عن مدينته</p><p><b>الإجابة:</b> city = input("مدينتك؟")</p><p><b>المشروع:</b> شات بوت بسيط</p></div>
+<div class="lesson"><h3>اليوم 4: الأرقام والعمليات</h3><div class="code">a = 10<br>b = 5<br>print(a+b, a*b)</div><p><b>التدريب:</b> احسب عمرك بعد 10 سنين</p><p><b>الإجابة:</b> print(age+10)</p><p><b>المشروع:</b> آلة حاسبة</p></div>
+<div class="lesson"><h3>اليوم 5: الشروط if</h3><div class="code">age = 18<br>if age >= 18:<br>&nbsp;&nbsp;print("بالغ")<br>else:<br>&nbsp;&nbsp;print("صغير")</div><p><b>التدريب:</b> لو الدرجة فوق 50 ناجح</p><p><b>الإجابة:</b> if score>=50: print("ناجح")</p><p><b>المشروع:</b> برنامج درجات</p></div>
+<div class="lesson"><h3>اليوم 6: الحلقات for</h3><div class="code">for i in range(5):<br>&nbsp;&nbsp;print(i)</div><p><b>التدريب:</b> اطبع من 1 لـ 10</p><p><b>الإجابة:</b> for i in range(1,11): print(i)</p><p><b>المشروع:</b> جدول الضرب</p></div>
+<div class="lesson"><h3>اليوم 7: القوائم List</h3><div class="code">langs = ["Python","JS","HTML"]<br>print(langs[0])</div><p><b>التدريب:</b> اعمل قائمة اصحابك</p><p><b>الإجابة:</b> friends = ["احمد","علي"]</p><p><b>المشروع:</b> قائمة مهام</p></div>
+<div class="lesson"><h3>اليوم 8: الدوال Function</h3><div class="code">def hello(name):<br>&nbsp;&nbsp;print("اهلا",name)<br>hello("محمد")</div><p><b>التدريب:</b> دالة تجمع رقمين</p><p><b>الإجابة:</b> def add(a,b): return a+b</p><p><b>المشروع:</b> حاسبة بالدوال</p></div>
+<div class="lesson"><h3>اليوم 9: القاموس Dict</h3><div class="code">user = {"name":"محمد","age":20}<br>print(user["name"])</div><p><b>التدريب:</b> اعمل قاموس لكتاب</p><p><b>الإجابة:</b> book={"title":"طريق الاحتراف"}</p><p><b>المشروع:</b> قاعدة بيانات طلاب</p></div>
+<div class="lesson"><h3>اليوم 10: مشروع Python</h3><p><b>المشروع الكبير:</b> اعمل برنامج متجر صغير - يضيف منتجات ويحسب الفاتورة. ده مشروعك الأول اللي هتحطه في CV.</p></div>
+
+<div class="sec">المرحلة 2: HTML + CSS - اليوم 11 إلى 20</div>
+<div class="lesson"><h3>اليوم 11: HTML الأساس</h3><div class="code">&lt;h1&gt;انا محترف&lt;/h1&gt;<br>&lt;p&gt;اول موقع ليا&lt;/p&gt;</div><p><b>التدريب:</b> اعمل صفحة فيها اسمك</p><p><b>المشروع:</b> صفحتك الشخصية</p></div>
+<div class="lesson"><h3>اليوم 12: الصور والروابط</h3><div class="code">&lt;img src="me.jpg"&gt;<br>&lt;a href="https://wa.me/201098920188"&gt;كلمني&lt;/a&gt;</div><p><b>التدريب:</b> حط صورتك ولينك واتسابك</p><p><b>المشروع:</b> كارت تعريف</p></div>
+<div class="lesson"><h3>اليوم 13: CSS الألوان</h3><div class="code">h1{color:gold; background:#0A1931;}</div><p><b>التدريب:</b> لون صفحتك كحلي وذهبي</p><p><b>المشروع:</b> صفحة بالوان الكتاب</p></div>
+<div class="lesson"><h3>اليوم 14: Flexbox</h3><div class="code">.box{display:flex; gap:10px;}</div><p><b>التدريب:</b> رتب 3 كروت جنب بعض</p><p><b>المشروع:</b> معرض صور</p></div>
+<div class="lesson"><h3>اليوم 15: الزرار والفورم</h3><div class="code">&lt;input placeholder="اسمك"&gt;<br>&lt;button&gt;ارسال&lt;/button&gt;</div><p><b>التدريب:</b> اعمل فورم تسجيل</p><p><b>المشروع:</b> صفحة تسجيل دخول</p></div>
+<div class="lesson"><h3>اليوم 16: موقع متجاوب</h3><p><b>الشرح:</b> لازم موقعك يشتغل على الموبايل.</p><div class="code">@media(max-width:600px){h1{font-size:20px}}</div><p><b>المشروع:</b> خلي موقعك يشتغل موبايل</p></div>
+<div class="lesson"><h3>اليوم 17: الأنيميشن</h3><div class="code">button:hover{transform:scale(1.1)}</div><p><b>التدريب:</b> اعمل زرار يكبر لما تقرب منه</p><p><b>المشروع:</b> موقع بحركات</p></div>
+<div class="lesson"><h3>اليوم 18: صفحة هبوط</h3><p><b>المشروع:</b> اعمل صفحة هبوط لكتابك زي الصفحة دي بالظبط.</p></div>
+<div class="lesson"><h3>اليوم 19: متجر إلكتروني</h3><p><b>المشروع:</b> صفحة منتجات + زرار واتساب للطلب.</p></div>
+<div class="lesson"><h3>اليوم 20: مشروع HTML/CSS</h3><p><b>المشروع الكبير:</b> موقع كامل لشخصيتك - CV + مشاريعك + تواصل.</p></div>
+
+<div class="sec">المرحلة 3: JavaScript - اليوم 21 إلى 30</div>
+<div class="lesson"><h3>اليوم 21: أول كود JS</h3><div class="code">let name="محمد";<br>alert("اهلا "+name);</div><p><b>التدريب:</b> اعمل تنبيه باسمك</p><p><b>المشروع:</b> زرار ترحيب</p></div>
+<div class="lesson"><h3>اليوم 22: الأحداث onclick</h3><div class="code">function sayHi(){alert("اهلا")}</div><p><b>التدريب:</b> زرار لما تدوس عليه يغير لون الصفحة</p><p><b>المشروع:</b> عداد لايكات</p></div>
+<div class="lesson"><h3>اليوم 23: الشروط والحلقات</h3><div class="code">for(let i=0;i<5;i++){console
