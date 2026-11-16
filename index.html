@@ -16,30 +16,19 @@ body{margin:0;background:linear-gradient(135deg, #0A1931 0%, #1A3A6B 100%);color
 .stars{color:#FFD700;font-size:28px;margin:15px 0}
 .lock-box{margin:30px auto;max-width:500px;background:#0E2447;border:2px solid #FFD700;border-radius:20px;padding:25px;text-align:center;box-shadow:0 0 20px rgba(255,215,0,0.2)}
 .whats{background:#25D366;color:#fff;padding:15px;border-radius:12px;display:block;text-decoration:none;font-weight:bold;margin:15px 0;font-size:18px}
-.whats:hover{background:#1ebe5d}
 input{width:100%;padding:14px;border-radius:12px;border:none;font-size:16px;text-align:center;margin-bottom:12px;outline:none}
-.btn-gold{background:#FFD700;color:#0A1931;padding:15px;border:none;border-radius:12px;width:100%;font-weight:bold;font-size:18px;cursor:pointer;transition:0.3s}
-.btn-gold:hover{background:#e6c200}
+.btn-gold{background:#FFD700;color:#0A1931;padding:15px;border:none;border-radius:12px;width:100%;font-weight:bold;font-size:18px;cursor:pointer}
 .book{display:none;padding:15px;max-width:900px;margin:0 auto}
 .sec{background:#FFD700;color:#0A1931;padding:12px;border-radius:12px;text-align:center;font-weight:bold;font-size:22px;margin:30px 0 15px}
-.lesson{background:#122A52;border:1px solid #FFD700;border-radius:16px;padding:20px;margin-bottom:25px;box-shadow:0 4px 10px rgba(0,0,0,0.3)}
+.lesson{background:#122A52;border:1px solid #FFD700;border-radius:16px;padding:20px;margin-bottom:25px}
 .lesson h3{color:#FFD700;font-size:22px;margin:0 0 12px}
-
-/* تنسيق خطوات الشرح */
 .explain-steps{margin:15px 0}
-.step-item{background:#0E2447;padding:12px 15px;border-radius:10px;margin-bottom:10px;border-right:4px solid #25D366;font-size:16px;position:relative}
-.step-item::before{content:"💡";margin-left:8px}
-
-/* تنسيق الكود */
+.step-item{background:#0E2447;padding:12px 15px;border-radius:10px;margin-bottom:10px;border-right:4px solid #25D366;font-size:16px}
 .code-box{background:#000;border-radius:10px;margin:15px 0;overflow:hidden;border:1px solid #333}
 .code-header{background:#1a1a1a;padding:8px 15px;border-bottom:1px solid #333}
 .code-header span{color:#aaa;font-size:14px}
 .code-content{background:#000;padding:15px;direction:ltr;text-align:left;color:#7CFF7C;font-size:15px;font-family:monospace;white-space:pre-wrap;margin:0}
-
-/* تنسيق التطبيق العملي */
 .try{background:#1A3A6B;padding:15px;border-radius:10px;border-right:4px solid #FFD700;margin:15px 0;font-weight:bold}
-
-/* تنسيق السؤال والجواب */
 .quiz-box{background:#0E2447;padding:15px;border-radius:10px;border-right:4px solid #c084fc;margin:15px 0;font-size:16px;font-weight:bold}
 .btn-ans{background:#c084fc;color:#fff;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;font-weight:bold;margin-top:10px;width:100%;font-size:16px}
 .ans{display:none;background:#000;padding:15px;border-radius:8px;margin-top:10px;color:#7CFF7C;direction:ltr;text-align:left;font-family:monospace;white-space:pre-wrap;border:1px solid #c084fc}
@@ -55,27 +44,27 @@ input{width:100%;padding:14px;border-radius:12px;border:none;font-size:16px;text
 
 <div id="lockScreen">
 <div class="top">
-<h1>المحترف 😎 - معاك من الصفر لحد متتأسس صح</h1>
+<h1 data-ar="المحترف 😎 - معاك من الصفر لحد متتأسس صح" data-en="The Pro 😎 - From Zero to True Foundation">المحترف 😎 - معاك من الصفر لحد متتأسس صح</h1>
 <div class="stars">★★★★★ 5/5</div>
-<p>موسوعة تأسيس البرمجة من الصفر لسوق العمل</p>
+<p data-ar="موسوعة تأسيس البرمجة من الصفر لسوق العمل" data-en="Programming foundation encyclopedia for the job market">موسوعة تأسيس البرمجة من الصفر لسوق العمل</p>
 </div>
 <div class="lock-box">
-<h2>🔒 الدخول للمشتركين فقط</h2>
-<p>اكتب كود التفعيل الخاص بك</p>
-<a class="whats" href="https://wa.me/201098920188?text=مرحباً، أريد الحصول على كود تفعيل المحترف" target="_blank">📱 تواصل واتساب: 01098920188</a>
+<h2 data-ar="🔒 الدخول للمشتركين فقط" data-en="🔒 Subscribers Only">🔒 الدخول للمشتركين فقط</h2>
+<p data-ar="اكتب كود التفعيل الخاص بك" data-en="Enter your activation code">اكتب كود التفعيل الخاص بك</p>
+<a class="whats" href="https://wa.me/201098920188?text=مرحباً، أريد الحصول على كود تفعيل المحترف" target="_blank" data-ar="📱 تواصل واتساب: 01098920188" data-en="📱 WhatsApp: +201098920188">📱 تواصل واتساب: 01098920188</a>
 <input id="codeInput" type="password" placeholder="">
-<button class="btn-gold" onclick="activate()">افتح الموسوعة الآن 🔓</button>
+<button class="btn-gold" onclick="activate()" data-ar="افتح الموسوعة الآن 🔓" data-en="Open Now 🔓">افتح الموسوعة الآن 🔓</button>
 <p id="msg" style="color:#FFD700;font-weight:bold;min-height:20px;margin-top:10px"></p>
 </div>
 </div>
 
 <div id="bookScreen" class="book">
 <div class="top">
-<h1>المحترف 😎 - معاك من الصفر لحد متتأسس صح</h1>
-<p>شرح مكثف + أكواد + أسئلة وإجابات</p>
+<h1 data-ar="المحترف 😎 - معاك من الصفر لحد متتأسس صح" data-en="The Pro 😎 - From Zero to True Foundation">المحترف 😎 - معاك من الصفر لحد متتأسس صح</h1>
+<p data-ar="شرح مكثف + أكواد + أسئلة وإجابات" data-en="Deep Explanation + Code + Q&A">شرح مكثف + أكواد + أسئلة وإجابات</p>
 </div>
 <div id="lessonsContainer"></div>
-<div class="footer"><p>© 2026 المحترف 😎</p></div>
+<div class="footer"><p data-ar="© 2026 المحترف 😎" data-en="© 2026 The Pro 😎">© 2026 المحترف 😎</p></div>
 </div>
 
 <script>
@@ -96,13 +85,23 @@ window.onload = function() {
     if(localStorage.getItem('proBookUnlocked') === 'yes'){
       document.getElementById('lockScreen').style.display='none';
       document.getElementById('bookScreen').style.display='block';
+    } else {
+      document.getElementById('lockScreen').style.display='block';
+      document.getElementById('bookScreen').style.display='none';
     }
 };
 
 // ====== اللغة ======
+let currentLang = 'ar';
 function setLang(lang){
+  currentLang = lang;
   document.getElementById('btn-ar').classList.toggle('active', lang==='ar');
   document.getElementById('btn-en').classList.toggle('active', lang==='en');
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.querySelectorAll('[data-ar]').forEach(el=>{
+    el.innerText = el.getAttribute('data-'+lang) || el.innerText;
+  });
+  renderLessons();
 }
 
 // ====== عرض الإجابة ======
@@ -111,113 +110,330 @@ function toggleAns(id){
   el.style.display = el.style.display === 'block' ? 'none' : 'block';
 }
 
-// ====== بيانات الدروس ======
+// ====== بيانات الدروس (1 لـ 30) ======
 const lessons = [
   {
-    section: "المرحلة التمهيدية: ما هي البرمجة؟",
-    title: "الدرس 1: عقل الكمبيوتر وإزاي بيفهم؟",
-    steps: [
-      "الكمبيوتر جهاز سريع جداً لكنه لا يفهم العربية ولا الإنجليزية، هو يفهم فقط لغة الآلة (أصفار وآحاد).",
-      "عشان كده إحنا بنكتب الكود بلغات سهلة زي Python، وفي الخلفية فيه برنامج (Interpreter) بيترجم الكود لأصفار وآحاد عشان الكمبيوتر ينفذه.",
-      "البرمجة هي ببساطة: كتابة أوامر منطقية ومتسلسلة لحل مشكلة معينة."
-    ],
-    code: 'print("مرحبا بك في عالم البرمجة!")\nprint("الكمبيوتر ينفذ الأوامر بالترتيب.")',
-    practice: "اكتب كود يطبع اسمك، ثم وظيفتك المستقبلية (مبرمج محترف)، ثم عمرك.",
-    quiz: "لو كتبت أوامر مش مترتبة، الكمبيوتر هيفهمها؟",
-    answer: 'print("أحمد محمد")\nprint("مبرمج محترف")\nprint(20)',
-    quizAns: "لأ، الكمبيوتر بينفذ الأوامر بالترتيب اللي إحنا بنكتبه بالظبط، عشان كده لازم الترتيب يكون صح."
+    section_ar: "المرحلة التمهيدية: ما هي البرمجة؟", section_en: "Intro: What is Programming?",
+    title_ar: "الدرس 1: عقل الكمبيوتر وإزاي بيفهم؟", title_en: "Lesson 1: How Computers Understand",
+    steps_ar: ["الكمبيوتر بيفهم بس أصفار وآحاد (لغة الآلة).", "إحنا بنكتب بلغات سهلة زي Python، ومترجم بيترجمها للكمبيوتر.", "البرمجة هي كتابة أوامر متسلسلة لحل مشكلة."],
+    steps_en: ["Computers only understand 0s and 1s.", "We write in Python, an interpreter translates it.", "Programming is writing sequential commands to solve a problem."],
+    code: 'print("Hello World")', practice_ar: "اطبع اسمك وعمرك.", practice_en: "Print your name and age.",
+    quiz_ar: "هل الكمبيوتر بيفهم الإنجليزي؟", quiz_en: "Does the computer understand English directly?",
+    answer: 'print("Ali")\nprint(20)', quizAns_ar: "لأ، هو بيفهم لغة الآلة بس.", quizAns_en: "No, it only understands machine language."
   },
   {
-    section: "المرحلة الأولى: تأسيس Python",
-    title: "الدرس 2: المتغيرات (المخازن الذكية)",
-    steps: [
-      "المتغير هو 'علبة' في ذاكرة الكمبيوتر بنحط فيها بيانات عشان نستخدمها بعدين.",
-      "في بايثون، مش بنحتاج نكتب نوع العلبة (زي int أو string)، بايثون بيفهم النوع لوحده.",
-      "القواعد: الاسم يبدأ بحرف أو _، وميكونش فيه مسافات، وحساس لحالة الأحرف (الـ age غير الـ Age)."
-    ],
-    code: 'name = "Youssef"\nage = 25\nsalary = 5000.50\nis_programmer = True\n\nprint("الاسم:", name)\nprint("العمر:", age)\nprint("هل هو مبرمج؟", is_programmer)',
-    practice: "أنشئ متغيرات لاسمك، مدينتك، وسنوات خبرتك، ثم اطبعهم في سطر واحد باستخدام فاصلة.",
-    quiz: "لو كتبت اسم المتغير 2name، هيشتغل؟",
-    answer: 'my_name = "Ali"\nmy_city = "Cairo"\nexp_years = 2\nprint(my_name, my_city, exp_years)',
-    quizAns: "لأ، لأن اسم المتغير لازم يبدأ بحرف أو underscore (_)، ومينفعش يبدأ برقم."
+    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
+    title_ar: "الدرس 2: المتغيرات", title_en: "Lesson 2: Variables",
+    steps_ar: ["المتغير علبة بنخزن فيها بيانات.", "مش بنحتاج نحدد النوع في بايثون.", "الاسم مينفعش يبدأ برقم."],
+    steps_en: ["Variable is a storage box.", "No type declaration needed in Python.", "Name cannot start with a number."],
+    code: 'name = "Ali"\nage = 25\nprint(name, age)', practice_ar: "خزن اسمك ومدينتك واطبعهم.", practice_en: "Store your name and city and print them.",
+    quiz_ar: "هل يمكن تغيير قيمة المتغير؟", quiz_en: "Can you change a variable's value?",
+    answer: 'name = "Ali"\ncity = "Cairo"\nprint(name, city)', quizAns_ar: "أيوة، المتغيرات قابلة للتغيير.", quizAns_en: "Yes, variables are mutable."
   },
   {
-    section: "المرحلة الأولى: تأسيس Python",
-    title: "الدرس 3: أنواع البيانات والعمليات الحسابية",
-    steps: [
-      "أنواع البيانات الأساسية: int (أرقام صحيحة)، float (أرقام عشرية)، str (نصوص)، bool (True/False).",
-      "العمليات الحسابية: الجمع +، الطرح -، الضرب *، القسمة /، القسمة الصحيحة //، باقي القسمة %، والأس **."
-    ],
-    code: 'x = 15\ny = 4\nprint("الجمع:", x + y)\nprint("القسمة:", x / y)\nprint("باقي القسمة:", x % y)\nprint("الأس:", x ** 2)',
-    practice: "احسب مساحة مستطيل طوله 10 وعرضه 5، واطبع النتيجة مع كلمة 'المساحة هي:'.",
-    quiz: "إيه الفرق بين / و // في بايثون؟",
-    answer: 'length = 10\nwidth = 5\narea = length * width\nprint("المساحة هي:", area)',
-    quizAns: "الـ / بترجع رقم عشري (float) زي 3.5، بينما الـ // بترجع الجزء الصحيح من القسمة بس (int) زي 3."
+    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
+    title_ar: "الدرس 3: أنواع البيانات", title_en: "Lesson 3: Data Types",
+    steps_ar: ["int: أرقام صحيحة.", "float: أرقام عشرية.", "str: نصوص.", "bool: True/False."],
+    steps_en: ["int: integers.", "float: decimals.", "str: strings.", "bool: True/False."],
+    code: 'x = 10\ny = 2.5\nname = "Ali"\nis_ok = True', practice_ar: "أنشئ متغير من كل نوع.", practice_en: "Create a variable of each type.",
+    quiz_ar: "إيه نوع 5.5؟", quiz_en: "What is the type of 5.5?",
+    answer: 'a = 5\nb = 5.5\nc = "text"\nd = True', quizAns_ar: "float (رقم عشري).", quizAns_en: "float (decimal number)."
   },
   {
-    section: "المرحلة الأولى: تأسيس Python",
-    title: "الدرس 4: الشروط (if, elif, else)",
-    steps: [
-      "الشروط هي 'مخ البرنامج'. عشان البرنامج ياخد قرار، بنستخدم if (لو)، elif (لو كان شرط تاني)، else (غير كده).",
-      "لازم الشرط ينتهي بنقطتين (:)، والكود اللي جواه يكون مزاح (Indented) بمسافة."
-    ],
-    code: 'grade = 85\n\nif grade >= 90:\n    print("ممتاز")\nelif grade >= 75:\n    print("جيد جداً")\nelif grade >= 50:\n    print("ناجح")\nelse:\n    print("راسب")',
-    practice: "اكتب برنامج يحدد إذا كان الرقم زوجي (Even) أم فردي (Odd).",
-    quiz: "لو عندي شرطين متتاليين if و elif، هل الاتنين هيتنفذوا لو الشرط الأول صح؟",
-    answer: 'num = 7\nif num % 2 == 0:\n    print("زوجي")\nelse:\n    print("فردي")',
-    quizAns: "لأ، elif بيتنفذ بس لو الشرط اللي قبله (if) كان غلط. أول شرط يتحقق، الباقي بيتجاهل."
+    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
+    title_ar: "الدرس 4: العمليات الحسابية", title_en: "Lesson 4: Math Operations",
+    steps_ar: ["الجمع +، الطرح -، الضرب *.", "القسمة /، القسمة الصحيحة //، باقي القسمة %.", "الأس **."],
+    steps_en: ["Addition +, Subtraction -, Multiplication *.", "Division /, Floor Division //, Modulus %.", "Exponent **."],
+    code: 'a = 10\nb = 3\nprint(a+b)\nprint(a//b)\nprint(a%b)', practice_ar: "احسب متوسط 3 أرقام.", practice_en: "Calculate the average of 3 numbers.",
+    quiz_ar: "إيه ناتج 10 % 3؟", quiz_en: "What is 10 % 3?",
+    answer: 'x = 10\ny = 20\nz = 30\navg = (x+y+z)/3\nprint(avg)', quizAns_ar: "1 (باقي القسمة).", quizAns_en: "1 (the remainder)."
+  },
+  {
+    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
+    title_ar: "الدرس 5: المدخلات input", title_en: "Lesson 5: User Input",
+    steps_ar: ["input بتستقبل نص من المستخدم.", "لو عايز رقم، لازم تحوله بـ int()."],
+    steps_en: ["input receives text from user.", "Convert to number with int()."],
+    code: 'name = input("Name: ")\nprint("Hello", name)', practice_ar: "اطلب من المستخدم عمره واطبعه.", practice_en: "Ask the user for their age and print it.",
+    quiz_ar: "إيه نوع البيانات اللي input بترجعها؟", quiz_en: "What data type does input return?",
+    answer: 'age = int(input("Age: "))\nprint(age)', quizAns_ar: "بترجع نص (str).", quizAns_en: "It returns a string (str)."
+  },
+  {
+    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
+    title_ar: "الدرس 6: الشروط if", title_en: "Lesson 6: If Conditions",
+    steps_ar: ["if بتعمل قرار.", "elif لشرط تاني.", "else لو مفيش شرط اتحقق."],
+    steps_en: ["if makes a decision.", "elif for another condition.", "else if none matched."],
+    code: 'age = 18\nif age >= 18:\n    print("Adult")\nelse:\n    print("Child")', practice_ar: "برنامج يحدد لو الرقم زوجي ولا فردي.", practice_en: "Check if a number is even or odd.",
+    quiz_ar: "هل الكود جوه if لازم يتزح؟", quiz_en: "Must the code inside if be indented?",
+    answer: 'n = 4\nif n % 2 == 0:\n    print("Even")\nelse:\n    print("Odd")', quizAns_ar: "أيوة، المسافة (Indentation) إجبارية.", quizAns_en: "Yes, indentation is mandatory."
+  },
+  {
+    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
+    title_ar: "الدرس 7: الشروط المتقدمة", title_en: "Lesson 7: Advanced Conditions",
+    steps_ar: ["استخدام and (و) و or (أو).", "لو عايز الشرطين يتحققوا مع بعض."],
+    steps_en: ["Using and / or.", "If you want both conditions true."],
+    code: 'age = 20\nhas_id = True\nif age >= 18 and has_id:\n    print("Allowed")', practice_ar: "برنامج يقبل الدخول لو العمر أكبر من 18 أو معاه تصريح.", practice_en: "Allow entry if age > 18 or has a permit.",
+    quiz_ar: "إيه الفرق بين and و or؟", quiz_en: "Difference between and / or?",
+    answer: 'age = 20\nhas_permit = False\nif age >= 18 or has_permit:\n    print("Allowed")', quizAns_ar: "and لازم الاتنين صح، or يكفي واحد.", quizAns_en: "and requires both true, or requires one true."
+  },
+  {
+    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
+    title_ar: "الدرس 8: حلقات for", title_en: "Lesson 8: For Loops",
+    steps_ar: ["for بتكرر الكود عدد معروف من المرات.", "range(5) بتلف من 0 لـ 4."],
+    steps_en: ["for repeats code a known number of times.", "range(5) iterates 0 to 4."],
+    code: 'for i in range(1, 4):\n    print("Number:", i)', practice_ar: "اطبع الأرقام من 1 لـ 10.", practice_en: "Print numbers 1 to 10.",
+    quiz_ar: "كام مرة هتلف range(3)؟", quiz_en: "How many times does range(3) loop?",
+    answer: 'for i in range(1, 11):\n    print(i)', quizAns_ar: "3 مرات (0, 1, 2).", quizAns_en: "3 times (0, 1, 2)."
+  },
+  {
+    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
+    title_ar: "الدرس 9: حلقات while", title_en: "Lesson 9: While Loops",
+    steps_ar: ["while بتلف طول ما الشرط صح.", "احترس من الحلقة اللانهائية."],
+    steps_en: ["while loops as long as condition is true.", "Beware of infinite loops."],
+    code: 'i = 1\nwhile i <= 3:\n    print(i)\n    i += 1', practice_ar: "اطبع الأرقام التنازلية من 5 لـ 1.", practice_en: "Print numbers 5 down to 1.",
+    quiz_ar: "لو نسيت تزود العداد هيحصل إيه؟", quiz_en: "If you forget to increment, what happens?",
+    answer: 'i = 5\nwhile i >= 1:\n    print(i)\n    i -= 1', quizAns_ar: "حلقة لانهائية (Infinite Loop).", quizAns_en: "An infinite loop."
+  },
+  {
+    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
+    title_ar: "الدرس 10: القوائم List", title_en: "Lesson 10: Lists",
+    steps_ar: ["القائمة بتخزن أكتر من قيمة.", "الفهرس يبدأ من 0.", "append بتضيف، remove بتحذف."],
+    steps_en: ["List stores multiple values.", "Index starts at 0.", "append adds, remove deletes."],
+    code: 'fruits = ["Apple", "Banana"]\nfruits.append("Orange")\nprint(fruits[0])', practice_ar: "أنشئ قائمة بألعابك المفضلة.", practice_en: "Create a list of your favorite games.",
+    quiz_ar: "إيه فهرس أول عنصر؟", quiz_en: "What is the first index?",
+    answer: 'games = ["FIFA", "Minecraft", "Roblox"]\nprint(games)', quizAns_ar: "صفر (0).", quizAns_en: "Zero (0)."
+  },
+  {
+    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
+    title_ar: "الدرس 11: القواميس Dict", title_en: "Lesson 11: Dictionaries",
+    steps_ar: ["بتخزن مفتاح وقيمة (key: value).", "مناسبة لبيانات الكائن الواحد."],
+    steps_en: ["Stores key: value pairs.", "Good for object data."],
+    code: 'user = {"name": "Ali", "age": 20}\nprint(user["name"])', practice_ar: "أنشئ قاموس لبيانات كتاب.", practice_en: "Create a dict for a book.",
+    quiz_ar: "إزاي نوصل لقيمة في القاموس؟", quiz_en: "How to access a dict value?",
+    answer: 'book = {"title": "Python", "year": 2024}\nprint(book["title"])', quizAns_ar: "باسم المفتاح بين قوسين مربعين.", quizAns_en: "By the key in square brackets."
+  },
+  {
+    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
+    title_ar: "الدرس 12: الدوال Function", title_en: "Lesson 12: Functions",
+    steps_ar: ["الدالة كود بنعيد استخدامه.", "def بتعرف الدالة."],
+    steps_en: ["Function is reusable code.", "def defines a function."],
+    code: 'def greet(name):\n    return "Hello " + name\nprint(greet("Ali"))', practice_ar: "اكتب دالة بتحسب مساحة مستطيل.", practice_en: "Write a function for rectangle area.",
+    quiz_ar: "إيه فايدة return؟", quiz_en: "What is the use of return?",
+    answer: 'def area(w, h):\n    return w * h\nprint(area(5, 4))', quizAns_ar: "بترجع قيمة من الدالة للكود الأساسي.", quizAns_en: "It returns a value to the caller."
+  },
+  {
+    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
+    title_ar: "الدرس 13: النصوص المتقدمة", title_en: "Lesson 13: Advanced Strings",
+    steps_ar: ["upper() بترفع الحروف.", "lower() بتنزلها.", "split() بتقسم النص."],
+    steps_en: ["upper() capitalizes.", "lower() lowercases.", "split() splits text."],
+    code: 'text = "Hello World"\nprint(text.upper())\nprint(text.split())', practice_ar: "اقسم جملة لكلمات.", practice_en: "Split a sentence into words.",
+    quiz_ar: "إيه فايدة len()? ", quiz_en: "What does len() do?",
+    answer: 's = "Python is fun"\nprint(s.split())', quizAns_ar: "بترجع طول النص أو عدد العناصر.", quizAns_en: "Returns the length of a string or list."
+  },
+  {
+    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
+    title_ar: "الدرس 14: التعامل مع الأخطاء", title_en: "Lesson 14: Error Handling",
+    steps_ar: ["try/except بيمنع البرنامج من الانهيار.", "بيمسك الخطأ ويعمل حاجة تانية."],
+    steps_en: ["try/except prevents crashes.", "Catches the error and handles it."],
+    code: 'try:\n    x = int("abc")\nexcept:\n    print("Error!")', practice_ar: "جرب تقسم على صفر وامسك الخطأ.", practice_en: "Try dividing by zero and catch it.",
+    quiz_ar: "إيه فايدة try؟", quiz_en: "What is the use of try?",
+    answer: 'try:\n    print(10/0)\nexcept ZeroDivisionError:\n    print("Cannot divide by zero")', quizAns_ar: "بيجرب الكود، ولو فيه خطأ بينتقل لـ except.", quizAns_en: "It tries the code, if error it goes to except."
+  },
+  {
+    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
+    title_ar: "الدرس 15: مشروع تطبيقي Python", title_en: "Lesson 15: Python Project",
+    steps_ar: ["هنبني آلة حاسبة بسيطة.", "بتاخد رقمين وعملية حسابية."],
+    steps_en: ["We build a simple calculator.", "Takes 2 numbers and an operation."],
+    code: 'a = int(input("Num1: "))\nb = int(input("Num2: "))\nprint("Sum:", a+b)', practice_ar: "طور الآلة الحاسبة لتشمل الطرح والضرب.", practice_en: "Extend the calculator to include subtraction and multiplication.",
+    quiz_ar: "لو المستخدم دخل حرف مش رقم هيحصل إيه؟", quiz_en: "What if user inputs text instead of a number?",
+    answer: 'a = int(input("1: "))\nb = int(input("2: "))\nop = input("Op: ")\nif op == "+":\n    print(a+b)', quizAns_ar: "هيطلع خطأ ValueError، ولازم نستخدم try/except.", quizAns_en: "It will throw a ValueError, we must use try/except."
+  },
+  {
+    section_ar: "المرحلة الثانية: تأسيس HTML", section_en: "Stage 2: HTML Foundation",
+    title_ar: "الدرس 16: مقدمة في HTML", title_en: "Lesson 16: Intro to HTML",
+    steps_ar: ["HTML هي هيكل الصفحة.", "بتتكون من Tags."],
+    steps_en: ["HTML is the page structure.", "Made of Tags."],
+    code: '<h1>Hello World</h1>\n<p>This is a paragraph</p>', practice_ar: "اكتب عنوان رئيسي باسمك.", practice_en: "Write a main heading with your name.",
+    quiz_ar: "إيه فايدة h1؟", quiz_en: "What is h1 for?",
+    answer: '<h1>My Name</h1>', quizAns_ar: "عنوان رئيسي.", quizAns_en: "Main heading."
+  },
+  {
+    section_ar: "المرحلة الثانية: تأسيس HTML", section_en: "Stage 2: HTML Foundation",
+    title_ar: "الدرس 17: هيكل الصفحة", title_en: "Lesson 17: Page Structure",
+    steps_ar: ["head فيه معلومات الصفحة.", "body فيه المحتوى."],
+    steps_en: ["head has page info.", "body has content."],
+    code: '<!DOCTYPE html>\n<html>\n<head><title>My Site</title></head>\n<body><h1>Hi</h1></body>\n</html>', practice_ar: "اعمل صفحة كاملة بالهيكل.", practice_en: "Create a full page structure.",
+    quiz_ar: "فين بيظهر المحتوى؟", quiz_en: "Where does content appear?",
+    answer: '<!DOCTYPE html>\n<html><head></head><body><h1>Hi</h1></body></html>', quizAns_ar: "جوه body.", quizAns_en: "Inside body."
+  },
+  {
+    section_ar: "المرحلة الثانية: تأسيس HTML", section_en: "Stage 2: HTML Foundation",
+    title_ar: "الدرس 18: العناوين والفقرات", title_en: "Lesson 18: Headings & Paragraphs",
+    steps_ar: ["h1 لأكبر عنوان، h6 لأصغر عنوان.", "p للفقرات."],
+    steps_en: ["h1 largest, h6 smallest.", "p for paragraphs."],
+    code: '<h1>Main</h1>\n<h2>Sub</h2>\n<p>Text here</p>', practice_ar: "اكتب 3 مستويات عناوين.", practice_en: "Write 3 heading levels.",
+    quiz_ar: "كام مستوى للعناوين؟", quiz_en: "How many heading levels?",
+    answer: '<h1>A</h1>\n<h2>B</h2>\n<h3>C</h3>', quizAns_ar: "6 مستويات (h1 to h6).", quizAns_en: "6 levels (h1 to h6)."
+  },
+  {
+    section_ar: "المرحلة الثانية: تأسيس HTML", section_en: "Stage 2: HTML Foundation",
+    title_ar: "الدرس 19: الروابط", title_en: "Lesson 19: Links",
+    steps_ar: ["a بتعمل رابط.", "href بيحدد الوجهة."],
+    steps_en: ["a makes a link.", "href sets destination."],
+    code: '<a href="https://google.com">Google</a>', practice_ar: "حط رابط لموقعك المفضل.", practice_en: "Add a link to your favorite site.",
+    quiz_ar: "إزاي تفتح الرابط في تاب جديد؟", quiz_en: "How to open in new tab?",
+    answer: '<a href="https://google.com" target="_blank">Google</a>', quizAns_ar: "باستخدام target='_blank'.", quizAns_en: "Using target='_blank'."
+  },
+  {
+    section_ar: "المرحلة الثانية: تأسيس HTML", section_en: "Stage 2: HTML Foundation",
+    title_ar: "الدرس 20: الصور", title_en: "Lesson 20: Images",
+    steps_ar: ["img بتحط صورة.", "src مكان الصورة، alt وصف بديل."],
+    steps_en: ["img for images.", "src is location, alt is description."],
+    code: '<img src="pic.jpg" alt="My Picture">', practice_ar: "حط صورة مع وصف.", practice_en: "Add an image with alt text.",
+    quiz_ar: "ليه بنستخدم alt؟", quiz_en: "Why use alt?",
+    answer: '<img src="me.jpg" alt="My Photo">', quizAns_ar: "لو الصورة مش ظاهرة أو للـ SEO.", quizAns_en: "If image fails to load or for SEO."
+  },
+  {
+    section_ar: "المرحلة الثانية: تأسيس HTML", section_en: "Stage 2: HTML Foundation",
+    title_ar: "الدرس 21: القوائم", title_en: "Lesson 21: Lists",
+    steps_ar: ["ul قائمة غير مرتبة.", "ol قائمة مرتبة.", "li عنصر القائمة."],
+    steps_en: ["ul unordered list.", "ol ordered list.", "li list item."],
+    code: '<ul>\n  <li>Apple</li>\n  <li>Banana</li>\n</ul>', practice_ar: "اعمل قائمة ب5 أكلات.", practice_en: "List 5 foods.",
+    quiz_ar: "إيه الفرق بين ul و ol؟", quiz_en: "Difference between ul and ol?",
+    answer: '<ol>\n  <li>First</li>\n  <li>Second</li>\n</ol>', quizAns_ar: "ul بنقط، ol بأرقام.", quizAns_en: "ul uses dots, ol uses numbers."
+  },
+  {
+    section_ar: "المرحلة الثانية: تأسيس HTML", section_en: "Stage 2: HTML Foundation",
+    title_ar: "الدرس 22: الجداول", title_en: "Lesson 22: Tables",
+    steps_ar: ["table بيعمل جدول.", "tr صف، td خلية."],
+    steps_en: ["table creates table.", "tr row, td cell."],
+    code: '<table>\n  <tr><td>A</td><td>B</td></tr>\n</table>', practice_ar: "اعمل جدول بصفين وعمودين.", practice_en: "Create 2x2 table.",
+    quiz_ar: "إيه فايدة th؟", quiz_en: "What is th for?",
+    answer: '<table>\n  <tr><th>Name</th></tr>\n  <tr><td>Ali</td></tr>\n</table>', quizAns_ar: "عنوان الخلية (Header).", quizAns_en: "Table header cell."
+  },
+  {
+    section_ar: "المرحلة الثانية: تأسيس HTML", section_en: "Stage 2: HTML Foundation",
+    title_ar: "الدرس 23: النماذج Forms", title_en: "Lesson 23: Forms",
+    steps_ar: ["form بيجمع بيانات.", "input بياخد إدخال.", "button للزر."],
+    steps_en: ["form collects data.", "input takes input.", "button for submit."],
+    code: '<form>\n  <input type="text">\n  <button>Send</button>\n</form>', practice_ar: "اعمل فورم للاسم والإيميل.", practice_en: "Create name and email form.",
+    quiz_ar: "إيه input type=password؟", quiz_en: "What is input type=password?",
+    answer: '<form>\n  <input type="email">\n  <button>Send</button>\n</form>', quizAns_ar: "بيخفي الحروف اللي بتتكتب.", quizAns_en: "Hides typed characters."
+  },
+  {
+    section_ar: "المرحلة الثانية: تأسيس CSS", section_en: "Stage 2: CSS Foundation",
+    title_ar: "الدرس 24: مقدمة CSS", title_en: "Lesson 24: Intro to CSS",
+    steps_ar: ["CSS بتتنسق الشكل.", "بتتكتب في style."],
+    steps_en: ["CSS styles the page.", "Written inside style."],
+    code: '<style>\n  h1 { color: red; }\n</style>', practice_ar: "لون العنوان بالأزرق.", practice_en: "Color heading blue.",
+    quiz_ar: "إزاي بنختار عنصر في CSS؟", quiz_en: "How to select an element?",
+    answer: '<style>\n  h1 { color: blue; }\n</style>', quizAns_ar: "باسم العنصر أو الـ id أو الـ class.", quizAns_en: "By tag, id, or class."
+  },
+  {
+    section_ar: "المرحلة الثانية: تأسيس CSS", section_en: "Stage 2: CSS Foundation",
+    title_ar: "الدرس 25: الألوان والخلفيات", title_en: "Lesson 25: Colors",
+    steps_ar: ["color للنص.", "background-color للخلفية."],
+    steps_en: ["color for text.", "background-color for background."],
+    code: '<style>\n  body { background-color: #eee; }\n</style>', practice_ar: "خلي الخلفية سودة والنص أبيض.", practice_en: "Black background, white text.",
+    quiz_ar: "إيه فايدة background-color؟", quiz_en: "What is background-color for?",
+    answer: '<style>\n  body { background: black; color: white; }\n</style>', quizAns_ar: "بتلون خلفية العنصر.", quizAns_en: "Colors the element's background."
+  },
+  {
+    section_ar: "المرحلة الثانية: تأسيس CSS", section_en: "Stage 2: CSS Foundation",
+    title_ar: "الدرس 26: الخطوط", title_en: "Lesson 26: Fonts",
+    steps_ar: ["font-size لحجم الخط.", "font-family لنوع الخط.", "font-weight لتخانة الخط."],
+    steps_en: ["font-size for size.", "font-family for type.", "font-weight for boldness."],
+    code: '<style>\n  p { font-size: 20px; font-weight: bold; }\n</style>', practice_ar: "غير نوع الخط.", practice_en: "Change font family.",
+    quiz_ar: "إيه فايدة font-weight؟", quiz_en: "What does font-weight do?",
+    answer: '<style>\n  p { font-family: Arial; }\n</style>', quizAns_ar: "بيتحكم في تخانة الخط.", quizAns_en: "Controls text thickness."
+  },
+  {
+    section_ar: "المرحلة الثانية: تأسيس CSS", section_en: "Stage 2: CSS Foundation",
+    title_ar: "الدرس 27: الهوامش", title_en: "Lesson 27: Margin & Padding",
+    steps_ar: ["margin مسافة برا العنصر.", "padding مسافة جوه العنصر."],
+    steps_en: ["margin is outside space.", "padding is inside space."],
+    code: '<style>\n  div { margin: 10px; padding: 20px; }\n</style>', practice_ar: "طبق الهوامش على صندوق.", practice_en: "Apply margins to a box.",
+    quiz_ar: "إيه الفرق بين margin و padding؟", quiz_en: "Difference between margin and padding?",
+    answer: '<style>\n  div { margin: 15px; padding: 10px; }\n</style>', quizAns_ar: "margin برا، padding جوه.", quizAns_en: "margin is outside, padding is inside."
+  },
+  {
+    section_ar: "المرحلة الثانية: تأسيس CSS", section_en: "Stage 2: CSS Foundation",
+    title_ar: "الدرس 28: الحدود", title_en: "Lesson 28: Borders",
+    steps_ar: ["border بيحط حدود.", "border-radius بيعمل حواف دايرة."],
+    steps_en: ["border adds a border.", "border-radius makes rounded corners."],
+    code: '<style>\n  div { border: 2px solid black; }\n</style>', practice_ar: "اعمل صندوق بحواف دايرة.", practice_en: "Make a box with rounded corners.",
+    quiz_ar: "إيه فايدة border-radius؟", quiz_en: "What is border-radius for?",
+    answer: '<style>\n  div { border-radius: 10px; border: 1px solid red; }\n</style>', quizAns_ar: "بيخلي الحواف ناعمة أو دايرية.", quizAns_en: "Makes corners smooth or circular."
+  },
+  {
+    section_ar: "المرحلة الثانية: تأسيس CSS", section_en: "Stage 2: CSS Foundation",
+    title_ar: "الدرس 29: Flexbox", title_en: "Lesson 29: Flexbox",
+    steps_ar: ["display: flex بترتب العناصر.", "justify-content للمحاذاة الأفقية.", "align-items للمحاذاة الرأسية."],
+    steps_en: ["display: flex aligns elements.", "justify-content for horizontal.", "align-items for vertical."],
+    code: '<style>\n  .box { display: flex; justify-content: center; }\n</style>', practice_ar: "رتب 3 عناصر في النص.", practice_en: "Center 3 elements.",
+    quiz_ar: "إيه فايدة flex؟", quiz_en: "What is flex for?",
+    answer: '<style>\n  .box { display: flex; gap: 10px; }\n</style>', quizAns_ar: "بيرتب العناصر أفقياً أو رأسياً بسهولة.", quizAns_en: "Arranges items horizontally or vertically easily."
+  },
+  {
+    section_ar: "المرحلة الثانية: تأسيس CSS", section_en: "Stage 2: CSS Foundation",
+    title_ar: "الدرس 30: مشروع تصميم", title_en: "Lesson 30: Design Project",
+    steps_ar: ["هنجمع كل حاجة عملناها في صفحة واحدة.", "عنوان، صورة، فورم، وتنسيق."],
+    steps_en: ["Combine everything in one page.", "Heading, image, form, and styles."],
+    code: '<h1>My Page</h1>\n<p>Welcome</p>', practice_ar: "اعمل صفحة تعريفية كاملة بنفسك.", practice_en: "Create a full profile page.",
+    quiz_ar: "إزاي تنسق صفحة HTML؟", quiz_en: "How to style an HTML page?",
+    answer: '<style>\n  body { background: #eee; }\n  h1 { color: blue; }\n</style>\n<h1>Hi</h1>', quizAns_ar: "بإضافة كود CSS في وسم style.", quizAns_en: "By adding CSS inside the style tag."
   }
 ];
 
-// ====== توليد الـ HTML ======
-const container = document.getElementById('lessonsContainer');
-let currentSection = "";
+// ====== بناء الدروس ======
+function renderLessons() {
+  const container = document.getElementById('lessonsContainer');
+  container.innerHTML = "";
+  let currentSection = "";
+  const lang = currentLang;
 
-lessons.forEach((l, i) => {
-  if(l.section !== currentSection){
-    currentSection = l.section;
-    container.insertAdjacentHTML('beforeend', `<div class="sec">${currentSection}</div>`);
-  }
+  lessons.forEach((l, i) => {
+    const secText = l['section_' + lang];
+    if(secText !== currentSection){
+      currentSection = secText;
+      container.insertAdjacentHTML('beforeend', `<div class="sec">${currentSection}</div>`);
+    }
 
-  // تجهيز الخطوات
-  let stepsHtml = "";
-  l.steps.forEach(s => {
-    stepsHtml += `<div class="step-item">${s}</div>`;
+    let stepsHtml = "";
+    l['steps_' + lang].forEach(s => {
+      stepsHtml += `<div class="step-item">${s}</div>`;
+    });
+
+    // تجهيز الكود للعرض الآمن
+    const displayCode = l.code.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const displayAns = l.answer.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+    const html = `
+      <div class="lesson">
+        <h3>${l['title_' + lang]}</h3>
+        <div class="explain-steps">
+          <strong style="color:#FFD700;">${lang === 'ar' ? '📖 خطوات الشرح:' : '📖 Steps:'}</strong><br>
+          ${stepsHtml}
+        </div>
+        <div class="code-box">
+          <div class="code-header"><span>${lang === 'ar' ? 'تطبيق الكود' : 'Code Example'}</span></div>
+          <pre class="code-content">${displayCode}</pre>
+        </div>
+        <div class="try">${lang === 'ar' ? '🎯 التطبيق العملي: ' : '🎯 Practice: '} ${l['practice_' + lang]}</div>
+        <div class="quiz-box">
+          ${lang === 'ar' ? '❓ سؤال للتقييم: ' : '❓ Quiz: '} ${l['quiz_' + lang]}
+          <button class="btn-ans" onclick="toggleAns('ans${i}')">${lang === 'ar' ? '👁️ شوف الإجابة' : '👁️ Show Answer'}</button>
+          <div class="ans" id="ans${i}">
+            <strong>${lang === 'ar' ? 'الحل:' : 'Answer:'}</strong><br>${l['quizAns_' + lang]}<br><br>
+            <strong>${lang === 'ar' ? 'الكود:' : 'Code:'}</strong><br>${displayAns}
+          </div>
+        </div>
+      </div>
+    `;
+    container.insertAdjacentHTML('beforeend', html);
   });
+}
 
-  const displayCode = l.code.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  const displayAns = l.answer.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-
-  const html = `
-    <div class="lesson">
-      <h3>${l.title}</h3>
-      
-      <div class="explain-steps">
-        <strong style="color:#FFD700;">📖 خطوات الشرح:</strong><br>
-        ${stepsHtml}
-      </div>
-
-      <div class="code-box">
-        <div class="code-header">
-          <span>تطبيق الكود (Python 3)</span>
-        </div>
-        <pre class="code-content">${displayCode}</pre>
-      </div>
-
-      <div class="try">🎯 التطبيق العملي: ${l.practice}</div>
-
-      <div class="quiz-box">
-        ❓ سؤال للتقييم: ${l.quiz}
-        <button class="btn-ans" onclick="toggleAns('ans${i}')">👁️ شوف الإجابة</button>
-        <div class="ans" id="ans${i}">
-          <strong>الحل:</strong><br>${l.quizAns}<br><br>
-          <strong>الكود:</strong><br>${displayAns}
-        </div>
-      </div>
-    </div>
-  `;
-  container.insertAdjacentHTML('beforeend', html);
-});
+renderLessons();
 </script>
 </body>
 </html>
