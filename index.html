@@ -3,10 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>طريق الاحتراف من الصفر - 120 درس</title>
+<title>أكاديمية المحترف - تأسيس البرمجة</title>
+<link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
+<script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
 <style>
 *{box-sizing:border-box;font-family:'Segoe UI',Tahoma,sans-serif}
-body{margin:0;background:#0A1931;color:#fff;line-height:1.6}
+body{margin:0;background:#0A1931;color:#fff;line-height:1.8}
 .lang-bar{display:flex;gap:8px;justify-content:center;padding:12px;background:#000;position:sticky;top:0;z-index:99}
 .lang-bar button{padding:10px 22px;border-radius:20px;border:1px solid #FFD700;background:#0A1931;color:#fff;cursor:pointer;font-weight:bold;font-size:15px}
 .lang-bar button.active{background:#FFD700;color:#0A1931}
@@ -18,62 +21,59 @@ body{margin:0;background:#0A1931;color:#fff;line-height:1.6}
 .whats{background:#25D366;color:#fff;padding:14px;border-radius:12px;display:block;text-decoration:none;font-weight:bold;margin:15px 0}
 input{width:100%;padding:14px;border-radius:12px;border:none;font-size:16px;text-align:center;margin-bottom:12px}
 .btn-gold{background:#FFD700;color:#0A1931;padding:14px;border:none;border-radius:12px;width:100%;font-weight:bold;font-size:18px;cursor:pointer}
-.btn-gold:disabled{opacity:.6}
 .book{display:none;padding:15px;max-width:900px;margin:0 auto}
-.lesson{background:#122A52;border:1px solid #FFD700;border-radius:16px;padding:20px;margin-bottom:20px}
+.sec{background:#FFD700;color:#0A1931;padding:12px;border-radius:12px;text-align:center;font-weight:bold;font-size:22px;margin:30px 0 15px}
+.lesson{background:#122A52;border:1px solid #FFD700;border-radius:16px;padding:20px;margin-bottom:25px}
 .lesson h3{color:#FFD700;font-size:22px;margin:0 0 12px}
-.tag{display:inline-block;background:#FFD700;color:#0A1931;padding:4px 12px;border-radius:20px;font-weight:bold;font-size:13px;margin-bottom:10px}
-.sec{background:#FFD700;color:#0A1931;padding:12px;border-radius:12px;text-align:center;font-weight:bold;font-size:20px;margin:25px 0 15px}
-.code{background:#000;padding:15px;border-radius:10px;direction:ltr;text-align:left;color:#7CFF7C;margin:12px 0;font-size:14px;overflow:auto;font-family:monospace;white-space:pre-wrap}
-.step{background:#0E2447;padding:12px;border-radius:10px;margin:10px 0;border-right:4px solid #25D366}
-.try{background:#1A3A6B;padding:12px;border-radius:10px;border-right:4px solid #FFD700;margin:12px 0}
-.btn-ans{background:#c084fc;color:#fff;border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-weight:bold;margin-top:8px}
-.ans{display:none;background:#000;padding:12px;border-radius:8px;margin-top:8px;color:#7CFF7C;direction:ltr;text-align:left;font-family:monospace;white-space:pre-wrap}
-.footer{margin-top:30px;padding:20px;text-align:center;border-top:1px solid #FFD700;color:#FFD700}
+.step{background:#0E2447;padding:15px;border-radius:10px;margin:10px 0;border-right:4px solid #25D366;font-size:16px}
+.code-box{background:#000;border-radius:10px;margin:15px 0;overflow:hidden;border:1px solid #333}
+.code-header{background:#1a1a1a;padding:8px 15px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #333}
+.code-header span{color:#aaa;font-size:14px}
+.run-btn{background:#25D366;color:#fff;border:none;padding:6px 15px;border-radius:5px;cursor:pointer;font-weight:bold;font-size:14px;display:flex;align-items:center;gap:5px;transition:0.3s}
+.run-btn:disabled{background:#555;cursor:not-allowed}
+.code-content{background:#000;padding:15px;direction:ltr;text-align:left;color:#7CFF7C;font-size:15px;font-family:monospace;white-space:pre-wrap;margin:0}
+.output-box{background:#111;padding:15px;direction:ltr;text-align:left;color:#fff;font-family:monospace;display:none;border-top:1px dashed #FFD700;white-space:pre-wrap}
+.try{background:#1A3A6B;padding:15px;border-radius:10px;border-right:4px solid #FFD700;margin:15px 0;font-weight:bold}
+.btn-ans{background:#c084fc;color:#fff;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;font-weight:bold;margin-top:10px;width:100%;font-size:16px}
+.ans{display:none;background:#000;padding:15px;border-radius:8px;margin-top:10px;color:#7CFF7C;direction:ltr;text-align:left;font-family:monospace;white-space:pre-wrap;border:1px solid #c084fc}
+.footer{margin-top:40px;padding:20px;text-align:center;border-top:1px solid #FFD700;color:#FFD700}
 </style>
 </head>
 <body>
 
-<!-- شريط اللغة -->
 <div class="lang-bar">
 <button id="btn-ar" class="active" onclick="setLang('ar')">🇪🇬 العربية</button>
 <button id="btn-en" onclick="setLang('en')">🇺🇸 English</button>
 </div>
 
-<!-- شاشة القفل -->
 <div id="lockScreen">
 <div class="top">
 <img class="cover" src="profile.jpg" onerror="this.style.display='none'">
-<h1 data-ar="طريق الاحتراف من الصفر" data-en="Road to Mastery From Zero">طريق الاحتراف من الصفر</h1>
+<h1>أكاديمية المحترف - تأسيس البرمجة</h1>
 <div class="stars">★★★★★ 5/5</div>
-<p data-ar="120 درس - تأسيس حقيقي لسوق العمل" data-en="120 Lessons - Real Foundation for the Job Market">120 درس - تأسيس حقيقي لسوق العمل</p>
+<p>موسوعة تأسيس البرمجة من الصفر لسوق العمل</p>
 </div>
 <div class="lock-box">
-<h2 data-ar="🔒 الكتاب مقفول" data-en="🔒 Book is Locked">🔒 الكتاب مقفول</h2>
-<p data-ar="اكتب كود التفعيل عشان تفتح الكتاب" data-en="Enter your activation code">اكتب كود التفعيل عشان تفتح الكتاب</p>
-<a class="whats" href="https://wa.me/201098920188?text=عايز كود تفعيل الكتاب" target="_blank">📱 اطلب كودك على واتساب</a>
-<input id="codeInput" type="password" placeholder="اكتب كود التفعيل هنا (مثال: snsn1)">
-<button class="btn-gold" onclick="activate()">افتح الكتاب الآن 🔓</button>
+<h2>🔒 الدخول للمشتركين فقط</h2>
+<p>اكتب كود التفعيل الخاص بك</p>
+<a class="whats" href="https://wa.me/201098920188" target="_blank">📱 اطلب كودك على واتساب</a>
+<input id="codeInput" type="password" placeholder="اكتب الكود هنا (مثال: snsn1)">
+<button class="btn-gold" onclick="activate()">افتح الموسوعة الآن 🔓</button>
 <p id="msg" style="color:#FFD700;font-weight:bold;min-height:20px"></p>
 </div>
 </div>
 
-<!-- شاشة الكتاب -->
 <div id="bookScreen" class="book">
 <div class="top">
-<h1 data-ar="طريق الاحتراف من الصفر - 120 درس" data-en="Road to Mastery - 120 Lessons">طريق الاحتراف من الصفر - 120 درس</h1>
-<p data-ar="كل درس: شرح + كود + تدريب + إجابة." data-en="Each lesson: Explanation + Code + Practice + Answer.">كل درس: شرح + كود + تدريب + إجابة.</p>
+<h1>أكاديمية المحترف - تأسيس البرمجة</h1>
+<p>شرح مكثف + أكواد شغالة + أسئلة وإجابات</p>
 </div>
-
 <div id="lessonsContainer"></div>
-
-<div class="footer">
-<p>© 2026 طريق الاحتراف من الصفر - المحترف 😎</p>
-</div>
+<div class="footer"><p>© 2026 أكاديمية المحترف - المحترف 😎</p></div>
 </div>
 
 <script>
-// ====== التفعيل (50 كلمة سر تلقائية من snsn1 لـ snsn50) ======
+// ====== التفعيل والحفظ (عشان يفتح مرة واحدة) ======
 const VALID_CODES = Array.from({length: 50}, (_, i) => "snsn" + (i + 1));
 
 function activate(){
@@ -81,23 +81,66 @@ function activate(){
   if(VALID_CODES.includes(code)){
     document.getElementById('lockScreen').style.display='none';
     document.getElementById('bookScreen').style.display='block';
-    localStorage.setItem('bookUnlocked','yes');
+    localStorage.setItem('proBookUnlocked','yes');
   } else {
     document.getElementById('msg').textContent = "كود غلط، جرب تاني أو اطلبه من واتساب.";
   }
 }
-if(localStorage.getItem('bookUnlocked')==='yes'){
-  document.getElementById('lockScreen').style.display='none';
-  document.getElementById('bookScreen').style.display='block';
-}
+
+// التأكد من الحفظ أول ما الصفحة تفتح
+window.onload = function() {
+    if(localStorage.getItem('proBookUnlocked') === 'yes'){
+      document.getElementById('lockScreen').style.display='none';
+      document.getElementById('bookScreen').style.display='block';
+    }
+};
 
 // ====== اللغة ======
 function setLang(lang){
-  document.querySelectorAll('[data-ar]').forEach(el=>{
-    el.textContent = el.getAttribute('data-'+lang) || el.textContent;
-  });
   document.getElementById('btn-ar').classList.toggle('active', lang==='ar');
   document.getElementById('btn-en').classList.toggle('active', lang==='en');
+}
+
+// ====== تشغيل الكود مرة واحدة ======
+let codeCounter = 0;
+function runCode(btn) {
+    const codeBox = btn.closest('.code-box');
+    const codeContent = codeBox.querySelector('.code-content').innerText;
+    const outputBox = codeBox.querySelector('.output-box');
+    
+    // تعطيل الزرار بعد الضغط
+    btn.disabled = true;
+    btn.innerHTML = "⏳ جاري التشغيل...";
+    
+    outputBox.style.display = 'block';
+    outputBox.innerText = "جاري تنفيذ الكود...";
+    
+    codeCounter++;
+    const scriptId = "pyscript-" + codeCounter;
+    const outId = "out-" + codeCounter;
+    outputBox.id = outId;
+    
+    const pyScriptTag = document.createElement('script');
+    pyScriptTag.type = 'py';
+    pyScriptTag.id = scriptId;
+    pyScriptTag.textContent = `
+import sys
+import io
+sys.stdout = io.StringIO()
+${codeContent}
+output_text = sys.stdout.getvalue()
+sys.stdout = sys.__stdout__
+from pyscript import document
+document.getElementById("${outId}").innerText = output_text
+    `;
+    
+    document.body.appendChild(pyScriptTag);
+    
+    setTimeout(() => {
+        btn.innerHTML = "✅ تم التشغيل";
+        const el = document.getElementById(scriptId);
+        if(el) el.remove();
+    }, 2500);
 }
 
 // ====== عرض الإجابة ======
@@ -106,103 +149,83 @@ function toggleAns(id){
   el.style.display = el.style.display === 'block' ? 'none' : 'block';
 }
 
-// ====== بيانات الدروس (الجزء الأول: 20 درس) ======
+// ====== بيانات الدروس ======
 const lessons = [
   {
-    day: "اليوم 1 - الدرس 1+2",
-    title: "مقدمة في البرمجة وأول كود",
-    explain: "البرمجة هي عملية كتابة تعليمات دقيقة للكمبيوتر ينفذها بالترتيب. Python لغة عالية المستوى تُقرأ كالإنجليزية، وتُستخدم في الذكاء الاصطناعي، تحليل البيانات، والويب. أول أمر ستتعلمه هو print الذي يطبع نصاً على الشاشة.",
-    code: 'print("Hello World")\nprint("أنا أتعلم Python")',
-    practice: "اطبع اسمك الكامل، ثم عمرك، ثم مدينتك، كل واحدة في سطر منفصل.",
-    answer: 'print("Youssef Ahmed")\nprint(9)\nprint("Cairo")'
+    section: "المرحلة التمهيدية: ما هي البرمجة؟",
+    title: "الدرس 1: عقل الكمبيوتر وإزاي بيفهم؟",
+    explain: "الكمبيوتر جهاز 'غبي' ولكنه سريع جداً. هو لا يفهم العربية ولا الإنجليزية، هو يفهم فقط لغة الآلة (أصفار وآحاد). عشان كده إحنا بنكتب الكود بلغة عالية المستوى (زي Python) عشان نسهل علينا، وفي الخلفية فيه برنامج اسمه Compiler أو Interpreter بيترجم الكود بتاعنا لأصفار وآحاد عشان الكمبيوتر ينفذه. البرمجة هي ببساطة (كتابة أوامر منطقية ومتسلسلة لحل مشكلة معينة).",
+    code: 'print("مرحبا بك في عالم البرمجة!")\nprint("الكمبيوتر ينفذ الأوامر بالترتيب.")',
+    practice: "اكتب كود يطبع اسمك، ثم وظيفتك المستقبلية (مبرمج محترف)، ثم عمرك.",
+    answer: 'print("أحمد محمد")\nprint("مبرمج محترف")\nprint(20)'
   },
   {
-    day: "اليوم 2 - الدرس 3+4",
-    title: "المتغيرات وأنواع البيانات",
-    explain: "المتغير هو اسم يُخزن فيه قيمة في الذاكرة. الأنواع الأساسية: int (أرقام صحيحة)، float (أرقام عشرية)، str (نصوص)، bool (صح/خطأ). استخدام أسماء واضحة للمتغيرات عادة احترافية.",
-    code: 'name = "Youssef"\nage = 9\nheight = 1.35\nis_student = True\nprint(name, age, height, is_student)',
-    practice: "أنشئ متغيرات لاسمك، عمرك، طولك، وهل تحب البرمجة أم لا، ثم اطبعهم في سطر واحد.",
-    answer: 'name = "Ali"\nage = 12\nheight = 1.5\nlikes_coding = True\nprint(name, age, height, likes_coding)'
+    section: "المرحلة الأولى: تأسيس Python",
+    title: "الدرس 2: المتغيرات (المخازن الذكية)",
+    explain: "المتغير هو 'علبة' في ذاكرة الكمبيوتر بنحط فيها بيانات عشان نستخدمها بعدين ونغيرها وقت ما نحب. في بايثون مش بنحتاج نكتب نوع العلبة (زي int أو string)، بايثون بيفهم النوع لوحده. القواعد: الاسم يبدأ بحرف أو _، وميكونش فيه مسافات، وحساس لحالة الأحرف.",
+    code: 'name = "Youssef"\nage = 25\nsalary = 5000.50\nis_programmer = True\n\nprint("الاسم:", name)\nprint("العمر:", age)\nprint("هل هو مبرمج؟", is_programmer)',
+    practice: "أنشئ متغيرات لاسمك، مدينتك، وسنوات خبرتك، ثم اطبعهم في سطر واحد باستخدام فاصلة.",
+    answer: 'my_name = "Ali"\nmy_city = "Cairo"\nexp_years = 2\nprint(my_name, my_city, exp_years)'
   },
   {
-    day: "اليوم 3 - الدرس 5+6",
-    title: "المدخلات input",
-    explain: "input توقف البرنامج وتنتظر المستخدم يكتب قيمة، وترجع دائماً نصاً (str). لو محتاج رقم، لازم تحوله باستخدام int() أو float().",
-    code: 'name = input("اسمك إيه؟ ")\nage = int(input("عمرك كام؟ "))\nprint("أهلاً", name, "عمرك", age)',
-    practice: "اطلب من المستخدم اسمه وعمره وطباعة رسالة ترحيب.",
-    answer: 'name = input("Name: ")\nage = int(input("Age: "))\nprint(f"Welcome {name}, you are {age} years old")'
+    section: "المرحلة الأولى: تأسيس Python",
+    title: "الدرس 3: أنواع البيانات والعمليات الحسابية",
+    explain: "أهم أنواع البيانات: \n1. int (أرقام صحيحة) \n2. float (أرقام عشرية) \n3. str (نصوص) \n4. bool (True/False).\nالعمليات الحسابية: الجمع +، الطرح -، الضرب *، القسمة /، القسمة الصحيحة //، باقي القسمة %، والأس **.",
+    code: 'x = 15\ny = 4\nprint("الجمع:", x + y)\nprint("القسمة:", x / y)\nprint("باقي القسمة:", x % y)\nprint("الأس:", x ** 2)',
+    practice: "احسب مساحة مستطيل طوله 10 وعرضه 5، واطبع النتيجة مع كلمة 'المساحة هي:'.",
+    answer: 'length = 10\nwidth = 5\narea = length * width\nprint("المساحة هي:", area)'
   },
   {
-    day: "اليوم 4 - الدرس 7+8",
-    title: "العمليات الحسابية",
-    explain: "Python يدعم الجمع +، الطرح -، الضرب *، القسمة /، القسمة الصحيحة //، باقي القسمة %، والأس **. ترتيب العمليات مثل الرياضيات: الأقواس أولاً.",
-    code: 'a = 10\nb = 3\nprint(a + b)\nprint(a - b)\nprint(a * b)\nprint(a / b)\nprint(a // b)\nprint(a % b)\nprint(a ** b)',
-    practice: "احسب متوسط 3 درجات (80، 90، 70) واطبع الناتج.",
-    answer: 'g1 = 80\ng2 = 90\ng3 = 70\navg = (g1 + g2 + g3) / 3\nprint("Average:", avg)'
+    section: "المرحلة الأولى: تأسيس Python",
+    title: "الدرس 4: الشروط (if, elif, else)",
+    explain: "الشروط هي 'مخ البرنامج'. عشان البرنامج ياخد قرار، بنستخدم if (لو)، elif (لو كان شرط تاني)، else (غير كده). لازم الشرط ينتهي بنقطتين (:)، والكود اللي جواه يكون مزاح (Indented).",
+    code: 'grade = 85\n\nif grade >= 90:\n    print("ممتاز")\nelif grade >= 75:\n    print("جيد جداً")\nelif grade >= 50:\n    print("ناجح")\nelse:\n    print("راسب")',
+    practice: "اكتب برنامج يحدد إذا كان الرقم زوجي (Even) أم فردي (Odd). استخدم باقي القسمة %.",
+    answer: 'num = 7\nif num % 2 == 0:\n    print("زوجي")\nelse:\n    print("فردي")'
   },
   {
-    day: "اليوم 5 - الدرس 9+10",
-    title: "الشروط if / elif / else",
-    explain: "الشروط تسمح للبرنامج باتخاذ قرار. if تُنفذ لو الشرط صحيح، elif لو شرط آخر، else لو لم يتحقق أي شرط. المسافة البادئة (indentation) إجبارية في Python.",
-    code: 'score = int(input("درجتك؟ "))\nif score >= 90:\n    print("ممتاز")\nelif score >= 75:\n    print("جيد جداً")\nelif score >= 50:\n    print("ناجح")\nelse:\n    print("راسب")',
-    practice: "برنامج يطلب رقم ويقول لو زوجي أم فردي.",
-    answer: 'n = int(input("Number: "))\nif n % 2 == 0:\n    print("Even")\nelse:\n    print("Odd")'
+    section: "المرحلة الأولى: تأسيس Python",
+    title: "الدرس 5: الحلقات التكرارية (for loop)",
+    explain: "لو عايز تطبع 'أهلا' 100 مرة، مش هتكتبها 100 مرة. الحلقة for بتكرر الكود. دالة range() بتولد أرقام: range(5) يعني من 0 لـ 4. range(1, 6) يعني من 1 لـ 5.",
+    code: 'print("--- طباعة الأرقام ---")\nfor i in range(1, 6):\n    print("الرقم:", i)\n\nfor i in range(3):\n    print("أهلا")',
+    practice: "استخدم حلقة for عشان تحسب مجموع الأرقام من 1 إلى 10 واطبع الناتج.",
+    answer: 'total = 0\nfor i in range(1, 11):\n    total = total + i\nprint("المجموع:", total)'
   },
   {
-    day: "اليوم 6 - الدرس 11+12",
-    title: "حلقة for",
-    explain: "for تُكرر كتلة كود عدداً معروفاً من المرات باستخدام range. range(start, stop, step) تبدأ من start وتقف قبل stop.",
-    code: 'for i in range(1, 6):\n    print("العدد:", i)\n\nfor i in range(0, 10, 2):\n    print("زوجي:", i)',
-    practice: "اطبع الأرقام من 1 إلى 20، ثم مجموعهم.",
-    answer: 'total = 0\nfor i in range(1, 21):\n    print(i)\n    total += i\nprint("Sum:", total)'
-  },
-  {
-    day: "اليوم 7 - الدرس 13+14",
-    title: "حلقة while",
-    explain: "while تُكرر الكود طالما الشرط صحيح. استخدمها عند عدم معرفة عدد التكرارات مسبقاً. احترس من الحلقات اللانهائية.",
-    code: 'count = 0\nwhile count < 5:\n    print("العدد:", count)\n    count += 1',
-    practice: "برنامج يطلب منك تخمين رقم سري (7) لحد ما تخمنه صح.",
-    answer: 'secret = 7\nguess = 0\nwhile guess != secret:\n    guess = int(input("خمن: "))\nprint("صح!")'
-  },
-  {
-    day: "اليوم 8 - الدرس 15+16",
-    title: "القوائم List",
-    explain: "القائمة تخزن عدة قيم في متغير واحد. العناصر لها فهارس تبدأ من 0. أهم الدوال: append, remove, len, sort, pop.",
-    code: 'games = ["Roblox", "Minecraft", "FIFA"]\nprint(games[0])\ngames.append("Fortnite")\nprint(games)\nprint(len(games))',
-    practice: "أنشئ قائمة ب5 ألعاب، أضف لعبة، احذف لعبة، واطبع القائمة النهائية.",
-    answer: 'games = ["A","B","C","D","E"]\ngames.append("F")\ngames.remove("B")\nprint(games)'
-  },
-  {
-    day: "اليوم 9 - الدرس 17+18",
-    title: "القاموس Dict",
-    explain: "القاموس يخزن بيانات على شكل مفتاح: قيمة. مناسب لتمثيل بيانات كائن واحد مثل ملف شخصي.",
-    code: 'me = {"name": "Youssef", "age": 9, "city": "Cairo"}\nprint(me["name"])\nme["age"] = 10\nprint(me)',
-    practice: "أنشئ قاموس لبيانات كتاب (عنوان، مؤلف، سنة) واطبعهم.",
-    answer: 'book = {"title":"Python","author":"Ali","year":2024}\nfor k,v in book.items():\n    print(k, ":", v)'
-  },
-  {
-    day: "اليوم 10 - الدرس 19+20",
-    title: "الدوال Function",
-    explain: "الدالة كتلة كود قابلة لإعادة الاستخدام. تُعرَّف بـ def، وتقبل معاملات، وقد ترجع قيمة بـ return.",
-    code: 'def greet(name):\n    return "أهلاً " + name\n\nprint(greet("Youssef"))\n\ndef add(a, b):\n    return a + b\n\nprint(add(5, 3))',
-    practice: "اكتب دالة تحسب مساحة مستطيل بالطول والعرض.",
-    answer: 'def area(w, h):\n    return w * h\nprint(area(5, 4))'
+    section: "المرحلة الأولى: تأسيس Python",
+    title: "الدرس 6: الحلقات الشرطية (while loop)",
+    explain: "حلقة while بتفضل تشتغل طول ما الشرط بتاعها 'صح' (True). لو الشرط فضل صح للأبد، الحلقة هتلف لانهائي. عشان كده لازم نغير قيمة المتغير اللي في الشرط جوه الحلقة.",
+    code: 'counter = 3\nwhile counter > 0:\n    print("العد التنازلي:", counter)\n    counter = counter - 1\nprint("انطلق!")',
+    practice: "اكتب كود يطبع الأرقام من 5 لـ 1 باستخدام while.",
+    answer: 'n = 5\nwhile n > 0:\n    print(n)\n    n = n - 1\nprint("انتهى")'
   }
-  // سيتم إكمال باقي الدروس في الأجزاء القادمة
 ];
 
-// ====== عرض الدروس ======
+// ====== توليد الـ HTML ======
 const container = document.getElementById('lessonsContainer');
+let currentSection = "";
+
 lessons.forEach((l, i) => {
+  if(l.section !== currentSection){
+    currentSection = l.section;
+    container.insertAdjacentHTML('beforeend', `<div class="sec">${currentSection}</div>`);
+  }
+  const displayCode = l.code.replace(/</g, '&lt;').replace(/>/g, '&gt;');
   const html = `
     <div class="lesson">
-      <span class="tag">${l.day}</span>
       <h3>${l.title}</h3>
-      <div class="step">${l.explain}</div>
-      <div class="code">${l.code}</div>
-      <div class="try">🎯 تدريب: ${l.practice}</div>
-      <button class="btn-ans" onclick="toggleAns('ans${i}')">👁️ شوف الإجابة</button>
-      <div class="ans" id="ans${i}">${l.answer}</div>
+      <div class="step">${l.explain.replace(/\n/g, '<br>')}</div>
+      <div class="code-box">
+        <div class="code-header">
+          <span>Python 3</span>
+          <button class="run-btn" onclick="runCode(this)">▶️ شغل الكود</button>
+        </div>
+        <pre class="code-content">${displayCode}</pre>
+        <pre class="output-box" id="out-${i}"></pre>
+      </div>
+      <div class="try">🎯 التطبيق العملي: ${l.practice}</div>
+      <button class="btn-ans" onclick="toggleAns('ans${i}')">👁️ عرض الإجابة النموذجية</button>
+      <pre class="ans" id="ans${i}">${l.answer.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</pre>
     </div>
   `;
   container.insertAdjacentHTML('beforeend', html);
