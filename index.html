@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>المحترف 😎 - معاك من الصفر لحد متتأسس صح</title>
-<link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
-<script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
 
 <style>
 *{box-sizing:border-box;font-family:'Segoe UI',Tahoma,sans-serif}
@@ -26,16 +24,23 @@ input{width:100%;padding:14px;border-radius:12px;border:none;font-size:16px;text
 .sec{background:#FFD700;color:#0A1931;padding:12px;border-radius:12px;text-align:center;font-weight:bold;font-size:22px;margin:30px 0 15px}
 .lesson{background:#122A52;border:1px solid #FFD700;border-radius:16px;padding:20px;margin-bottom:25px;box-shadow:0 4px 10px rgba(0,0,0,0.3)}
 .lesson h3{color:#FFD700;font-size:22px;margin:0 0 12px}
-.step{background:#0E2447;padding:15px;border-radius:10px;margin:10px 0;border-right:4px solid #25D366;font-size:16px}
+
+/* تنسيق خطوات الشرح */
+.explain-steps{margin:15px 0}
+.step-item{background:#0E2447;padding:12px 15px;border-radius:10px;margin-bottom:10px;border-right:4px solid #25D366;font-size:16px;position:relative}
+.step-item::before{content:"💡";margin-left:8px}
+
+/* تنسيق الكود */
 .code-box{background:#000;border-radius:10px;margin:15px 0;overflow:hidden;border:1px solid #333}
-.code-header{background:#1a1a1a;padding:8px 15px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #333}
+.code-header{background:#1a1a1a;padding:8px 15px;border-bottom:1px solid #333}
 .code-header span{color:#aaa;font-size:14px}
-.run-btn{background:#25D366;color:#fff;border:none;padding:6px 15px;border-radius:5px;cursor:pointer;font-weight:bold;font-size:14px;display:flex;align-items:center;gap:5px;transition:0.3s}
-.run-btn:hover{background:#1ebe5d}
-.run-btn:disabled{background:#555;cursor:not-allowed}
 .code-content{background:#000;padding:15px;direction:ltr;text-align:left;color:#7CFF7C;font-size:15px;font-family:monospace;white-space:pre-wrap;margin:0}
-.output-box{background:#111;padding:15px;direction:ltr;text-align:left;color:#fff;font-family:monospace;display:none;border-top:1px dashed #FFD700;white-space:pre-wrap}
+
+/* تنسيق التطبيق العملي */
 .try{background:#1A3A6B;padding:15px;border-radius:10px;border-right:4px solid #FFD700;margin:15px 0;font-weight:bold}
+
+/* تنسيق السؤال والجواب */
+.quiz-box{background:#0E2447;padding:15px;border-radius:10px;border-right:4px solid #c084fc;margin:15px 0;font-size:16px;font-weight:bold}
 .btn-ans{background:#c084fc;color:#fff;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;font-weight:bold;margin-top:10px;width:100%;font-size:16px}
 .ans{display:none;background:#000;padding:15px;border-radius:8px;margin-top:10px;color:#7CFF7C;direction:ltr;text-align:left;font-family:monospace;white-space:pre-wrap;border:1px solid #c084fc}
 .footer{margin-top:40px;padding:20px;text-align:center;border-top:1px solid #FFD700;color:#FFD700}
@@ -67,14 +72,14 @@ input{width:100%;padding:14px;border-radius:12px;border:none;font-size:16px;text
 <div id="bookScreen" class="book">
 <div class="top">
 <h1>المحترف 😎 - معاك من الصفر لحد متتأسس صح</h1>
-<p>شرح مكثف + أكواد شغالة + أسئلة وإجابات</p>
+<p>شرح مكثف + أكواد + أسئلة وإجابات</p>
 </div>
 <div id="lessonsContainer"></div>
 <div class="footer"><p>© 2026 المحترف 😎</p></div>
 </div>
 
 <script>
-// ====== التفعيل (50 كلمة سر) ======
+// ====== التفعيل ======
 const VALID_CODES = Array.from({length: 50}, (_, i) => "snsn" + (i + 1));
 
 function activate(){
@@ -100,45 +105,6 @@ function setLang(lang){
   document.getElementById('btn-en').classList.toggle('active', lang==='en');
 }
 
-// ====== تشغيل الكود مرة واحدة ======
-let codeCounter = 0;
-function runCode(btn) {
-    const codeBox = btn.closest('.code-box');
-    const codeContent = codeBox.querySelector('.code-content').innerText;
-    const outputBox = codeBox.querySelector('.output-box');
-    
-    btn.disabled = true;
-    btn.innerHTML = "⏳ جاري التشغيل...";
-    outputBox.style.display = 'block';
-    outputBox.innerText = "جاري تنفيذ الكود...";
-    
-    codeCounter++;
-    const scriptId = "pyscript-" + codeCounter;
-    const outId = "out-" + codeCounter;
-    outputBox.id = outId;
-    
-    const pyScriptTag = document.createElement('script');
-    pyScriptTag.type = 'py';
-    pyScriptTag.id = scriptId;
-    pyScriptTag.textContent = `
-import sys
-import io
-sys.stdout = io.StringIO()
-${codeContent}
-output_text = sys.stdout.getvalue()
-sys.stdout = sys.__stdout__
-from pyscript import document
-document.getElementById("${outId}").innerText = output_text
-    `;
-    document.body.appendChild(pyScriptTag);
-    
-    setTimeout(() => {
-        btn.innerHTML = "✅ تم التشغيل";
-        const el = document.getElementById(scriptId);
-        if(el) el.remove();
-    }, 2500);
-}
-
 // ====== عرض الإجابة ======
 function toggleAns(id){
   const el = document.getElementById(id);
@@ -150,50 +116,56 @@ const lessons = [
   {
     section: "المرحلة التمهيدية: ما هي البرمجة؟",
     title: "الدرس 1: عقل الكمبيوتر وإزاي بيفهم؟",
-    explain: "الكمبيوتر جهاز 'غبي' ولكنه سريع جداً. هو لا يفهم العربية ولا الإنجليزية، هو يفهم فقط لغة الآلة (أصفار وآحاد). عشان كده إحنا بنكتب الكود بلغة عالية المستوى (زي Python) عشان نسهل علينا، وفي الخلفية فيه برنامج اسمه Compiler أو Interpreter بيترجم الكود بتاعنا لأصفار وآحاد عشان الكمبيوتر ينفذه. البرمجة هي ببساطة (كتابة أوامر منطقية ومتسلسلة لحل مشكلة معينة).",
+    steps: [
+      "الكمبيوتر جهاز سريع جداً لكنه لا يفهم العربية ولا الإنجليزية، هو يفهم فقط لغة الآلة (أصفار وآحاد).",
+      "عشان كده إحنا بنكتب الكود بلغات سهلة زي Python، وفي الخلفية فيه برنامج (Interpreter) بيترجم الكود لأصفار وآحاد عشان الكمبيوتر ينفذه.",
+      "البرمجة هي ببساطة: كتابة أوامر منطقية ومتسلسلة لحل مشكلة معينة."
+    ],
     code: 'print("مرحبا بك في عالم البرمجة!")\nprint("الكمبيوتر ينفذ الأوامر بالترتيب.")',
     practice: "اكتب كود يطبع اسمك، ثم وظيفتك المستقبلية (مبرمج محترف)، ثم عمرك.",
-    answer: 'print("أحمد محمد")\nprint("مبرمج محترف")\nprint(20)'
+    quiz: "لو كتبت أوامر مش مترتبة، الكمبيوتر هيفهمها؟",
+    answer: 'print("أحمد محمد")\nprint("مبرمج محترف")\nprint(20)',
+    quizAns: "لأ، الكمبيوتر بينفذ الأوامر بالترتيب اللي إحنا بنكتبه بالظبط، عشان كده لازم الترتيب يكون صح."
   },
   {
     section: "المرحلة الأولى: تأسيس Python",
     title: "الدرس 2: المتغيرات (المخازن الذكية)",
-    explain: "المتغير هو 'علبة' في ذاكرة الكمبيوتر بنحط فيها بيانات عشان نستخدمها بعدين ونغيرها وقت ما نحب. في بايثون مش بنحتاج نكتب نوع العلبة (زي int أو string)، بايثون بيفهم النوع لوحده. القواعد: الاسم يبدأ بحرف أو _، وميكونش فيه مسافات، وحساس لحالة الأحرف.",
+    steps: [
+      "المتغير هو 'علبة' في ذاكرة الكمبيوتر بنحط فيها بيانات عشان نستخدمها بعدين.",
+      "في بايثون، مش بنحتاج نكتب نوع العلبة (زي int أو string)، بايثون بيفهم النوع لوحده.",
+      "القواعد: الاسم يبدأ بحرف أو _، وميكونش فيه مسافات، وحساس لحالة الأحرف (الـ age غير الـ Age)."
+    ],
     code: 'name = "Youssef"\nage = 25\nsalary = 5000.50\nis_programmer = True\n\nprint("الاسم:", name)\nprint("العمر:", age)\nprint("هل هو مبرمج؟", is_programmer)',
     practice: "أنشئ متغيرات لاسمك، مدينتك، وسنوات خبرتك، ثم اطبعهم في سطر واحد باستخدام فاصلة.",
-    answer: 'my_name = "Ali"\nmy_city = "Cairo"\nexp_years = 2\nprint(my_name, my_city, exp_years)'
+    quiz: "لو كتبت اسم المتغير 2name، هيشتغل؟",
+    answer: 'my_name = "Ali"\nmy_city = "Cairo"\nexp_years = 2\nprint(my_name, my_city, exp_years)',
+    quizAns: "لأ، لأن اسم المتغير لازم يبدأ بحرف أو underscore (_)، ومينفعش يبدأ برقم."
   },
   {
     section: "المرحلة الأولى: تأسيس Python",
     title: "الدرس 3: أنواع البيانات والعمليات الحسابية",
-    explain: "أهم أنواع البيانات: \n1. int (أرقام صحيحة) \n2. float (أرقام عشرية) \n3. str (نصوص) \n4. bool (True/False).\nالعمليات الحسابية: الجمع +، الطرح -، الضرب *، القسمة /، القسمة الصحيحة //، باقي القسمة %، والأس **.",
+    steps: [
+      "أنواع البيانات الأساسية: int (أرقام صحيحة)، float (أرقام عشرية)، str (نصوص)، bool (True/False).",
+      "العمليات الحسابية: الجمع +، الطرح -، الضرب *، القسمة /، القسمة الصحيحة //، باقي القسمة %، والأس **."
+    ],
     code: 'x = 15\ny = 4\nprint("الجمع:", x + y)\nprint("القسمة:", x / y)\nprint("باقي القسمة:", x % y)\nprint("الأس:", x ** 2)',
     practice: "احسب مساحة مستطيل طوله 10 وعرضه 5، واطبع النتيجة مع كلمة 'المساحة هي:'.",
-    answer: 'length = 10\nwidth = 5\narea = length * width\nprint("المساحة هي:", area)'
+    quiz: "إيه الفرق بين / و // في بايثون؟",
+    answer: 'length = 10\nwidth = 5\narea = length * width\nprint("المساحة هي:", area)',
+    quizAns: "الـ / بترجع رقم عشري (float) زي 3.5، بينما الـ // بترجع الجزء الصحيح من القسمة بس (int) زي 3."
   },
   {
     section: "المرحلة الأولى: تأسيس Python",
     title: "الدرس 4: الشروط (if, elif, else)",
-    explain: "الشروط هي 'مخ البرنامج'. عشان البرنامج ياخد قرار، بنستخدم if (لو)، elif (لو كان شرط تاني)، else (غير كده). لازم الشرط ينتهي بنقطتين (:)، والكود اللي جواه يكون مزاح (Indented).",
+    steps: [
+      "الشروط هي 'مخ البرنامج'. عشان البرنامج ياخد قرار، بنستخدم if (لو)، elif (لو كان شرط تاني)، else (غير كده).",
+      "لازم الشرط ينتهي بنقطتين (:)، والكود اللي جواه يكون مزاح (Indented) بمسافة."
+    ],
     code: 'grade = 85\n\nif grade >= 90:\n    print("ممتاز")\nelif grade >= 75:\n    print("جيد جداً")\nelif grade >= 50:\n    print("ناجح")\nelse:\n    print("راسب")',
-    practice: "اكتب برنامج يحدد إذا كان الرقم زوجي (Even) أم فردي (Odd). استخدم باقي القسمة %.",
-    answer: 'num = 7\nif num % 2 == 0:\n    print("زوجي")\nelse:\n    print("فردي")'
-  },
-  {
-    section: "المرحلة الأولى: تأسيس Python",
-    title: "الدرس 5: الحلقات التكرارية (for loop)",
-    explain: "لو عايز تطبع 'أهلا' 100 مرة، مش هتكتبها 100 مرة. الحلقة for بتكرر الكود. دالة range() بتولد أرقام: range(5) يعني من 0 لـ 4. range(1, 6) يعني من 1 لـ 5.",
-    code: 'print("--- طباعة الأرقام ---")\nfor i in range(1, 6):\n    print("الرقم:", i)\n\nfor i in range(3):\n    print("أهلا")',
-    practice: "استخدم حلقة for عشان تحسب مجموع الأرقام من 1 إلى 10 واطبع الناتج.",
-    answer: 'total = 0\nfor i in range(1, 11):\n    total = total + i\nprint("المجموع:", total)'
-  },
-  {
-    section: "المرحلة الأولى: تأسيس Python",
-    title: "الدرس 6: الحلقات الشرطية (while loop)",
-    explain: "حلقة while بتفضل تشتغل طول ما الشرط بتاعها 'صح' (True). لو الشرط فضل صح للأبد، الحلقة هتلف لانهائي. عشان كده لازم نغير قيمة المتغير اللي في الشرط جوه الحلقة.",
-    code: 'counter = 3\nwhile counter > 0:\n    print("العد التنازلي:", counter)\n    counter = counter - 1\nprint("انطلق!")',
-    practice: "اكتب كود يطبع الأرقام من 5 لـ 1 باستخدام while.",
-    answer: 'n = 5\nwhile n > 0:\n    print(n)\n    n = n - 1\nprint("انتهى")'
+    practice: "اكتب برنامج يحدد إذا كان الرقم زوجي (Even) أم فردي (Odd).",
+    quiz: "لو عندي شرطين متتاليين if و elif، هل الاتنين هيتنفذوا لو الشرط الأول صح؟",
+    answer: 'num = 7\nif num % 2 == 0:\n    print("زوجي")\nelse:\n    print("فردي")',
+    quizAns: "لأ، elif بيتنفذ بس لو الشرط اللي قبله (if) كان غلط. أول شرط يتحقق، الباقي بيتجاهل."
   }
 ];
 
@@ -206,22 +178,42 @@ lessons.forEach((l, i) => {
     currentSection = l.section;
     container.insertAdjacentHTML('beforeend', `<div class="sec">${currentSection}</div>`);
   }
+
+  // تجهيز الخطوات
+  let stepsHtml = "";
+  l.steps.forEach(s => {
+    stepsHtml += `<div class="step-item">${s}</div>`;
+  });
+
   const displayCode = l.code.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const displayAns = l.answer.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
   const html = `
     <div class="lesson">
       <h3>${l.title}</h3>
-      <div class="step">${l.explain.replace(/\n/g, '<br>')}</div>
+      
+      <div class="explain-steps">
+        <strong style="color:#FFD700;">📖 خطوات الشرح:</strong><br>
+        ${stepsHtml}
+      </div>
+
       <div class="code-box">
         <div class="code-header">
-          <span>Python 3</span>
-          <button class="run-btn" onclick="runCode(this)">▶️ شغل الكود</button>
+          <span>تطبيق الكود (Python 3)</span>
         </div>
         <pre class="code-content">${displayCode}</pre>
-        <pre class="output-box" id="out-${i}"></pre>
       </div>
+
       <div class="try">🎯 التطبيق العملي: ${l.practice}</div>
-      <button class="btn-ans" onclick="toggleAns('ans${i}')">👁️ عرض الإجابة النموذجية</button>
-      <pre class="ans" id="ans${i}">${l.answer.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</pre>
+
+      <div class="quiz-box">
+        ❓ سؤال للتقييم: ${l.quiz}
+        <button class="btn-ans" onclick="toggleAns('ans${i}')">👁️ شوف الإجابة</button>
+        <div class="ans" id="ans${i}">
+          <strong>الحل:</strong><br>${l.quizAns}<br><br>
+          <strong>الكود:</strong><br>${displayAns}
+        </div>
+      </div>
     </div>
   `;
   container.insertAdjacentHTML('beforeend', html);
