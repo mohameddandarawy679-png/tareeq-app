@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>المحترف 😎 - معاك من الصفر لحد متتأسس صح</title>
+<title>كتاب Python - المحترف 😎</title>
 
 <style>
 *{box-sizing:border-box;font-family:'Segoe UI',Tahoma,sans-serif}
@@ -44,24 +44,24 @@ input{width:100%;padding:14px;border-radius:12px;border:none;font-size:16px;text
 
 <div id="lockScreen">
 <div class="top">
-<h1 data-ar="المحترف 😎 - معاك من الصفر لحد متتأسس صح" data-en="The Pro 😎 - From Zero to True Foundation">المحترف 😎 - معاك من الصفر لحد متتأسس صح</h1>
+<h1 data-ar="كتاب Python - المحترف 😎" data-en="Python Book - The Pro 😎">كتاب Python - المحترف 😎</h1>
 <div class="stars">★★★★★ 5/5</div>
-<p data-ar="موسوعة تأسيس البرمجة من الصفر لسوق العمل" data-en="Programming foundation encyclopedia for the job market">موسوعة تأسيس البرمجة من الصفر لسوق العمل</p>
+<p data-ar="تأسيس Python من الصفر لسوق العمل" data-en="Python Foundation for the Job Market">تأسيس Python من الصفر لسوق العمل</p>
 </div>
 <div class="lock-box">
 <h2 data-ar="🔒 الدخول للمشتركين فقط" data-en="🔒 Subscribers Only">🔒 الدخول للمشتركين فقط</h2>
 <p data-ar="اكتب كود التفعيل الخاص بك" data-en="Enter your activation code">اكتب كود التفعيل الخاص بك</p>
-<a class="whats" href="https://wa.me/201098920188?text=مرحباً، أريد الحصول على كود تفعيل المحترف" target="_blank" data-ar="📱 تواصل واتساب: 01098920188" data-en="📱 WhatsApp: +201098920188">📱 تواصل واتساب: 01098920188</a>
+<a class="whats" href="https://wa.me/201098920188?text=مرحباً، أريد الحصول على كود تفعيل كتاب بايثون" target="_blank" data-ar="📱 تواصل واتساب: 01098920188" data-en="📱 WhatsApp: +201098920188">📱 تواصل واتساب: 01098920188</a>
 <input id="codeInput" type="password" placeholder="">
-<button class="btn-gold" onclick="activate()" data-ar="افتح الموسوعة الآن 🔓" data-en="Open Now 🔓">افتح الموسوعة الآن 🔓</button>
+<button class="btn-gold" onclick="activate()" data-ar="افتح الكتاب الآن 🔓" data-en="Open Now 🔓">افتح الكتاب الآن 🔓</button>
 <p id="msg" style="color:#FFD700;font-weight:bold;min-height:20px;margin-top:10px"></p>
 </div>
 </div>
 
 <div id="bookScreen" class="book">
 <div class="top">
-<h1 data-ar="المحترف 😎 - معاك من الصفر لحد متتأسس صح" data-en="The Pro 😎 - From Zero to True Foundation">المحترف 😎 - معاك من الصفر لحد متتأسس صح</h1>
-<p data-ar="شرح مكثف + أكواد + أسئلة وإجابات" data-en="Deep Explanation + Code + Q&A">شرح مكثف + أكواد + أسئلة وإجابات</p>
+<h1 data-ar="كتاب Python - المحترف 😎" data-en="Python Book - The Pro 😎">كتاب Python - المحترف 😎</h1>
+<p data-ar="50 درس لتعليم Python من الصفر" data-en="50 Lessons to master Python from scratch">50 درس لتعليم Python من الصفر</p>
 </div>
 <div id="lessonsContainer"></div>
 <div class="footer"><p data-ar="© 2026 المحترف 😎" data-en="© 2026 The Pro 😎">© 2026 المحترف 😎</p></div>
@@ -76,13 +76,13 @@ function activate(){
   if(VALID_CODES.includes(code)){
     document.getElementById('lockScreen').style.display='none';
     document.getElementById('bookScreen').style.display='block';
-    localStorage.setItem('proBookUnlocked','yes');
+    localStorage.setItem('pythonBookUnlocked','yes');
   } else {
     document.getElementById('msg').textContent = "كود غلط، جرب تاني أو اطلبه من واتساب.";
   }
 }
 window.onload = function() {
-    if(localStorage.getItem('proBookUnlocked') === 'yes'){
+    if(localStorage.getItem('pythonBookUnlocked') === 'yes'){
       document.getElementById('lockScreen').style.display='none';
       document.getElementById('bookScreen').style.display='block';
     } else {
@@ -110,119 +110,156 @@ function toggleAns(id){
   el.style.display = el.style.display === 'block' ? 'none' : 'block';
 }
 
-// ====== بيانات الدروس (1 لـ 30) ======
+// ====== بيانات الدروس ======
 const lessons = [
+  // ------ الدروس من 1 إلى 25 ------
   {
-    section_ar: "المرحلة التمهيدية: ما هي البرمجة؟", section_en: "Intro: What is Programming?",
-    title_ar: "الدرس 1: عقل الكمبيوتر وإزاي بيفهم؟", title_en: "Lesson 1: How Computers Understand",
-    steps_ar: ["الكمبيوتر بيفهم بس أصفار وآحاد (لغة الآلة).", "إحنا بنكتب بلغات سهلة زي Python، ومترجم بيترجمها للكمبيوتر.", "البرمجة هي كتابة أوامر متسلسلة لحل مشكلة."],
-    steps_en: ["Computers only understand 0s and 1s.", "We write in Python, an interpreter translates it.", "Programming is writing sequential commands to solve a problem."],
+    section_ar: "المرحلة التمهيدية", section_en: "Intro",
+    title_ar: "الدرس 1: يعني إيه برمجة؟", title_en: "Lesson 1: What is Programming?",
+    steps_ar: ["البرمجة هي كتابة أوامر للكمبيوتر ينفذها بالترتيب.", "بايثون لغة سهلة وقريبة من الإنجليزي.", "بنستخدم print عشان نطبع كلام على الشاشة."],
+    steps_en: ["Programming is writing commands for the computer.", "Python is an easy language.", "We use print to show text."],
     code: 'print("Hello World")', practice_ar: "اطبع اسمك وعمرك.", practice_en: "Print your name and age.",
-    quiz_ar: "هل الكمبيوتر بيفهم الإنجليزي؟", quiz_en: "Does the computer understand English directly?",
-    answer: 'print("Ali")\nprint(20)', quizAns_ar: "لأ، هو بيفهم لغة الآلة بس.", quizAns_en: "No, it only understands machine language."
+    quiz_ar: "إيه وظيفة print؟", quiz_en: "What does print do?",
+    answer: 'print("Ali")\nprint(20)', quizAns_ar: "بتطبع اللي بين القوسين على الشاشة.", quizAns_en: "It prints what's inside brackets to the screen."
   },
   {
-    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
-    title_ar: "الدرس 2: المتغيرات", title_en: "Lesson 2: Variables",
-    steps_ar: ["المتغير علبة بنخزن فيها بيانات.", "مش بنحتاج نحدد النوع في بايثون.", "الاسم مينفعش يبدأ برقم."],
-    steps_en: ["Variable is a storage box.", "No type declaration needed in Python.", "Name cannot start with a number."],
-    code: 'name = "Ali"\nage = 25\nprint(name, age)', practice_ar: "خزن اسمك ومدينتك واطبعهم.", practice_en: "Store your name and city and print them.",
-    quiz_ar: "هل يمكن تغيير قيمة المتغير؟", quiz_en: "Can you change a variable's value?",
-    answer: 'name = "Ali"\ncity = "Cairo"\nprint(name, city)', quizAns_ar: "أيوة، المتغيرات قابلة للتغيير.", quizAns_en: "Yes, variables are mutable."
+    section_ar: "المرحلة التمهيدية", section_en: "Intro",
+    title_ar: "الدرس 2: المتغيرات (Variables)", title_en: "Lesson 2: Variables",
+    steps_ar: ["المتغير علبة بنحفظ فيها قيمة.", "ممكن يتغير محتواها وقت ما نحب."],
+    steps_en: ["A variable is a box to store a value.", "It can be changed anytime."],
+    code: 'name = "Ali"\nage = 20\nprint(name, age)', practice_ar: "أنشئ متغير باسم مدينتك واطبعه.", practice_en: "Create a variable for your city and print it.",
+    quiz_ar: "هل يمكن تغيير قيمة المتغير بعد تعريفه؟", quiz_en: "Can you change a variable after defining it?",
+    answer: 'city = "Cairo"\nprint(city)', quizAns_ar: "أيوة، تقدر تغيرها في أي وقت.", quizAns_en: "Yes, you can change it anytime."
   },
   {
-    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
+    section_ar: "المرحلة التمهيدية", section_en: "Intro",
     title_ar: "الدرس 3: أنواع البيانات", title_en: "Lesson 3: Data Types",
-    steps_ar: ["int: أرقام صحيحة.", "float: أرقام عشرية.", "str: نصوص.", "bool: True/False."],
-    steps_en: ["int: integers.", "float: decimals.", "str: strings.", "bool: True/False."],
-    code: 'x = 10\ny = 2.5\nname = "Ali"\nis_ok = True', practice_ar: "أنشئ متغير من كل نوع.", practice_en: "Create a variable of each type.",
-    quiz_ar: "إيه نوع 5.5؟", quiz_en: "What is the type of 5.5?",
-    answer: 'a = 5\nb = 5.5\nc = "text"\nd = True', quizAns_ar: "float (رقم عشري).", quizAns_en: "float (decimal number)."
+    steps_ar: ["int: أرقام صحيحة (5).", "float: أرقام عشرية (5.5).", "str: نصوص (\"Ali\").", "bool: True أو False."],
+    steps_en: ["int: whole numbers (5).", "float: decimals (5.5).", "str: text (\"Ali\").", "bool: True/False."],
+    code: 'x = 5\ny = 5.5\nname = "Ali"\nis_ok = True', practice_ar: "اعمل متغير لكل نوع.", practice_en: "Create one variable of each type.",
+    quiz_ar: "إيه نوع الرقم 3.14؟", quiz_en: "What is the type of 3.14?",
+    answer: 'a = 10\nb = 3.14\nc = "Hello"\nd = False', quizAns_ar: "float (رقم عشري).", quizAns_en: "float (decimal)."
   },
   {
-    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
-    title_ar: "الدرس 4: العمليات الحسابية", title_en: "Lesson 4: Math Operations",
-    steps_ar: ["الجمع +، الطرح -، الضرب *.", "القسمة /، القسمة الصحيحة //، باقي القسمة %.", "الأس **."],
-    steps_en: ["Addition +, Subtraction -, Multiplication *.", "Division /, Floor Division //, Modulus %.", "Exponent **."],
-    code: 'a = 10\nb = 3\nprint(a+b)\nprint(a//b)\nprint(a%b)', practice_ar: "احسب متوسط 3 أرقام.", practice_en: "Calculate the average of 3 numbers.",
-    quiz_ar: "إيه ناتج 10 % 3؟", quiz_en: "What is 10 % 3?",
-    answer: 'x = 10\ny = 20\nz = 30\navg = (x+y+z)/3\nprint(avg)', quizAns_ar: "1 (باقي القسمة).", quizAns_en: "1 (the remainder)."
+    section_ar: "المرحلة التمهيدية", section_en: "Intro",
+    title_ar: "الدرس 4: المدخلات input", title_en: "Lesson 4: User Input",
+    steps_ar: ["input بتوقف البرنامج وتستنى المستخدم يكتب.", "بترجع نص دايماً، فلو عايز رقم لازم تحوله بـ int()."],
+    steps_en: ["input stops the program and waits for user input.", "It returns a string, convert it with int() for numbers."],
+    code: 'name = input("Name: ")\nage = int(input("Age: "))\nprint(name, age)', practice_ar: "اطلب من المستخدم مدينته واطبعها.", practice_en: "Ask for the user's city and print it.",
+    quiz_ar: "ليه بنستخدم int() مع input؟", quiz_en: "Why use int() with input?",
+    answer: 'city = input("City: ")\nprint(city)', quizAns_ar: "عشان نحول النص لرقم ونقدر نعمل عليه عمليات حسابية.", quizAns_en: "To convert the string to a number for math operations."
   },
   {
-    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
-    title_ar: "الدرس 5: المدخلات input", title_en: "Lesson 5: User Input",
-    steps_ar: ["input بتستقبل نص من المستخدم.", "لو عايز رقم، لازم تحوله بـ int()."],
-    steps_en: ["input receives text from user.", "Convert to number with int()."],
-    code: 'name = input("Name: ")\nprint("Hello", name)', practice_ar: "اطلب من المستخدم عمره واطبعه.", practice_en: "Ask the user for their age and print it.",
-    quiz_ar: "إيه نوع البيانات اللي input بترجعها؟", quiz_en: "What data type does input return?",
-    answer: 'age = int(input("Age: "))\nprint(age)', quizAns_ar: "بترجع نص (str).", quizAns_en: "It returns a string (str)."
+    section_ar: "المرحلة التمهيدية", section_en: "Intro",
+    title_ar: "الدرس 5: العمليات الحسابية", title_en: "Lesson 5: Math Operations",
+    steps_ar: ["+ للجمع، - للطرح، * للضرب.", "/ للقسمة، // للقسمة الصحيحة، % لباقي القسمة."],
+    steps_en: ["+ addition, - subtraction, * multiplication.", "/ division, // floor division, % modulus."],
+    code: 'a = 10\nb = 3\nprint(a+b)\nprint(a//b)\nprint(a%b)', practice_ar: "احسب مساحة مستطيل.", practice_en: "Calculate a rectangle's area.",
+    quiz_ar: "إيه ناتج 7 % 2؟", quiz_en: "What is 7 % 2?",
+    answer: 'length = 10\nwidth = 5\nprint(length * width)', quizAns_ar: "1 (باقي القسمة).", quizAns_en: "1 (the remainder)."
   },
   {
-    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
+    section_ar: "التحكم في المسار", section_en: "Control Flow",
     title_ar: "الدرس 6: الشروط if", title_en: "Lesson 6: If Conditions",
-    steps_ar: ["if بتعمل قرار.", "elif لشرط تاني.", "else لو مفيش شرط اتحقق."],
-    steps_en: ["if makes a decision.", "elif for another condition.", "else if none matched."],
-    code: 'age = 18\nif age >= 18:\n    print("Adult")\nelse:\n    print("Child")', practice_ar: "برنامج يحدد لو الرقم زوجي ولا فردي.", practice_en: "Check if a number is even or odd.",
-    quiz_ar: "هل الكود جوه if لازم يتزح؟", quiz_en: "Must the code inside if be indented?",
-    answer: 'n = 4\nif n % 2 == 0:\n    print("Even")\nelse:\n    print("Odd")', quizAns_ar: "أيوة، المسافة (Indentation) إجبارية.", quizAns_en: "Yes, indentation is mandatory."
+    steps_ar: ["if بتعمل قرار في البرنامج.", "لو الشرط صح، الكود اللي جواه يتنفذ."],
+    steps_en: ["if makes a decision.", "If the condition is true, its code runs."],
+    code: 'age = 20\nif age >= 18:\n    print("Adult")', practice_ar: "اطبع رسالة لو الرقم أكبر من 10.", practice_en: "Print a message if the number > 10.",
+    quiz_ar: "هل لازم نكتب نقطتين (:) بعد if؟", quiz_en: "Must we put a colon (:) after if?",
+    answer: 'n = 15\nif n > 10:\n    print("Big")', quizAns_ar: "أيوة، لازم.", quizAns_en: "Yes, it's required."
   },
   {
-    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
-    title_ar: "الدرس 7: الشروط المتقدمة", title_en: "Lesson 7: Advanced Conditions",
-    steps_ar: ["استخدام and (و) و or (أو).", "لو عايز الشرطين يتحققوا مع بعض."],
-    steps_en: ["Using and / or.", "If you want both conditions true."],
+    section_ar: "التحكم في المسار", section_en: "Control Flow",
+    title_ar: "الدرس 7: elif و else", title_en: "Lesson 7: elif & else",
+    steps_ar: ["elif بتجرب شرط تاني لو الأول فشل.", "else لو مفيش أي شرط اتحقق."],
+    steps_en: ["elif tests another condition.", "else runs if nothing matched."],
+    code: 'grade = 80\nif grade >= 90:\n    print("A")\nelif grade >= 75:\n    print("B")\nelse:\n    print("C")', practice_ar: "برنامج يحدد لو الرقم موجب ولا سالب ولا صفر.", practice_en: "Check if a number is positive, negative, or zero.",
+    quiz_ar: "هل ممكن نحط أكتر من elif؟", quiz_en: "Can we use multiple elif?",
+    answer: 'n = -5\nif n > 0:\n    print("Positive")\nelif n < 0:\n    print("Negative")\nelse:\n    print("Zero")', quizAns_ar: "أيوة، ممكن نحط كام واحد.", quizAns_en: "Yes, multiple are allowed."
+  },
+  {
+    section_ar: "التحكم في المسار", section_en: "Control Flow",
+    title_ar: "الدرس 8: الشروط المركبة (and/or)", title_en: "Lesson 8: Compound Conditions",
+    steps_ar: ["and: لازم الشرطين يتحققوا.", "or: يكفي شرط واحد."],
+    steps_en: ["and: both conditions must be true.", "or: only one condition is needed."],
     code: 'age = 20\nhas_id = True\nif age >= 18 and has_id:\n    print("Allowed")', practice_ar: "برنامج يقبل الدخول لو العمر أكبر من 18 أو معاه تصريح.", practice_en: "Allow entry if age > 18 or has a permit.",
-    quiz_ar: "إيه الفرق بين and و or؟", quiz_en: "Difference between and / or?",
-    answer: 'age = 20\nhas_permit = False\nif age >= 18 or has_permit:\n    print("Allowed")', quizAns_ar: "and لازم الاتنين صح، or يكفي واحد.", quizAns_en: "and requires both true, or requires one true."
+    quiz_ar: "لو استخدمنا or والشرط الأول صح، هل الثاني هيتجرب؟", quiz_en: "With or, if the first is true, is the second tested?",
+    answer: 'age = 20\nhas_permit = False\nif age >= 18 or has_permit:\n    print("Allowed")', quizAns_ar: "لأ، لو الأول صح، الثاني بيتجاهل.", quizAns_en: "No, if the first is true, the second is ignored."
   },
   {
-    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
-    title_ar: "الدرس 8: حلقات for", title_en: "Lesson 8: For Loops",
-    steps_ar: ["for بتكرر الكود عدد معروف من المرات.", "range(5) بتلف من 0 لـ 4."],
+    section_ar: "الحلقات التكرارية", section_en: "Loops",
+    title_ar: "الدرس 9: حلقة for", title_en: "Lesson 9: For Loop",
+    steps_ar: ["for بتكرر الكود عدد معروف من المرات.", "range(5) من 0 لـ 4."],
     steps_en: ["for repeats code a known number of times.", "range(5) iterates 0 to 4."],
-    code: 'for i in range(1, 4):\n    print("Number:", i)', practice_ar: "اطبع الأرقام من 1 لـ 10.", practice_en: "Print numbers 1 to 10.",
+    code: 'for i in range(5):\n    print(i)', practice_ar: "اطبع الأرقام من 1 لـ 10.", practice_en: "Print numbers 1 to 10.",
     quiz_ar: "كام مرة هتلف range(3)؟", quiz_en: "How many times does range(3) loop?",
-    answer: 'for i in range(1, 11):\n    print(i)', quizAns_ar: "3 مرات (0, 1, 2).", quizAns_en: "3 times (0, 1, 2)."
+    answer: 'for i in range(1, 11):\n    print(i)', quizAns_ar: "3 مرات.", quizAns_en: "3 times."
   },
   {
-    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
-    title_ar: "الدرس 9: حلقات while", title_en: "Lesson 9: While Loops",
+    section_ar: "الحلقات التكرارية", section_en: "Loops",
+    title_ar: "الدرس 10: حلقة while", title_en: "Lesson 10: While Loop",
     steps_ar: ["while بتلف طول ما الشرط صح.", "احترس من الحلقة اللانهائية."],
     steps_en: ["while loops as long as condition is true.", "Beware of infinite loops."],
-    code: 'i = 1\nwhile i <= 3:\n    print(i)\n    i += 1', practice_ar: "اطبع الأرقام التنازلية من 5 لـ 1.", practice_en: "Print numbers 5 down to 1.",
+    code: 'i = 1\nwhile i <= 3:\n    print(i)\n    i += 1', practice_ar: "اطبع الأرقام التنازلية من 5 لـ 1.", practice_en: "Print numbers from 5 down to 1.",
     quiz_ar: "لو نسيت تزود العداد هيحصل إيه؟", quiz_en: "If you forget to increment, what happens?",
-    answer: 'i = 5\nwhile i >= 1:\n    print(i)\n    i -= 1', quizAns_ar: "حلقة لانهائية (Infinite Loop).", quizAns_en: "An infinite loop."
+    answer: 'i = 5\nwhile i >= 1:\n    print(i)\n    i -= 1', quizAns_ar: "حلقة لانهائية.", quizAns_en: "An infinite loop."
   },
   {
-    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
-    title_ar: "الدرس 10: القوائم List", title_en: "Lesson 10: Lists",
-    steps_ar: ["القائمة بتخزن أكتر من قيمة.", "الفهرس يبدأ من 0.", "append بتضيف، remove بتحذف."],
-    steps_en: ["List stores multiple values.", "Index starts at 0.", "append adds, remove deletes."],
-    code: 'fruits = ["Apple", "Banana"]\nfruits.append("Orange")\nprint(fruits[0])', practice_ar: "أنشئ قائمة بألعابك المفضلة.", practice_en: "Create a list of your favorite games.",
+    section_ar: "القوائم", section_en: "Lists",
+    title_ar: "الدرس 11: القوائم List", title_en: "Lesson 11: Lists",
+    steps_ar: ["القائمة بتخزن أكتر من قيمة.", "الفهرس يبدأ من 0."],
+    steps_en: ["List stores multiple values.", "Index starts at 0."],
+    code: 'games = ["FIFA", "Roblox"]\nprint(games[0])', practice_ar: "أنشئ قائمة بألعابك المفضلة.", practice_en: "Create a list of your favorite games.",
     quiz_ar: "إيه فهرس أول عنصر؟", quiz_en: "What is the first index?",
-    answer: 'games = ["FIFA", "Minecraft", "Roblox"]\nprint(games)', quizAns_ar: "صفر (0).", quizAns_en: "Zero (0)."
+    answer: 'games = ["A", "B", "C"]\nprint(games)', quizAns_ar: "صفر (0).", quizAns_en: "Zero (0)."
   },
   {
-    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
-    title_ar: "الدرس 11: القواميس Dict", title_en: "Lesson 11: Dictionaries",
-    steps_ar: ["بتخزن مفتاح وقيمة (key: value).", "مناسبة لبيانات الكائن الواحد."],
-    steps_en: ["Stores key: value pairs.", "Good for object data."],
-    code: 'user = {"name": "Ali", "age": 20}\nprint(user["name"])', practice_ar: "أنشئ قاموس لبيانات كتاب.", practice_en: "Create a dict for a book.",
+    section_ar: "القوائم", section_en: "Lists",
+    title_ar: "الدرس 12: دوال القوائم", title_en: "Lesson 12: List Methods",
+    steps_ar: ["append بتضيف في الآخر.", "remove بتحذف عنصر.", "len بترجع عدد العناصر."],
+    steps_en: ["append adds to the end.", "remove deletes an item.", "len returns the number of items."],
+    code: 'fruits = ["Apple"]\nfruits.append("Banana")\nfruits.remove("Apple")\nprint(fruits, len(fruits))', practice_ar: "اعمل قائمة ب3 ألوان، ضيف لون، احذف لون.", practice_en: "Create a list of 3 colors, add one, remove one.",
+    quiz_ar: "إيه فايدة len؟", quiz_en: "What does len do?",
+    answer: 'colors = ["Red", "Blue", "Green"]\ncolors.append("Black")\ncolors.remove("Blue")\nprint(colors)', quizAns_ar: "بترجع عدد العناصر اللي في القائمة.", quizAns_en: "Returns the number of items in the list."
+  },
+  {
+    section_ar: "القواميس", section_en: "Dictionaries",
+    title_ar: "الدرس 13: القواميس Dict", title_en: "Lesson 13: Dictionaries",
+    steps_ar: ["القاموس بيخزن مفتاح: قيمة.", "زي ملف شخصي فيه اسم وعمر ومدينة."],
+    steps_en: ["Dict stores key: value pairs.", "Like a profile with name, age, city."],
+    code: 'me = {"name": "Ali", "age": 20}\nprint(me["name"])', practice_ar: "أنشئ قاموس لبيانات كتاب.", practice_en: "Create a dict for a book.",
     quiz_ar: "إزاي نوصل لقيمة في القاموس؟", quiz_en: "How to access a dict value?",
-    answer: 'book = {"title": "Python", "year": 2024}\nprint(book["title"])', quizAns_ar: "باسم المفتاح بين قوسين مربعين.", quizAns_en: "By the key in square brackets."
+    answer: 'book = {"title": "Python", "year": 2024}\nprint(book["title"])', quizAns_ar: "باسم المفتاح بين قوسين مربعين.", quizAns_en: "Using the key in square brackets."
   },
   {
-    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
-    title_ar: "الدرس 12: الدوال Function", title_en: "Lesson 12: Functions",
-    steps_ar: ["الدالة كود بنعيد استخدامه.", "def بتعرف الدالة."],
-    steps_en: ["Function is reusable code.", "def defines a function."],
+    section_ar: "القواميس", section_en: "Dictionaries",
+    title_ar: "الدرس 14: التعديل على القواميس", title_en: "Lesson 14: Modifying Dicts",
+    steps_ar: ["تقدر تضيف مفتاح جديد بسهولة.", "تقدر تغير قيمة مفتاح موجود."],
+    steps_en: ["You can add a new key easily.", "You can change an existing key's value."],
+    code: 'me = {"name": "Ali"}\nme["age"] = 20\nme["name"] = "Ahmed"\nprint(me)', practice_ar: "ضيف مفتاح جديد لقاموس الكتاب.", practice_en: "Add a new key to the book dict.",
+    quiz_ar: "لو كتبت مفتاح موجود بقيمة جديدة إيه اللي يحصل؟", quiz_en: "If you write an existing key with a new value, what happens?",
+    answer: 'book = {"title": "Python"}\nbook["year"] = 2024\nprint(book)', quizAns_ar: "القيمة القديمة بتتغير للجديدة.", quizAns_en: "The old value gets updated to the new one."
+  },
+  {
+    section_ar: "الدوال", section_en: "Functions",
+    title_ar: "الدرس 15: الدوال Function", title_en: "Lesson 15: Functions",
+    steps_ar: ["الدالة كود بنعيد استخدامه.", "def بتعرف الدالة، return بترجع قيمة."],
+    steps_en: ["Function is reusable code.", "def defines, return returns a value."],
     code: 'def greet(name):\n    return "Hello " + name\nprint(greet("Ali"))', practice_ar: "اكتب دالة بتحسب مساحة مستطيل.", practice_en: "Write a function for rectangle area.",
     quiz_ar: "إيه فايدة return؟", quiz_en: "What is the use of return?",
-    answer: 'def area(w, h):\n    return w * h\nprint(area(5, 4))', quizAns_ar: "بترجع قيمة من الدالة للكود الأساسي.", quizAns_en: "It returns a value to the caller."
+    answer: 'def area(w, h):\n    return w * h\nprint(area(5, 4))', quizAns_ar: "بترجع قيمة من الدالة.", quizAns_en: "It returns a value from the function."
   },
   {
-    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
-    title_ar: "الدرس 13: النصوص المتقدمة", title_en: "Lesson 13: Advanced Strings",
+    section_ar: "الدوال", section_en: "Functions",
+    title_ar: "الدرس 16: معاملات الدوال", title_en: "Lesson 16: Function Parameters",
+    steps_ar: ["ممكن الدالة تاخد أكتر من معامل.", "المعاملات بتتكتب بين القوسين."],
+    steps_en: ["A function can take multiple parameters.", "Parameters are written in brackets."],
+    code: 'def add(a, b):\n    return a + b\nprint(add(5, 3))', practice_ar: "دالة بترجع متوسط 3 أرقام.", practice_en: "Function returning the average of 3 numbers.",
+    quiz_ar: "لو ناديت دالة بمعاملات ناقصة هيحصل إيه؟", quiz_en: "If you call a function with missing parameters, what happens?",
+    answer: 'def avg(a, b, c):\n    return (a+b+c)/3\nprint(avg(10, 20, 30))', quizAns_ar: "هيطلع خطأ (TypeError).", quizAns_en: "It will throw a TypeError."
+  },
+  {
+    section_ar: "التعامل مع النصوص", section_en: "Strings",
+    title_ar: "الدرس 17: النصوص المتقدمة", title_en: "Lesson 17: Advanced Strings",
     steps_ar: ["upper() بترفع الحروف.", "lower() بتنزلها.", "split() بتقسم النص."],
     steps_en: ["upper() capitalizes.", "lower() lowercases.", "split() splits text."],
     code: 'text = "Hello World"\nprint(text.upper())\nprint(text.split())', practice_ar: "اقسم جملة لكلمات.", practice_en: "Split a sentence into words.",
@@ -230,8 +267,17 @@ const lessons = [
     answer: 's = "Python is fun"\nprint(s.split())', quizAns_ar: "بترجع طول النص أو عدد العناصر.", quizAns_en: "Returns the length of a string or list."
   },
   {
-    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
-    title_ar: "الدرس 14: التعامل مع الأخطاء", title_en: "Lesson 14: Error Handling",
+    section_ar: "التعامل مع النصوص", section_en: "Strings",
+    title_ar: "الدرس 18: فهرسة النصوص", title_en: "Lesson 18: String Indexing",
+    steps_ar: ["كل حرف في النص له رقم فهرس.", "الفهرس يبدأ من 0."],
+    steps_en: ["Each character has an index.", "Index starts at 0."],
+    code: 'name = "Python"\nprint(name[0])\nprint(name[-1])', practice_ar: "اطبع أول حرف من اسمك.", practice_en: "Print the first letter of your name.",
+    quiz_ar: "إيه فهرس آخر حرف؟", quiz_en: "What is the index of the last char?",
+    answer: 'name = "Ali"\nprint(name[0])', quizAns_ar: "آخر حرف فهرسه -1.", quizAns_en: "The last char index is -1."
+  },
+  {
+    section_ar: "الأخطاء", section_en: "Errors",
+    title_ar: "الدرس 19: التعامل مع الأخطاء", title_en: "Lesson 19: Error Handling",
     steps_ar: ["try/except بيمنع البرنامج من الانهيار.", "بيمسك الخطأ ويعمل حاجة تانية."],
     steps_en: ["try/except prevents crashes.", "Catches the error and handles it."],
     code: 'try:\n    x = int("abc")\nexcept:\n    print("Error!")', practice_ar: "جرب تقسم على صفر وامسك الخطأ.", practice_en: "Try dividing by zero and catch it.",
@@ -239,148 +285,283 @@ const lessons = [
     answer: 'try:\n    print(10/0)\nexcept ZeroDivisionError:\n    print("Cannot divide by zero")', quizAns_ar: "بيجرب الكود، ولو فيه خطأ بينتقل لـ except.", quizAns_en: "It tries the code, if error it goes to except."
   },
   {
-    section_ar: "المرحلة الأولى: تأسيس Python", section_en: "Stage 1: Python Foundation",
-    title_ar: "الدرس 15: مشروع تطبيقي Python", title_en: "Lesson 15: Python Project",
-    steps_ar: ["هنبني آلة حاسبة بسيطة.", "بتاخد رقمين وعملية حسابية."],
-    steps_en: ["We build a simple calculator.", "Takes 2 numbers and an operation."],
-    code: 'a = int(input("Num1: "))\nb = int(input("Num2: "))\nprint("Sum:", a+b)', practice_ar: "طور الآلة الحاسبة لتشمل الطرح والضرب.", practice_en: "Extend the calculator to include subtraction and multiplication.",
-    quiz_ar: "لو المستخدم دخل حرف مش رقم هيحصل إيه؟", quiz_en: "What if user inputs text instead of a number?",
-    answer: 'a = int(input("1: "))\nb = int(input("2: "))\nop = input("Op: ")\nif op == "+":\n    print(a+b)', quizAns_ar: "هيطلع خطأ ValueError، ولازم نستخدم try/except.", quizAns_en: "It will throw a ValueError, we must use try/except."
+    section_ar: "الأخطاء", section_en: "Errors",
+    title_ar: "الدرس 20: أنواع الأخطاء", title_en: "Lesson 20: Error Types",
+    steps_ar: ["ValueError: قيمة غلط.", "TypeError: نوع بيانات غلط.", "IndexError: فهرس مش موجود."],
+    steps_en: ["ValueError: wrong value.", "TypeError: wrong type.", "IndexError: invalid index."],
+    code: 'try:\n    lst = [1, 2]\n    print(lst[5])\nexcept IndexError:\n    print("Index out of range")', practice_ar: "امسك خطأ نوع البيانات.", practice_en: "Catch a type error.",
+    quiz_ar: "إيه نوع الخطأ لو قسمنا رقم على نص؟", quiz_en: "What error occurs when dividing a number by text?",
+    answer: 'try:\n    print(10 + "a")\nexcept TypeError:\n    print("Type error")', quizAns_ar: "TypeError.", quizAns_en: "TypeError."
   },
   {
-    section_ar: "المرحلة الثانية: تأسيس HTML", section_en: "Stage 2: HTML Foundation",
-    title_ar: "الدرس 16: مقدمة في HTML", title_en: "Lesson 16: Intro to HTML",
-    steps_ar: ["HTML هي هيكل الصفحة.", "بتتكون من Tags."],
-    steps_en: ["HTML is the page structure.", "Made of Tags."],
-    code: '<h1>Hello World</h1>\n<p>This is a paragraph</p>', practice_ar: "اكتب عنوان رئيسي باسمك.", practice_en: "Write a main heading with your name.",
-    quiz_ar: "إيه فايدة h1؟", quiz_en: "What is h1 for?",
-    answer: '<h1>My Name</h1>', quizAns_ar: "عنوان رئيسي.", quizAns_en: "Main heading."
+    section_ar: "التكرار المتقدم", section_en: "Advanced Loops",
+    title_ar: "الدرس 21: التكرار على القوائم", title_en: "Lesson 21: Looping Lists",
+    steps_ar: ["تقدر تلف على كل عنصر في القائمة.", "بنستخدم for item in list."],
+    steps_en: ["You can loop through each item.", "Use for item in list."],
+    code: 'fruits = ["Apple", "Banana"]\nfor f in fruits:\n    print(f)', practice_ar: "اطبع كل الأرقام في قائمة.", practice_en: "Print all numbers in a list.",
+    quiz_ar: "إزاي نطبع كل عناصر القائمة؟", quiz_en: "How to print all list items?",
+    answer: 'nums = [1, 2, 3]\nfor n in nums:\n    print(n)', quizAns_ar: "باستخدام for item in list.", quizAns_en: "Using for item in list."
   },
   {
-    section_ar: "المرحلة الثانية: تأسيس HTML", section_en: "Stage 2: HTML Foundation",
-    title_ar: "الدرس 17: هيكل الصفحة", title_en: "Lesson 17: Page Structure",
-    steps_ar: ["head فيه معلومات الصفحة.", "body فيه المحتوى."],
-    steps_en: ["head has page info.", "body has content."],
-    code: '<!DOCTYPE html>\n<html>\n<head><title>My Site</title></head>\n<body><h1>Hi</h1></body>\n</html>', practice_ar: "اعمل صفحة كاملة بالهيكل.", practice_en: "Create a full page structure.",
-    quiz_ar: "فين بيظهر المحتوى؟", quiz_en: "Where does content appear?",
-    answer: '<!DOCTYPE html>\n<html><head></head><body><h1>Hi</h1></body></html>', quizAns_ar: "جوه body.", quizAns_en: "Inside body."
+    section_ar: "التكرار المتقدم", section_en: "Advanced Loops",
+    title_ar: "الدرس 22: range المتقدم", title_en: "Lesson 22: Advanced Range",
+    steps_ar: ["range(start, stop, step).", "step بتحدد الخطوة."],
+    steps_en: ["range(start, stop, step).", "step defines the increment."],
+    code: 'for i in range(0, 10, 2):\n    print(i)', practice_ar: "اطبع الأرقام الزوجية من 0 لـ 10.", practice_en: "Print even numbers 0 to 10.",
+    quiz_ar: "إيه ناتج range(1, 10, 3)?", quiz_en: "What does range(1, 10, 3) produce?",
+    answer: 'for i in range(0, 11, 2):\n    print(i)', quizAns_ar: "1, 4, 7 (يقف قبل 10).", quizAns_en: "1, 4, 7 (stops before 10)."
   },
   {
-    section_ar: "المرحلة الثانية: تأسيس HTML", section_en: "Stage 2: HTML Foundation",
-    title_ar: "الدرس 18: العناوين والفقرات", title_en: "Lesson 18: Headings & Paragraphs",
-    steps_ar: ["h1 لأكبر عنوان، h6 لأصغر عنوان.", "p للفقرات."],
-    steps_en: ["h1 largest, h6 smallest.", "p for paragraphs."],
-    code: '<h1>Main</h1>\n<h2>Sub</h2>\n<p>Text here</p>', practice_ar: "اكتب 3 مستويات عناوين.", practice_en: "Write 3 heading levels.",
-    quiz_ar: "كام مستوى للعناوين؟", quiz_en: "How many heading levels?",
-    answer: '<h1>A</h1>\n<h2>B</h2>\n<h3>C</h3>', quizAns_ar: "6 مستويات (h1 to h6).", quizAns_en: "6 levels (h1 to h6)."
+    section_ar: "التكرار المتقدم", section_en: "Advanced Loops",
+    title_ar: "الدرس 23: break و continue", title_en: "Lesson 23: break & continue",
+    steps_ar: ["break بتوقف الحلقة.", "continue بتتخطى الدورة الحالية."],
+    steps_en: ["break stops the loop.", "continue skips the current iteration."],
+    code: 'for i in range(5):\n    if i == 3:\n        break\n    print(i)', practice_ar: "اطبع الأرقام وتخطى 3.", practice_en: "Print numbers skipping 3.",
+    quiz_ar: "إيه الفرق بين break و continue؟", quiz_en: "Difference between break and continue?",
+    answer: 'for i in range(5):\n    if i == 3:\n        continue\n    print(i)', quizAns_ar: "break بتوقف، continue بتتخطى.", quizAns_en: "break stops, continue skips."
   },
   {
-    section_ar: "المرحلة الثانية: تأسيس HTML", section_en: "Stage 2: HTML Foundation",
-    title_ar: "الدرس 19: الروابط", title_en: "Lesson 19: Links",
-    steps_ar: ["a بتعمل رابط.", "href بيحدد الوجهة."],
-    steps_en: ["a makes a link.", "href sets destination."],
-    code: '<a href="https://google.com">Google</a>', practice_ar: "حط رابط لموقعك المفضل.", practice_en: "Add a link to your favorite site.",
-    quiz_ar: "إزاي تفتح الرابط في تاب جديد؟", quiz_en: "How to open in new tab?",
-    answer: '<a href="https://google.com" target="_blank">Google</a>', quizAns_ar: "باستخدام target='_blank'.", quizAns_en: "Using target='_blank'."
+    section_ar: "المشاريع", section_en: "Projects",
+    title_ar: "الدرس 24: مشروع آلة حاسبة", title_en: "Lesson 24: Calculator Project",
+    steps_ar: ["هنبني آلة حاسبة بسيطة.", "بتاخد رقمين وعملية."],
+    steps_en: ["We build a simple calculator.", "Takes two numbers and an operation."],
+    code: 'a = int(input("1: "))\nb = int(input("2: "))\nprint(a+b)', practice_ar: "طورها لتشمل الطرح.", practice_en: "Extend it to include subtraction.",
+    quiz_ar: "لو المستخدم دخل حرف هيحصل إيه؟", quiz_en: "What if the user enters a letter?",
+    answer: 'a = int(input("1: "))\nb = int(input("2: "))\nprint(a-b)', quizAns_ar: "هيطلع ValueError.", quizAns_en: "It will throw a ValueError."
   },
   {
-    section_ar: "المرحلة الثانية: تأسيس HTML", section_en: "Stage 2: HTML Foundation",
-    title_ar: "الدرس 20: الصور", title_en: "Lesson 20: Images",
-    steps_ar: ["img بتحط صورة.", "src مكان الصورة، alt وصف بديل."],
-    steps_en: ["img for images.", "src is location, alt is description."],
-    code: '<img src="pic.jpg" alt="My Picture">', practice_ar: "حط صورة مع وصف.", practice_en: "Add an image with alt text.",
-    quiz_ar: "ليه بنستخدم alt؟", quiz_en: "Why use alt?",
-    answer: '<img src="me.jpg" alt="My Photo">', quizAns_ar: "لو الصورة مش ظاهرة أو للـ SEO.", quizAns_en: "If image fails to load or for SEO."
-  },
-  {
-    section_ar: "المرحلة الثانية: تأسيس HTML", section_en: "Stage 2: HTML Foundation",
-    title_ar: "الدرس 21: القوائم", title_en: "Lesson 21: Lists",
-    steps_ar: ["ul قائمة غير مرتبة.", "ol قائمة مرتبة.", "li عنصر القائمة."],
-    steps_en: ["ul unordered list.", "ol ordered list.", "li list item."],
-    code: '<ul>\n  <li>Apple</li>\n  <li>Banana</li>\n</ul>', practice_ar: "اعمل قائمة ب5 أكلات.", practice_en: "List 5 foods.",
-    quiz_ar: "إيه الفرق بين ul و ol؟", quiz_en: "Difference between ul and ol?",
-    answer: '<ol>\n  <li>First</li>\n  <li>Second</li>\n</ol>', quizAns_ar: "ul بنقط، ol بأرقام.", quizAns_en: "ul uses dots, ol uses numbers."
-  },
-  {
-    section_ar: "المرحلة الثانية: تأسيس HTML", section_en: "Stage 2: HTML Foundation",
-    title_ar: "الدرس 22: الجداول", title_en: "Lesson 22: Tables",
-    steps_ar: ["table بيعمل جدول.", "tr صف، td خلية."],
-    steps_en: ["table creates table.", "tr row, td cell."],
-    code: '<table>\n  <tr><td>A</td><td>B</td></tr>\n</table>', practice_ar: "اعمل جدول بصفين وعمودين.", practice_en: "Create 2x2 table.",
-    quiz_ar: "إيه فايدة th؟", quiz_en: "What is th for?",
-    answer: '<table>\n  <tr><th>Name</th></tr>\n  <tr><td>Ali</td></tr>\n</table>', quizAns_ar: "عنوان الخلية (Header).", quizAns_en: "Table header cell."
-  },
-  {
-    section_ar: "المرحلة الثانية: تأسيس HTML", section_en: "Stage 2: HTML Foundation",
-    title_ar: "الدرس 23: النماذج Forms", title_en: "Lesson 23: Forms",
-    steps_ar: ["form بيجمع بيانات.", "input بياخد إدخال.", "button للزر."],
-    steps_en: ["form collects data.", "input takes input.", "button for submit."],
-    code: '<form>\n  <input type="text">\n  <button>Send</button>\n</form>', practice_ar: "اعمل فورم للاسم والإيميل.", practice_en: "Create name and email form.",
-    quiz_ar: "إيه input type=password؟", quiz_en: "What is input type=password?",
-    answer: '<form>\n  <input type="email">\n  <button>Send</button>\n</form>', quizAns_ar: "بيخفي الحروف اللي بتتكتب.", quizAns_en: "Hides typed characters."
-  },
-  {
-    section_ar: "المرحلة الثانية: تأسيس CSS", section_en: "Stage 2: CSS Foundation",
-    title_ar: "الدرس 24: مقدمة CSS", title_en: "Lesson 24: Intro to CSS",
-    steps_ar: ["CSS بتتنسق الشكل.", "بتتكتب في style."],
-    steps_en: ["CSS styles the page.", "Written inside style."],
-    code: '<style>\n  h1 { color: red; }\n</style>', practice_ar: "لون العنوان بالأزرق.", practice_en: "Color heading blue.",
-    quiz_ar: "إزاي بنختار عنصر في CSS؟", quiz_en: "How to select an element?",
-    answer: '<style>\n  h1 { color: blue; }\n</style>', quizAns_ar: "باسم العنصر أو الـ id أو الـ class.", quizAns_en: "By tag, id, or class."
-  },
-  {
-    section_ar: "المرحلة الثانية: تأسيس CSS", section_en: "Stage 2: CSS Foundation",
-    title_ar: "الدرس 25: الألوان والخلفيات", title_en: "Lesson 25: Colors",
-    steps_ar: ["color للنص.", "background-color للخلفية."],
-    steps_en: ["color for text.", "background-color for background."],
-    code: '<style>\n  body { background-color: #eee; }\n</style>', practice_ar: "خلي الخلفية سودة والنص أبيض.", practice_en: "Black background, white text.",
-    quiz_ar: "إيه فايدة background-color؟", quiz_en: "What is background-color for?",
-    answer: '<style>\n  body { background: black; color: white; }\n</style>', quizAns_ar: "بتلون خلفية العنصر.", quizAns_en: "Colors the element's background."
-  },
-  {
-    section_ar: "المرحلة الثانية: تأسيس CSS", section_en: "Stage 2: CSS Foundation",
-    title_ar: "الدرس 26: الخطوط", title_en: "Lesson 26: Fonts",
-    steps_ar: ["font-size لحجم الخط.", "font-family لنوع الخط.", "font-weight لتخانة الخط."],
-    steps_en: ["font-size for size.", "font-family for type.", "font-weight for boldness."],
-    code: '<style>\n  p { font-size: 20px; font-weight: bold; }\n</style>', practice_ar: "غير نوع الخط.", practice_en: "Change font family.",
-    quiz_ar: "إيه فايدة font-weight؟", quiz_en: "What does font-weight do?",
-    answer: '<style>\n  p { font-family: Arial; }\n</style>', quizAns_ar: "بيتحكم في تخانة الخط.", quizAns_en: "Controls text thickness."
-  },
-  {
-    section_ar: "المرحلة الثانية: تأسيس CSS", section_en: "Stage 2: CSS Foundation",
-    title_ar: "الدرس 27: الهوامش", title_en: "Lesson 27: Margin & Padding",
-    steps_ar: ["margin مسافة برا العنصر.", "padding مسافة جوه العنصر."],
-    steps_en: ["margin is outside space.", "padding is inside space."],
-    code: '<style>\n  div { margin: 10px; padding: 20px; }\n</style>', practice_ar: "طبق الهوامش على صندوق.", practice_en: "Apply margins to a box.",
-    quiz_ar: "إيه الفرق بين margin و padding؟", quiz_en: "Difference between margin and padding?",
-    answer: '<style>\n  div { margin: 15px; padding: 10px; }\n</style>', quizAns_ar: "margin برا، padding جوه.", quizAns_en: "margin is outside, padding is inside."
-  },
-  {
-    section_ar: "المرحلة الثانية: تأسيس CSS", section_en: "Stage 2: CSS Foundation",
-    title_ar: "الدرس 28: الحدود", title_en: "Lesson 28: Borders",
-    steps_ar: ["border بيحط حدود.", "border-radius بيعمل حواف دايرة."],
-    steps_en: ["border adds a border.", "border-radius makes rounded corners."],
-    code: '<style>\n  div { border: 2px solid black; }\n</style>', practice_ar: "اعمل صندوق بحواف دايرة.", practice_en: "Make a box with rounded corners.",
-    quiz_ar: "إيه فايدة border-radius؟", quiz_en: "What is border-radius for?",
-    answer: '<style>\n  div { border-radius: 10px; border: 1px solid red; }\n</style>', quizAns_ar: "بيخلي الحواف ناعمة أو دايرية.", quizAns_en: "Makes corners smooth or circular."
-  },
-  {
-    section_ar: "المرحلة الثانية: تأسيس CSS", section_en: "Stage 2: CSS Foundation",
-    title_ar: "الدرس 29: Flexbox", title_en: "Lesson 29: Flexbox",
-    steps_ar: ["display: flex بترتب العناصر.", "justify-content للمحاذاة الأفقية.", "align-items للمحاذاة الرأسية."],
-    steps_en: ["display: flex aligns elements.", "justify-content for horizontal.", "align-items for vertical."],
-    code: '<style>\n  .box { display: flex; justify-content: center; }\n</style>', practice_ar: "رتب 3 عناصر في النص.", practice_en: "Center 3 elements.",
-    quiz_ar: "إيه فايدة flex؟", quiz_en: "What is flex for?",
-    answer: '<style>\n  .box { display: flex; gap: 10px; }\n</style>', quizAns_ar: "بيرتب العناصر أفقياً أو رأسياً بسهولة.", quizAns_en: "Arranges items horizontally or vertically easily."
-  },
-  {
-    section_ar: "المرحلة الثانية: تأسيس CSS", section_en: "Stage 2: CSS Foundation",
-    title_ar: "الدرس 30: مشروع تصميم", title_en: "Lesson 30: Design Project",
-    steps_ar: ["هنجمع كل حاجة عملناها في صفحة واحدة.", "عنوان، صورة، فورم، وتنسيق."],
-    steps_en: ["Combine everything in one page.", "Heading, image, form, and styles."],
-    code: '<h1>My Page</h1>\n<p>Welcome</p>', practice_ar: "اعمل صفحة تعريفية كاملة بنفسك.", practice_en: "Create a full profile page.",
-    quiz_ar: "إزاي تنسق صفحة HTML؟", quiz_en: "How to style an HTML page?",
-    answer: '<style>\n  body { background: #eee; }\n  h1 { color: blue; }\n</style>\n<h1>Hi</h1>', quizAns_ar: "بإضافة كود CSS في وسم style.", quizAns_en: "By adding CSS inside the style tag."
+    section_ar: "المشاريع", section_en: "Projects",
+    title_ar: "الدرس 25: مشروع تخمين الرقم", title_en: "Lesson 25: Guess The Number",
+    steps_ar: ["البرنامج بيختار رقم.", "المستخدم بيخمن لحد ما يوصل."],
+    steps_en: ["The program picks a number.", "The user guesses until correct."],
+    code: 'secret = 7\nguess = 0\nwhile guess != secret:\n    guess = int(input("Guess: "))\nprint("Correct!")', practice_ar: "خلي الرقم عشوائي.", practice_en: "Make the number random.",
+    quiz_ar: "هتفضل الحلقة شغالة لحد إمتى؟", quiz_en: "How long will the loop run?",
+    answer: 'import random\nsecret = random.randint(1, 10)\nguess = 0\nwhile guess != secret:\n    guess = int(input("Guess: "))', quizAns_ar: "لحد ما المستخدم يخمن الرقم الصح.", quizAns_en: "Until the user guesses the correct number."
+  // ------ الدروس من 26 إلى 50 ------
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 26: مشروع التحقق من العمر", title_en: "Lesson 26: Age Verifier",
+  steps_ar: ["هنبني برنامج يحدد لو المستخدم يقدر يدخل ولا لأ.", "بياخد العمر من المستخدم ويشوف لو أكبر من 18."],
+  steps_en: ["We build a program to check if the user can enter.", "It takes age and checks if > 18."],
+  code: 'age = int(input("Age: "))\nif age >= 18:\n    print("Allowed")\nelse:\n    print("Denied")', practice_ar: "ضيف شرط لو العمر أصغر من 10.", practice_en: "Add a condition for age < 10.",
+  quiz_ar: "لو المستخدم كتب 18 بالظبط، هيدخل ولا لأ؟", quiz_en: "If the user writes 18, will they enter?",
+  answer: 'age = int(input("Age: "))\nif age >= 18:\n    print("Allowed")\nelif age < 10:\n    print("Child")\nelse:\n    print("Denied")', quizAns_ar: "أيوة، لأن الشرط >= يعني أكبر أو يساوي.", quizAns_en: "Yes, because >= means greater or equal."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 27: مشروع قائمة المهام", title_en: "Lesson 27: To-Do List",
+  steps_ar: ["هنبني برنامج بسيط بيضيف مهام في قائمة.", "بيقدر يطبع المهام."],
+  steps_en: ["We build a simple program to add tasks.", "It can print the tasks."],
+  code: 'tasks = []\ntasks.append("Study")\ntasks.append("Code")\nprint(tasks)', practice_ar: "خلي المستخدم يدخل المهمة بنفسه.", practice_en: "Let the user enter the task themselves.",
+  quiz_ar: "إزاي نضيف مهمة للقائمة؟", quiz_en: "How to add a task to the list?",
+  answer: 'tasks = []\ntask = input("Task: ")\ntasks.append(task)\nprint(tasks)', quizAns_ar: "باستخدام append.", quizAns_en: "Using append."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 28: مشروع حاسبة المعدل", title_en: "Lesson 28: Average Calculator",
+  steps_ar: ["هنحسب متوسط درجات.", "بنجمع الدرجات ونقسم على عددها."],
+  steps_en: ["We calculate the average of grades.", "Sum all grades and divide by count."],
+  code: 'grades = [80, 90, 70]\navg = sum(grades) / len(grades)\nprint(avg)', practice_ar: "اطلب من المستخدم يدخل 3 درجات ويحسب المتوسط.", practice_en: "Ask the user for 3 grades and calculate the average.",
+  quiz_ar: "إيه فايدة sum()؟", quiz_en: "What does sum() do?",
+  answer: 'g1 = int(input("1: "))\ng2 = int(input("2: "))\ng3 = int(input("3: "))\navg = (g1+g2+g3)/3\nprint(avg)', quizAns_ar: "بترجع مجموع الأرقام.", quizAns_en: "Returns the sum of numbers."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 29: مشروع عداد الحروف", title_en: "Lesson 29: Letter Counter",
+  steps_ar: ["هنعد عدد الحروف في كلمة.", "بنستخدم len()."],
+  steps_en: ["We count letters in a word.", "Using len()."],
+  code: 'word = "Python"\nprint(len(word))', practice_ar: "اطلب من المستخدم كلمة واطبع طولها.", practice_en: "Ask for a word and print its length.",
+  quiz_ar: "إيه فايدة len()؟", quiz_en: "What does len() do?",
+  answer: 'w = input("Word: ")\nprint(len(w))', quizAns_ar: "بترجع طول النص.", quizAns_en: "Returns the string length."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 30: مشروع التحقق من الباسورد", title_en: "Lesson 30: Password Check",
+  steps_ar: ["هنشوف لو الباسورد قوي.", "لازم يكون طوله 8 حروف على الأقل."],
+  steps_en: ["We check if the password is strong.", "It must be at least 8 characters."],
+  code: 'password = "12345678"\nif len(password) >= 8:\n    print("Strong")\nelse:\n    print("Weak")', practice_ar: "اطلب من المستخدم الباسورد وقيمه.", practice_en: "Ask for the password and evaluate it.",
+  quiz_ar: "لو الباسورد 7 حروف، هيبقى قوي؟", quiz_en: "If the password is 7 chars, is it strong?",
+  answer: 'p = input("Password: ")\nif len(p) >= 8:\n    print("Strong")\nelse:\n    print("Weak")', quizAns_ar: "لأ، لازم 8 على الأقل.", quizAns_en: "No, it needs 8 at least."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 31: مشروع إدارة مصاريف", title_en: "Lesson 31: Expense Tracker",
+  steps_ar: ["هنحسب مجموع المصاريف.", "بنستخدم sum()."],
+  steps_en: ["We sum the expenses.", "Using sum()."],
+  code: 'expenses = [50, 30, 20]\nprint(sum(expenses))', practice_ar: "خلي المستخدم يضيف مصاريف ويحسب المجموع.", practice_en: "Let the user add expenses and sum them.",
+  quiz_ar: "إيه فايدة sum()؟", quiz_en: "What does sum() do?",
+  answer: 'expenses = [100, 200, 300]\nprint(sum(expenses))', quizAns_ar: "بترجع مجموع القيم.", quizAns_en: "Returns the sum of values."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 32: مشروع البحث في القائمة", title_en: "Lesson 32: Search in List",
+  steps_ar: ["هنبحث عن عنصر في القائمة.", "بنستخدم in."],
+  steps_en: ["We search for an item in a list.", "Using in."],
+  code: 'fruits = ["Apple", "Banana"]\nif "Apple" in fruits:\n    print("Found")', practice_ar: "اسأل المستخدم عن فاكهة وشوفها في القائمة.", practice_en: "Ask for a fruit and check if it's in the list.",
+  quiz_ar: "إيه فايدة in؟", quiz_en: "What does in do?",
+  answer: 'fruits = ["Apple", "Banana"]\nf = input("Fruit: ")\nif f in fruits:\n    print("Found")\nelse:\n    print("Not found")', quizAns_ar: "بتشوف لو القيمة موجودة في القائمة.", quizAns_en: "Checks if a value exists in the list."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 33: مشروع جمع الأرقام", title_en: "Lesson 33: Sum Numbers",
+  steps_ar: ["هنطلب من المستخدم يدخل أرقام لحد ما يدخل صفر.", "ونجمعهم."],
+  steps_en: ["Ask the user for numbers until 0.", "Then sum them."],
+  code: 'total = 0\nn = int(input("Num: "))\nwhile n != 0:\n    total += n\n    n = int(input("Num: "))\nprint(total)', practice_ar: "طور الكود يحسب المتوسط كمان.", practice_en: "Extend it to calculate the average.",
+  quiz_ar: "إمتى الحلقة بتتوقف؟", quiz_en: "When does the loop stop?",
+  answer: 'total = 0\nn = int(input("Num: "))\nwhile n != 0:\n    total += n\n    n = int(input("Num: "))\nprint("Sum:", total)', quizAns_ar: "لما المستخدم يدخل صفر.", quizAns_en: "When the user enters zero."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 34: مشروع فحص الكلمة", title_en: "Lesson 34: Word Check",
+  steps_ar: ["هنشوف لو الكلمة بتبدأ بحرف معين.", "بنستخدم startswith."],
+  steps_en: ["Check if a word starts with a letter.", "Using startswith."],
+  code: 'word = "Python"\nprint(word.startswith("P"))', practice_ar: "اسأل المستخدم عن كلمة وشوف بتبدأ بـ A ولا لأ.", practice_en: "Ask for a word and check if it starts with A.",
+  quiz_ar: "إيه فايدة startswith؟", quiz_en: "What does startswith do?",
+  answer: 'w = input("Word: ")\nprint(w.startswith("A"))', quizAns_ar: "بتشوف لو النص بيبدأ بحرف معين.", quizAns_en: "Checks if the text starts with a specific letter."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 35: مشروع عكس النص", title_en: "Lesson 35: Reverse Text",
+  steps_ar: ["هنعكس كلمة.", "بنستخدم [::-1]."],
+  steps_en: ["We reverse a word.", "Using [::-1]."],
+  code: 'word = "Python"\nprint(word[::-1])', practice_ar: "اعكس اسمك.", practice_en: "Reverse your name.",
+  quiz_ar: "إيه فايدة [::-1]؟", quiz_en: "What does [::-1] do?",
+  answer: 'name = "Ali"\nprint(name[::-1])', quizAns_ar: "بتعكس النص.", quizAns_en: "Reverses the string."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 36: مشروع تحويل الحروف", title_en: "Lesson 36: Change Case",
+  steps_ar: ["هنحول النص لحروف كبيرة.", "بنستخدم upper()."],
+  steps_en: ["Convert text to uppercase.", "Using upper()."],
+  code: 'text = "hello"\nprint(text.upper())', practice_ar: "حول النص لحروف صغيرة.", practice_en: "Convert text to lowercase.",
+  quiz_ar: "إيه فايدة upper()؟", quiz_en: "What does upper() do?",
+  answer: 't = "Hello"\nprint(t.lower())', quizAns_ar: "بتحول الحروف الكبيرة لصغيرة.", quizAns_en: "Converts letters to lowercase."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 37: مشروع فصل الكلمات", title_en: "Lesson 37: Split Words",
+  steps_ar: ["هنفصل الجملة لكلمات.", "بنستخدم split()."],
+  steps_en: ["Split a sentence into words.", "Using split()."],
+  code: 'sentence = "I love Python"\nprint(sentence.split())', practice_ar: "اقسم جملة واطبع كل كلمة في سطر.", practice_en: "Split a sentence and print each word on a line.",
+  quiz_ar: "إيه فايدة split()؟", quiz_en: "What does split() do?",
+  answer: 's = "Hello World"\nwords = s.split()\nfor w in words:\n    print(w)', quizAns_ar: "بتقسم النص لكلمات.", quizAns_en: "Splits the string into words."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 38: مشروع دمج النصوص", title_en: "Lesson 38: Join Strings",
+  steps_ar: ["هندمج كلمات في جملة.", "بنستخدم join()."],
+  steps_en: ["Combine words into a sentence.", "Using join()."],
+  code: 'words = ["I", "love", "Python"]\nprint(" ".join(words))', practice_ar: "ادمج كلمات بفاصلة.", practice_en: "Combine words with a comma.",
+  quiz_ar: "إيه فايدة join؟", quiz_en: "What does join do?",
+  answer: 'words = ["A", "B", "C"]\nprint("-".join(words))', quizAns_ar: "بتدمج قائمة نصوص بفاصل معين.", quizAns_en: "Joins a list of strings with a separator."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 39: مشروع البحث عن حرف", title_en: "Lesson 39: Find Letter",
+  steps_ar: ["هنشوف لو حرف موجود في النص.", "بنستخدم in."],
+  steps_en: ["Check if a letter is in the text.", "Using in."],
+  code: 'text = "Python"\nif "y" in text:\n    print("Found")', practice_ar: "اسأل المستخدم عن حرف وشوفه في كلمة.", practice_en: "Ask for a letter and check it in a word.",
+  quiz_ar: "إيه فايدة in في النصوص؟", quiz_en: "What does in do in strings?",
+  answer: 't = "Hello"\nif "e" in t:\n    print("Yes")\nelse:\n    print("No")', quizAns_ar: "بيشوف لو الحرف أو النص موجود.", quizAns_en: "Checks if the letter or text exists."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 40: مشروع إزالة المسافات", title_en: "Lesson 40: Remove Spaces",
+  steps_ar: ["هنشيل المسافات من الأطراف.", "بنستخدم strip()."],
+  steps_en: ["Remove spaces from edges.", "Using strip()."],
+  code: 'text = "  Hello  "\nprint(text.strip())', practice_ar: "شيل المسافات من نص.", practice_en: "Remove spaces from a text.",
+  quiz_ar: "إيه فايدة strip()؟", quiz_en: "What does strip() do?",
+  answer: 't = "  Word  "\nprint(t.strip())', quizAns_ar: "بتشيل المسافات من البداية والنهاية.", quizAns_en: "Removes spaces from start and end."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 41: مشروع الحساب التلقائي", title_en: "Lesson 41: Auto Calculator",
+  steps_ar: ["هنعمل دالة للحساب.", "بنجمع فيها العمليات."],
+  steps_en: ["We make a calculator function.", "It handles operations."],
+  code: 'def calc(a, b, op):\n    if op == "+":\n        return a + b\nprint(calc(5, 3, "+"))', practice_ar: "ضيف عملية الضرب.", practice_en: "Add multiplication.",
+  quiz_ar: "إيه فايدة الدالة calc؟", quiz_en: "What is the calc function for?",
+  answer: 'def calc(a, b, op):\n    if op == "+":\n        return a + b\n    elif op == "*":\n        return a * b\nprint(calc(5, 3, "*"))', quizAns_ar: "بتجمع عمليات حسابية في مكان واحد.", quizAns_en: "It groups math operations in one place."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 42: مشروع طالب بيانات", title_en: "Lesson 42: User Data",
+  steps_ar: ["هنجمع بيانات المستخدم في قاموس.", "ونطبعها."],
+  steps_en: ["We collect user data in a dict.", "And print them."],
+  code: 'user = {}\nuser["name"] = input("Name: ")\nuser["age"] = input("Age: ")\nprint(user)', practice_ar: "ضيف الإيميل للقاموس.", practice_en: "Add email to the dict.",
+  quiz_ar: "إزاي بنضيف بيانات للقاموس؟", quiz_en: "How to add data to a dict?",
+  answer: 'u = {}\nu["name"] = input("Name: ")\nu["email"] = input("Email: ")\nprint(u)', quizAns_ar: "باسم المفتاح وقيمة.", quizAns_en: "Using key and value."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 43: مشروع عد الكلمات", title_en: "Lesson 43: Word Count",
+  steps_ar: ["هنعد كلمات الجملة.", "بنقسمها وبعدين نعد."],
+  steps_en: ["We count words in a sentence.", "Split then count."],
+  code: 'sentence = "I love Python"\nwords = sentence.split()\nprint(len(words))', practice_ar: "اطلب جملة من المستخدم واطبع عدد كلماتها.", practice_en: "Ask for a sentence and print word count.",
+  quiz_ar: "إزاي نعرف عدد الكلمات؟", quiz_en: "How to know the word count?",
+  answer: 's = input("Sentence: ")\nprint(len(s.split()))', quizAns_ar: "بنقسمها لـ list ونعد بالـ len.", quizAns_en: "Split it into a list and use len."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 44: مشروع التحقق من النص", title_en: "Lesson 44: Text Validation",
+  steps_ar: ["هنشوف لو النص رقم ولا لأ.", "بنستخدم isdigit()."],
+  steps_en: ["Check if text is numeric.", "Using isdigit()."],
+  code: 'text = "123"\nprint(text.isdigit())', practice_ar: "اطلب من المستخدم نص وشوف رقم ولا لأ.", practice_en: "Ask for text and check if it's numeric.",
+  quiz_ar: "إيه فايدة isdigit؟", quiz_en: "What does isdigit do?",
+  answer: 't = input("Text: ")\nprint(t.isdigit())', quizAns_ar: "بتشوف لو النص كله أرقام.", quizAns_en: "Checks if the text is all numbers."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 45: مشروع التقويم", title_en: "Lesson 45: Calendar",
+  steps_ar: ["هنطبع أسماء الشهور.", "بنستخدم قائمة."],
+  steps_en: ["Print month names.", "Using a list."],
+  code: 'months = ["Jan", "Feb", "Mar"]\nfor m in months:\n    print(m)', practice_ar: "اكتب كل شهور السنة.", practice_en: "Write all months of the year.",
+  quiz_ar: "إزاي نطبع كل الشهور؟", quiz_en: "How to print all months?",
+  answer: 'months = ["Jan", "Feb", "Mar", "Apr"]\nfor m in months:\n    print(m)', quizAns_ar: "باستخدام حلقة for.", quizAns_en: "Using a for loop."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 46: مشروع التحقق من البريد", title_en: "Lesson 46: Email Check",
+  steps_ar: ["هنشوف لو الإيميل فيه @.", "بنستخدم in."],
+  steps_en: ["Check if email has @.", "Using in."],
+  code: 'email = "a@b.com"\nif "@" in email:\n    print("Valid")', practice_ar: "اطلب إيميل من المستخدم وقيمه.", practice_en: "Ask for an email and validate it.",
+  quiz_ar: "إيه شرط الإيميل الصحيح؟", quiz_en: "What is a valid email condition?",
+  answer: 'e = input("Email: ")\nif "@" in e:\n    print("Valid")\nelse:\n    print("Invalid")', quizAns_ar: "لازم يكون فيه @.", quizAns_en: "It must contain @."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 47: مشروع إحصائيات", title_en: "Lesson 47: Statistics",
+  steps_ar: ["هنحسب أعلى وأقل قيمة.", "بنستخدم max و min."],
+  steps_en: ["Calculate max and min.", "Using max and min."],
+  code: 'nums = [10, 20, 5]\nprint(max(nums))\nprint(min(nums))', practice_ar: "اطبع أعلى وأقل درجة من قائمة درجات.", practice_en: "Print the max and min from a grades list.",
+  quiz_ar: "إيه فايدة max؟", quiz_en: "What does max do?",
+  answer: 'grades = [80, 90, 70]\nprint(max(grades))\nprint(min(grades))', quizAns_ar: "بترجع أعلى قيمة.", quizAns_en: "Returns the highest value."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 48: مشروع ترتيب البيانات", title_en: "Lesson 48: Sort Data",
+  steps_ar: ["هنرتب القائمة.", "بنستخدم sort()."],
+  steps_en: ["Sort the list.", "Using sort()."],
+  code: 'nums = [3, 1, 2]\nnums.sort()\nprint(nums)', practice_ar: "رتب القائمة تنازلياً.", practice_en: "Sort the list descending.",
+  quiz_ar: "إيه فايدة sort()؟", quiz_en: "What does sort() do?",
+  answer: 'nums = [3, 1, 2]\nnums.sort(reverse=True)\nprint(nums)', quizAns_ar: "بترتب القائمة تصاعدياً أو تنازلياً.", quizAns_en: "Sorts the list ascending or descending."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 49: مشروع البحث المتقدم", title_en: "Lesson 49: Advanced Search",
+  steps_ar: ["هنبحث عن عنصر ونطبع مكانه.", "بنستخدم index()."],
+  steps_en: ["Search for an item and print its index.", "Using index()."],
+  code: 'nums = [10, 20, 30]\nprint(nums.index(20))', practice_ar: "ابحث عن رقم في قائمة.", practice_en: "Search for a number in a list.",
+  quiz_ar: "لو العنصر مش موجود هيحصل إيه؟", quiz_en: "If the item is not found, what happens?",
+  answer: 'nums = [10, 20, 30]\nif 20 in nums:\n    print(nums.index(20))\nelse:\n    print("Not found")', quizAns_ar: "هيطلع ValueError.", quizAns_en: "It will throw a ValueError."
+},
+{
+  section_ar: "المشاريع", section_en: "Projects",
+  title_ar: "الدرس 50: المشروع الختامي", title_en: "Lesson 50: Final Project",
+  steps_ar: ["هنجمع كل اللي اتعلمناه.", "هنبني نظام إدارة مهام بسيط."],
+  steps_en: ["We combine everything we learned.", "Build a simple task management system."],
+  code: 'tasks = []\nwhile True:\n    print("1. Add 2. Show 3. Exit")\n    choice = input("Choice: ")\n    if choice == "1":\n        t = input("Task: ")\n        tasks.append(t)\n    elif choice == "2":\n        for t in tasks:\n            print(t)\n    elif choice == "3":\n        break', practice_ar: "جرب البرنامج ده وشوف شغال إزاي، وعدل عليه.", practice_en: "Try this program and modify it.",
+  quiz_ar: "إيه فايدة while True هنا؟", quiz_en: "What is the use of while True here?",
+  answer: 'tasks = []\nwhile True:\n    choice = input("1. Add 2. Show 3. Exit: ")\n    if choice == "3":\n        break\n    if choice == "1":\n        tasks.append(input("Task: "))\n    if choice == "2":\n        print(tasks)', quizAns_ar: "بيخلي البرنامج يفضل شغال لحد ما المستخدم يختار خروج.", quizAns_en: "Keeps the program running until the user chooses exit."
   }
 ];
 
@@ -403,7 +584,6 @@ function renderLessons() {
       stepsHtml += `<div class="step-item">${s}</div>`;
     });
 
-    // تجهيز الكود للعرض الآمن
     const displayCode = l.code.replace(/</g, '&lt;').replace(/>/g, '&gt;');
     const displayAns = l.answer.replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
